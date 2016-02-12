@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="187.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true" />
+      <Text layoutX="81.0" layoutY="311.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GrytBitar" />
+      <Text layoutX="148.0" layoutY="337.0" strokeType="OUTSIDE" strokeWidth="0.0" text="89 kr/kg" />
+      <Text layoutX="80.0" layoutY="334.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pris" />
+      <Button layoutX="494.0" layoutY="349.0" mnemonicParsing="false" text="Button" />
+      <Text layoutX="77.0" layoutY="366.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Antal kg" />
+      <TextField layoutX="157.0" layoutY="349.0" />
+   </children>
+</AnchorPane>
