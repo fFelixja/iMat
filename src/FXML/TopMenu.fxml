@@ -9,14 +9,12 @@
    <children>
       <AnchorPane layoutX="-4.0" prefHeight="53.0" prefWidth="608.0">
          <children>
-
             <TextField fx:id="searchTextField" layoutX="139.0" layoutY="16.0" promptText="Sök..." />
-            <Button fx:id="backButton" layoutY="1.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="59.0" style="-fx-background-radius: 0;" stylesheets="@css/topMenuStyle.css" text="Tbk" AnchorPane.leftAnchor="4.0" AnchorPane.topAnchor="0.0" />
-            <Button fx:id="homeButton" layoutX="69.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="59.0" style="-fx-background-radius: 0;" stylesheets="@css/topMenuStyle.css" text="Hem" AnchorPane.leftAnchor="64.0" />
-            <Button fx:id="profileButton" layoutX="327.0" layoutY="-1.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="100.0" stylesheets="@css/topMenuStyle.css" text="Profil" AnchorPane.rightAnchor="206.0" AnchorPane.topAnchor="0.0" />
-            <Button fx:id="purchaseHistoryButton" layoutX="408.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="100.0" stylesheets="@css/topMenuStyle.css" text="Tidigare inköp" AnchorPane.rightAnchor="105.0" AnchorPane.topAnchor="0.0" />
-            <Button fx:id="shoppingCartButton" layoutX="500.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="100.0" stylesheets="@css/topMenuStyle.css" text="Kundvagn" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="0.0" />
-
+            <Button fx:id="backButton" layoutY="1.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="59.0" style="-fx-background-radius: 0;" stylesheets="@../css/topMenuStyle.css" text="Tbk" AnchorPane.leftAnchor="4.0" AnchorPane.topAnchor="0.0" />
+            <Button fx:id="homeButton" layoutX="69.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="59.0" style="-fx-background-radius: 0;" stylesheets="@../css/topMenuStyle.css" text="Hem" AnchorPane.leftAnchor="64.0" />
+            <Button fx:id="profileButton" layoutX="327.0" layoutY="-1.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="100.0" stylesheets="@../css/topMenuStyle.css" text="Profil" AnchorPane.rightAnchor="206.0" AnchorPane.topAnchor="0.0" />
+            <Button fx:id="purchaseHistoryButton" layoutX="408.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="100.0" stylesheets="@../css/topMenuStyle.css" text="Tidigare inköp" AnchorPane.rightAnchor="105.0" AnchorPane.topAnchor="0.0" />
+            <Button fx:id="shoppingCartButton" layoutX="500.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="100.0" stylesheets="@../css/topMenuStyle.css" text="Kundvagn" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="0.0" />
          </children>
       </AnchorPane>
       <Separator layoutX="-7.0" layoutY="53.0" prefHeight="8.0" prefWidth="608.0" />

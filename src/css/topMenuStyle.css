@@ -9,3 +9,7 @@
 #homeButton:hover, #backButton:hover, #profileButton:hover, #purchaseHistoryButton:hover, #shoppingCartButton:hover {
 	-fx-background-color:#bdc3c7;
 }
+
+#backButtonImage {
+	-fx-background-image:back-button.png;
+}
