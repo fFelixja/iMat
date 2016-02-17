@@ -9,7 +9,7 @@
    <children>
       <AnchorPane layoutX="-4.0" prefHeight="53.0" prefWidth="608.0">
          <children>
-            <TextField fx:id="searchTextField" layoutX="125.0" layoutY="16.0" text="Sök..." />
+            <TextField fx:id="searchTextField" layoutX="125.0" layoutY="16.0" promptText="Sök..." />
             <Button fx:id="backButton" layoutX="6.0" layoutY="3.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #FFF; -fx-background-radius: 0;" text="Tbk" />
             <Button fx:id="homeButton" layoutX="56.0" layoutY="3.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #FFF; -fx-background-radius: 0;" text="Hem" />
             <Button fx:id="profileButton" layoutX="368.0" layoutY="16.0" mnemonicParsing="false" text="Profil" />
