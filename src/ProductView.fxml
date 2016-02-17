@@ -5,28 +5,28 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="407.0" prefWidth="457.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
+<?import javafx.scene.control.Label?>
+<AnchorPane maxHeight="1" maxWidth="1" minHeight="-Infinity" minWidth="-Infinity" prefHeight="407.0" prefWidth="457.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ProductViewController">
    <children>
       <ImageView fx:id="productImage" fitHeight="150.0" fitWidth="200.0" layoutX="187.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true" />
-      <Text fx:id="nameLabel" layoutX="81.0" layoutY="311.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GrytBitar">
+      <Label fx:id="nameLabel" layoutX="81.0" layoutY="311.0"  text="GrytBitar">
          <font>
             <Font size="26.0" />
-         </font></Text>
-      <Text fx:id="priceUnitLabel" layoutX="148.0" layoutY="337.0" strokeType="OUTSIDE" strokeWidth="0.0" text="89 kr/kg">
+         </font></Label>
+      <Label fx:id="priceUnitLabel" layoutX="148.0" layoutY="337.0"  text="89 kr/kg">
          <font>
             <Font size="19.0" />
-         </font></Text>
-      <Text layoutX="90.0" layoutY="336.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pris" wrappingWidth="44.6337890625">
+         </font></Label>
+       <Label layoutX="90.0" layoutY="336.0" text="Pris">
          <font>
             <Font size="18.0" />
-         </font></Text>
+         </font></Label>
       <Button fx:id="addToCartButton" layoutX="340.0" layoutY="350.0" mnemonicParsing="false" text="Button" />
-      <Text fx:id="amountUnitLabel" layoutX="89.0" layoutY="367.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Antal kg" wrappingWidth="78.51416015625">
+      <Label  fx:id="amountUnitLabel" layoutX="89.0" layoutY="367.0" text="Antal kg" >
          <font>
             <Font size="19.0" />
-         </font></Text>
+         </font></Label>
       <Spinner fx:id="amountSpinner" layoutX="258.0" layoutY="350.0" prefHeight="26.0" prefWidth="62.0" />
    </children>
 </AnchorPane>
