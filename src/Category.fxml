@@ -3,15 +3,16 @@
 <?import javafx.scene.text.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CategoryController">
    <children>
       <ImageView fitHeight="113.0" fitWidth="157.0" layoutX="73.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="73.0" AnchorPane.rightAnchor="70.0" AnchorPane.topAnchor="21.0" />
-      <Text layoutX="24.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kött" wrappingWidth="101.7294921875" AnchorPane.bottomAnchor="19.80224609375" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="174.2705078125">
+      <Label fx:id="categoryLabel" layoutX="7.0" layoutY="189.0"  text="Kött"  AnchorPane.bottomAnchor="1.2119140625" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="191.2705078125">
          <font>
             <Font size="39.0" />
          </font>
-      </Text>
+      </Label>
+      <ImageView fx:id="categoryImage" fitHeight="152.0" fitWidth="300.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>
