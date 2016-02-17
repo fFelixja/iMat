@@ -1,0 +1,11 @@
+#homeButton, #backButton, #profileButton, #purchaseHistoryButton, #shoppingCartButton {
+	-fx-background-color:#FFF;
+	-fx-background-radius:0;
+	-fx-border-color:#f39c12;
+	-fx-border-style:solid;
+	-fx-border-width:1px;
+}
+
+#homeButton:hover, #backButton:hover, #profileButton:hover, #purchaseHistoryButton:hover, #shoppingCartButton:hover {
+	-fx-background-color:#bdc3c7;
+}
