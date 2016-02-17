@@ -5,17 +5,16 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TopMenuController">
    <children>
       <AnchorPane layoutX="-4.0" prefHeight="53.0" prefWidth="608.0">
          <children>
-            <TextField layoutX="125.0" layoutY="16.0" text="Sök..." />
-            <Button layoutX="6.0" layoutY="3.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #FFF; -fx-background-radius: 0;" />
-            <Button layoutX="56.0" layoutY="3.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #FFF; -fx-background-radius: 0;" />
-            <Button layoutX="368.0" layoutY="16.0" mnemonicParsing="false" text="Profil" />
-            <Button layoutX="421.0" layoutY="16.0" mnemonicParsing="false" text="Tidigare inköp" />
-            <Button layoutX="522.0" layoutY="16.0" mnemonicParsing="false" text="Kundvagn" />
+            <TextField fx:id="searchTextField" layoutX="125.0" layoutY="16.0" text="Sök..." />
+            <Button fx:id="backButton" layoutX="6.0" layoutY="3.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #FFF; -fx-background-radius: 0;" text="Tbk" />
+            <Button fx:id="homeButton" layoutX="56.0" layoutY="3.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-color: #FFF; -fx-background-radius: 0;" text="Hem" />
+            <Button fx:id="profileButton" layoutX="368.0" layoutY="16.0" mnemonicParsing="false" text="Profil" />
+            <Button fx:id="purchaseHistoryButton" layoutX="421.0" layoutY="16.0" mnemonicParsing="false" text="Tidigare inköp" />
+            <Button fx:id="shoppingCartButton" layoutX="522.0" layoutY="16.0" mnemonicParsing="false" text="Kundvagn" />
          </children>
       </AnchorPane>
       <Separator layoutX="-7.0" layoutY="53.0" prefHeight="8.0" prefWidth="608.0" />
