@@ -28,8 +28,8 @@ public class TopMenuController extends AnchorPane implements Initializable{
 
     @Override
     public void initialize(URL url, ResourceBundle bundle){
-        System.out.println("a");
-//        backButtonImage.setImage(new Image("img/backbutton.png"));
+//        System.out.println("a");
+        backButtonImage.setImage(new Image("img/backbutton.png"));
     }
 
     @FXML
