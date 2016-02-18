@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ProfileViewController">
+   <children>
+      <TextField fx:id="firstnameTextField" layoutX="131.0" layoutY="77.0" prefHeight="26.0" prefWidth="136.0" />
+      <TextField fx:id="lastnameTextField" layoutX="131.0" layoutY="107.0" prefHeight="26.0" prefWidth="136.0" />
+      <TextField fx:id="adressTextField" layoutX="131.0" layoutY="140.0" prefHeight="26.0" prefWidth="136.0" />
+      <TextField fx:id="adressTwoTextField" layoutX="131.0" layoutY="179.0" prefHeight="26.0" prefWidth="136.0" />
+      <TextField fx:id="zipcodeTextField" layoutX="131.0" layoutY="213.0" prefHeight="26.0" prefWidth="89.0" />
+      <TextField fx:id="cityTextField" layoutX="131.0" layoutY="252.0" prefHeight="26.0" prefWidth="136.0" />
+      <TextField fx:id="telephoneTextField" layoutX="131.0" layoutY="289.0" prefHeight="26.0" prefWidth="136.0" />
+      <TextField fx:id="ccvTextField" layoutX="416.0" layoutY="282.0" prefHeight="26.0" prefWidth="53.0" />
+      <TextField fx:id="cardNumberTextField" layoutX="411.0" layoutY="166.0" prefHeight="26.0" prefWidth="129.0" />
+      <TextField fx:id="cardHolderTextField" layoutX="411.0" layoutY="200.0" prefHeight="26.0" prefWidth="129.0" />
+      <TextField fx:id="expirationMonthTextField" layoutX="442.0" layoutY="239.0" prefHeight="26.0" prefWidth="30.0" />
+      <TextField fx:id="expirationYearTextField" layoutX="505.0" layoutY="239.0" prefHeight="26.0" prefWidth="30.0" />
+      <Button fx:id="saveButton" layoutX="414.0" layoutY="332.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" text="Spara" />
+      <Button fx:id="cancelButton" layoutX="48.0" layoutY="332.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" text="Avbryt" />
+      <Label layoutX="252.0" layoutY="20.0" text="Profilvy">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER_RIGHT" layoutX="65.0" layoutY="82.0" text="Förnamn:" />
+      <Label alignment="CENTER_RIGHT" layoutX="54.0" layoutY="112.0" text="Efternamn:" />
+      <Label alignment="CENTER_RIGHT" layoutX="79.0" layoutY="145.0" text="Adress:" />
+      <Label alignment="CENTER_RIGHT" layoutX="66.0" layoutY="184.0" text="Adress 2:" />
+      <Label alignment="CENTER_RIGHT" layoutX="35.0" layoutY="218.0" text="Postnummer:" />
+      <Label alignment="CENTER_RIGHT" layoutX="78.0" layoutY="257.0" text="Postort:" />
+      <Label alignment="CENTER_RIGHT" layoutX="77.0" layoutY="295.0" text="Telefon:" />
+      <Label alignment="CENTER_RIGHT" layoutX="145.0" layoutY="55.0" text="Personuppgifter" />
+      <Label alignment="CENTER_RIGHT" layoutX="355.0" layoutY="55.0" text="Betalningsuppgifter" />
+      <RadioButton fx:id="cardRadioButton" layoutX="342.0" layoutY="89.0" mnemonicParsing="false" selected="true" text="Kort">
+         <toggleGroup>
+            <ToggleGroup fx:id="paygroup" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="invoiceRadioButton" layoutX="420.0" layoutY="89.0" mnemonicParsing="false" text="Faktura" toggleGroup="$paygroup" />
+      <ChoiceBox fx:id="cardTypeChoiceBox" layoutX="403.0" layoutY="120.0" prefHeight="26.0" prefWidth="129.0" />
+      <Label alignment="CENTER_RIGHT" layoutX="341.0" layoutY="125.0" text="Korttyp:" />
+      <Label alignment="CENTER_RIGHT" layoutX="324.0" layoutY="171.0" text="Kortnummer:" />
+      <Label alignment="CENTER_RIGHT" layoutX="303.0" layoutY="205.0" text="Kortinnehavare:" />
+      <Label alignment="CENTER_RIGHT" layoutX="475.0" layoutY="244.0" text="År:" />
+      <Label alignment="CENTER_RIGHT" layoutX="281.0" layoutY="244.0" text="Utgångsdatum Månad:" />
+      <Label alignment="CENTER_RIGHT" layoutX="349.0" layoutY="287.0" text="CCV/CVC" />
+      <Button fx:id="ccvHelpButton" layoutX="474.0" layoutY="282.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="19.0" text="?" />
+   </children>
+</AnchorPane>
