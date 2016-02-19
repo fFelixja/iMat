@@ -23,7 +23,7 @@
                   <ImageView fx:id="backButtonImage" fitHeight="45.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true" />
                </graphic></Button>
             <Button fx:id="homeButton" layoutX="69.0" mnemonicParsing="false" onAction="#homeButtonActionPerformed" prefHeight="56.0" prefWidth="59.0" style="-fx-background-radius: 0;" text="Hem" AnchorPane.leftAnchor="64.0" />
-            <Button fx:id="profileButton" layoutX="297.0" layoutY="11.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="Profil" AnchorPane.rightAnchor="212.0" AnchorPane.topAnchor="15.0" />
+            <Button fx:id="profileButton" layoutX="297.0" layoutY="11.0" mnemonicParsing="false" onAction="#profileButtonActionPerformed" prefHeight="25.0" prefWidth="100.0" text="Profil" AnchorPane.rightAnchor="212.0" AnchorPane.topAnchor="15.0" />
             <Button fx:id="purchaseHistoryButton" layoutX="408.0" layoutY="11.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="Tidigare inköp" AnchorPane.rightAnchor="109.0" AnchorPane.topAnchor="15.0" />
             <Button fx:id="shoppingCartButton" layoutX="503.0" layoutY="11.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="Kundvagn" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="15.0" />
             <Label layoutX="144.0" layoutY="18.0" text="Sök" AnchorPane.topAnchor="18.0" />

@@ -42,4 +42,8 @@ public class ProfileViewController extends AnchorPane {
 
     @FXML private ChoiceBox cardTypeChoiceBox;
 
+    public ProfileViewController(){
+
+    }
+
 }

@@ -46,4 +46,11 @@ public class TopMenuController extends AnchorPane implements Initializable{
         System.out.println("hej");
     }
 
+    @FXML
+    protected void profileButtonActionPerformed(ActionEvent event){
+        System.out.println("Profilknapp fungerar");
+        ProfileViewController profileController = new ProfileViewController();
+        profileController.toFront();
+    }
+
 }
