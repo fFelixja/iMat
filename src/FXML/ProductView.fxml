@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="407.0" maxWidth="361.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="407.0" prefWidth="361.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ProductViewController">
-   <children>
+<fx:root type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
       <ImageView fx:id="productImage" fitHeight="240.0" fitWidth="333.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
       <Label fx:id="nameLabel" layoutX="24.0" layoutY="261.0" text="GrytBitar">
          <font>
@@ -28,5 +27,4 @@
             <Font size="19.0" />
          </font></Label>
       <Spinner fx:id="amountSpinner" layoutX="100.0" layoutY="350.0" prefHeight="26.0" prefWidth="62.0" />
-   </children>
-</AnchorPane>
+</fx:root>

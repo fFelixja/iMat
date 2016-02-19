@@ -5,9 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ConfirmViewController">
-   <children>
+<fx:root  type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
       <Label layoutX="198.0" layoutY="33.0" text="Bekräftelsevy">
          <font>
             <Font size="28.0" />
@@ -24,5 +22,4 @@
       <Label fx:id="totalCostLabel" layoutX="362.0" layoutY="180.0" text="1000 kr" />
       <Button fx:id="shopAgainButton" layoutX="67.0" layoutY="269.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" text="Handla Igen" />
       <Button fx:id="exitButton" layoutX="372.0" layoutY="273.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" text="Avsluta Program" />
-   </children>
-</AnchorPane>
+</fx:root>
