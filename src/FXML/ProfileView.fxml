@@ -9,8 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ProfileViewController">
-   <children>
+<fx:root type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
       <TextField fx:id="firstnameTextField" layoutX="131.0" layoutY="77.0" prefHeight="26.0" prefWidth="136.0" />
       <TextField fx:id="lastnameTextField" layoutX="131.0" layoutY="107.0" prefHeight="26.0" prefWidth="136.0" />
       <TextField fx:id="adressTextField" layoutX="131.0" layoutY="140.0" prefHeight="26.0" prefWidth="136.0" />
@@ -53,5 +52,4 @@
       <Label alignment="CENTER_RIGHT" layoutX="281.0" layoutY="244.0" text="Utgångsdatum Månad:" />
       <Label alignment="CENTER_RIGHT" layoutX="349.0" layoutY="287.0" text="CCV/CVC" />
       <Button fx:id="ccvHelpButton" layoutX="474.0" layoutY="282.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="19.0" text="?" />
-   </children>
-</AnchorPane>
+</fx:root>
