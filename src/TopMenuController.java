@@ -1,5 +1,6 @@
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
@@ -39,6 +40,8 @@ public class TopMenuController extends AnchorPane implements Initializable{
     public void initialize(URL url, ResourceBundle bundle){
 //        System.out.println("a");
         backButtonImage.setImage(new Image("img/backbutton.png"));
+        CategoryController categoryPane = new CategoryController();
+        categoryGridPane.add(categoryPane, 1, 1);
     }
 
     @FXML
