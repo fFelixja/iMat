@@ -5,8 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="102.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PastPurchasePanelController">
-   <children>
+<fx:root  type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
       <Label fx:id="datePurchasedLabel" layoutX="79.0" layoutY="16.0" text="XXXX-XX-XX" AnchorPane.leftAnchor="79.0">
          <font>
             <Font size="25.0" />
@@ -42,5 +41,4 @@
             <Font size="19.0" />
          </font>
       </Label>
-   </children>
-</AnchorPane>
+</fx:root>

@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PurchaseHistoryViewController">
-   <children>
+<fx:root  type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
       <Label layoutX="219.0" layoutY="6.0" prefHeight="32.0" prefWidth="135.0" text="Tidigare inköp">
          <font>
             <Font size="20.0" />
@@ -22,5 +17,4 @@
             <VBox fx:id="purchaseBox" prefHeight="362.0" prefWidth="600.0" />
          </content>
       </ScrollPane>
-   </children>
-</AnchorPane>
+</fx:root>
