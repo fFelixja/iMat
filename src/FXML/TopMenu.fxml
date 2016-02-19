@@ -26,7 +26,7 @@
          </children>
       </AnchorPane>
       <Separator layoutX="-7.0" layoutY="53.0" prefHeight="8.0" prefWidth="608.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="53.0" />
-      <StackPane layoutX="11.0" layoutY="68.0" prefHeight="306.0" prefWidth="574.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0" />
+      <StackPane fx:id="categoryStackPane" layoutX="11.0" layoutY="68.0" prefHeight="306.0" prefWidth="574.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0" />
       <Label layoutX="305.0" layoutY="61.0" text="Alla kategorier" AnchorPane.leftAnchor="305.0" AnchorPane.rightAnchor="304.0" AnchorPane.topAnchor="61.0">
          <font>
             <Font size="26.0" />
