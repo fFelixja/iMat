@@ -10,6 +10,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
+import se.chalmers.ait.dat215.project.ProductCategory;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -41,7 +42,47 @@ public class TopMenuController extends AnchorPane implements Initializable{
 //        System.out.println("a");
         backButtonImage.setImage(new Image("img/backbutton.png"));
         CategoryController categoryPane = new CategoryController();
-        categoryGridPane.add(categoryPane, 1, 1);
+
+        categoryPane.setCategoryName(DataHandler.getCategory());
+        categoryPane.setCategoryImage(DataHandler.getCategoryImage(ProductCategory.BERRY));
+
+        categoryGridPane.add(categoryPane, 0, 1);
+
+        CategoryController categoryPane2 = new CategoryController();
+
+        categoryPane2.setCategoryName(DataHandler.getCategory());
+        categoryPane2.setCategoryImage(DataHandler.getCategoryImage(ProductCategory.BERRY));
+
+        categoryGridPane.add(categoryPane2, 0, 3);
+
+        CategoryController categoryPane3 = new CategoryController();
+
+        categoryPane3.setCategoryName(DataHandler.getCategory());
+        categoryPane3.setCategoryImage(DataHandler.getCategoryImage(ProductCategory.BERRY));
+
+        categoryGridPane.add(categoryPane3, 0, 5);
+
+        //testing columns
+        CategoryController categoryPane4 = new CategoryController();
+
+        categoryPane4.setCategoryName(DataHandler.getCategory());
+        categoryPane4.setCategoryImage(DataHandler.getCategoryImage(ProductCategory.BERRY));
+
+        categoryGridPane.add(categoryPane4, 1, 1);
+
+        CategoryController categoryPane5 = new CategoryController();
+
+        categoryPane5.setCategoryName(DataHandler.getCategory());
+        categoryPane5.setCategoryImage(DataHandler.getCategoryImage(ProductCategory.BERRY));
+
+        categoryGridPane.add(categoryPane5, 2, 1);
+
+        CategoryController categoryPane6 = new CategoryController();
+
+        categoryPane6.setCategoryName(DataHandler.getCategory());
+        categoryPane6.setCategoryImage(DataHandler.getCategoryImage(ProductCategory.BERRY));
+
+        categoryGridPane.add(categoryPane6, 3, 1);
     }
 
     @FXML

@@ -1,6 +1,7 @@
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 
@@ -22,5 +23,13 @@ public class CategoryController extends AnchorPane {
         } catch (IOException e) {
             System.out.println("fel");
         }
+    }
+
+    public void setCategoryImage(Image image) {
+        categoryImage.setImage(image);
+    }
+
+    public void setCategoryName(String text) {
+        categoryLabel.setText(text);
     }
 }
