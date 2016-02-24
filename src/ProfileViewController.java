@@ -1,3 +1,5 @@
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -5,6 +7,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import se.chalmers.ait.dat215.project.Customer;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 
 public class ProfileViewController extends AnchorPane {
@@ -53,19 +56,32 @@ public class ProfileViewController extends AnchorPane {
     private String telephone;
     private boolean isError = false;
 
+    private String cardType;
+    private String cardNumber;
+    private String cardHolder;
+    private int cardExpireMonth;
+    private int cardExpireYear;
+    private int cardCCV;
+
     public ProfileViewController(){
 
+        //Sets items to choicebox
+        ObservableList<String> cardTypes = FXCollections.observableArrayList("Visa", "Mastercard");
+        cardTypeChoiceBox.setItems(cardTypes);
     }
 
     @FXML
     public void saveButtonActionPerformed(ActionEvent event){
         if(!isError) {
-            getData();
-            saveData();
+            getPersonalData();
+            if(cardRadioButton.isSelected()) {
+                getCardData();
+            }
         }
     }
 
-    private void getData(){
+git p    private void getPersonalData(){
+
         firstname = checkString(firstnameTextField.getText());
         lastname = checkString(lastnameTextField.getText());
         adress = checkString(adressTextField.getText());
@@ -73,6 +89,22 @@ public class ProfileViewController extends AnchorPane {
         zipcode = checkString(zipcodeTextField.getText());
         postCity = checkString(cityTextField.getText());
         telephone = checkString(telephoneTextField.getText());
+        savePersonalData();
+    }
+    private void getCardData(){
+        cardType = cardTypeChoiceBox.getValue().toString();
+        cardNumber = checkString(cardNumberTextField.getText());
+        cardHolder = checkString(cardHolderTextField.getText());
+        cardExpireMonth = checkStringToInt(expirationMonthTextField.getText());
+        cardExpireYear = checkStringToInt(expirationYearTextField.getText());
+        cardCCV = checkStringToInt(ccvTextField.getText());
+        saveCardData();
+    }
+    private int checkStringToInt(String s){
+        if (s == null){
+            return 0;
+        }
+        return Integer.parseInt(s);
     }
     private String checkString(String s) {
         if (s == null) {
@@ -80,7 +112,12 @@ public class ProfileViewController extends AnchorPane {
         }
         return s;
     }
-    private void saveData(){
 
+    private void savePersonalData(){
+        DataHandler.saveCustomer(firstname,lastname, adress, zipcode, postCity, telephone);
+    }
+
+    private void saveCardData(){
+        DataHandler.saveCard(cardType, cardNumber, cardHolder, cardExpireMonth, cardExpireYear, cardCCV);
     }
 }
