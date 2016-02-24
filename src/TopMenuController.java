@@ -43,21 +43,21 @@ public class TopMenuController extends AnchorPane implements Initializable{
         backButtonImage.setImage(new Image("img/backbutton.png"));
         CategoryController categoryPane = new CategoryController();
 
-        categoryPane.setCategoryName(DataHandler.getCategory());
+        categoryPane.setCategoryName(DataHandler.getCategory(1));
         categoryPane.setCategoryImage(DataHandler.getCategoryImage(ProductCategory.BERRY));
 
         categoryGridPane.add(categoryPane, 0, 1);
 
         CategoryController categoryPane2 = new CategoryController();
 
-        categoryPane2.setCategoryName(DataHandler.getCategory());
+        categoryPane2.setCategoryName(DataHandler.getCategory(1));
         categoryPane2.setCategoryImage(DataHandler.getCategoryImage(ProductCategory.BERRY));
 
         categoryGridPane.add(categoryPane2, 0, 3);
 
         CategoryController categoryPane3 = new CategoryController();
 
-        categoryPane3.setCategoryName(DataHandler.getCategory());
+        categoryPane3.setCategoryName(DataHandler.getCategory(1));
         categoryPane3.setCategoryImage(DataHandler.getCategoryImage(ProductCategory.BERRY));
 
         categoryGridPane.add(categoryPane3, 0, 5);
@@ -65,21 +65,21 @@ public class TopMenuController extends AnchorPane implements Initializable{
         //testing columns
         CategoryController categoryPane4 = new CategoryController();
 
-        categoryPane4.setCategoryName(DataHandler.getCategory());
+        categoryPane4.setCategoryName(DataHandler.getCategory(1));
         categoryPane4.setCategoryImage(DataHandler.getCategoryImage(ProductCategory.BERRY));
 
         categoryGridPane.add(categoryPane4, 1, 1);
 
         CategoryController categoryPane5 = new CategoryController();
 
-        categoryPane5.setCategoryName(DataHandler.getCategory());
+        categoryPane5.setCategoryName(DataHandler.getCategory(1));
         categoryPane5.setCategoryImage(DataHandler.getCategoryImage(ProductCategory.BERRY));
 
         categoryGridPane.add(categoryPane5, 2, 1);
 
         CategoryController categoryPane6 = new CategoryController();
 
-        categoryPane6.setCategoryName(DataHandler.getCategory());
+        categoryPane6.setCategoryName(DataHandler.getCategory(1));
         categoryPane6.setCategoryImage(DataHandler.getCategoryImage(ProductCategory.BERRY));
 
         categoryGridPane.add(categoryPane6, 3, 1);

@@ -34,7 +34,7 @@
          <children>
             <ScrollPane fx:id="categoryScrollPane" prefHeight="200.0" prefWidth="200.0">
                <content>
-                  <GridPane fx:id="categoryGridPane" hgap="5.0" prefHeight="305.0" prefWidth="451.0" vgap="5.0">
+                  <GridPane fx:id="categoryGridPane" hgap="5.0" prefHeight="411.0" prefWidth="451.0" vgap="5.0">
                     <columnConstraints>
                         <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" />
                         <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" />
@@ -48,19 +48,18 @@
                         <RowConstraints maxHeight="1.7976931348623157E308" valignment="TOP" vgrow="ALWAYS" />
                         <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" vgrow="SOMETIMES" />
                         <RowConstraints maxHeight="1.7976931348623157E308" valignment="TOP" vgrow="ALWAYS" />
-                        <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="1.7976931348623157E308" valignment="TOP" vgrow="ALWAYS" />
+                        <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="24.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="1.7976931348623157E308" minHeight="11.0" prefHeight="11.0" valignment="TOP" vgrow="ALWAYS" />
                         <RowConstraints maxHeight="1.7976931348623157E308" minHeight="2.0" prefHeight="21.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="1.7976931348623157E308" valignment="TOP" vgrow="ALWAYS" />
-                        <RowConstraints maxHeight="12.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="32.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="1.7976931348623157E308" valignment="TOP" vgrow="ALWAYS" />
+                        <RowConstraints maxHeight="1.7976931348623157E308" minHeight="1.0" prefHeight="1.0" valignment="TOP" vgrow="ALWAYS" />
+                        <RowConstraints maxHeight="29.0" minHeight="0.0" prefHeight="29.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
                         <Label text="Label1" />
                         <Label text="Label2" GridPane.rowIndex="2" />
                         <Label text="Label3" GridPane.rowIndex="4" />
+                        <Label text="Label" GridPane.rowIndex="6" />
+                        <Label text="Label" GridPane.rowIndex="9" />
                      </children>
                   </GridPane>
                </content>
