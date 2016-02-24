@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<fx:root type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root prefHeight="419.0" prefWidth="588.0" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
       <TextField fx:id="firstnameTextField" layoutX="131.0" layoutY="77.0" prefHeight="26.0" prefWidth="136.0" />
       <TextField fx:id="lastnameTextField" layoutX="131.0" layoutY="107.0" prefHeight="26.0" prefWidth="136.0" />
       <TextField fx:id="adressTextField" layoutX="131.0" layoutY="140.0" prefHeight="26.0" prefWidth="136.0" />
@@ -22,9 +22,9 @@
       <TextField fx:id="cardHolderTextField" layoutX="411.0" layoutY="200.0" prefHeight="26.0" prefWidth="129.0" />
       <TextField fx:id="expirationMonthTextField" layoutX="442.0" layoutY="239.0" prefHeight="26.0" prefWidth="30.0" />
       <TextField fx:id="expirationYearTextField" layoutX="505.0" layoutY="239.0" prefHeight="26.0" prefWidth="30.0" />
-      <Button fx:id="saveButton" layoutX="414.0" layoutY="332.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" text="Spara" />
-      <Button fx:id="cancelButton" layoutX="48.0" layoutY="332.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" text="Avbryt" />
-      <Label layoutX="252.0" layoutY="20.0" text="Profilvy">
+      <Button fx:id="saveButton" layoutX="313.0" layoutY="357.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="122.0" text="Spara" />
+      <Button fx:id="cancelButton" layoutX="176.0" layoutY="357.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="105.0" text="Avbryt" />
+      <Label layoutX="252.0" layoutY="9.0" text="Profilvy">
          <font>
             <Font size="26.0" />
          </font>
@@ -36,8 +36,8 @@
       <Label alignment="CENTER_RIGHT" layoutX="35.0" layoutY="218.0" text="Postnummer:" />
       <Label alignment="CENTER_RIGHT" layoutX="78.0" layoutY="257.0" text="Postort:" />
       <Label alignment="CENTER_RIGHT" layoutX="77.0" layoutY="295.0" text="Telefon:" />
-      <Label alignment="CENTER_RIGHT" layoutX="145.0" layoutY="55.0" text="Personuppgifter" />
-      <Label alignment="CENTER_RIGHT" layoutX="355.0" layoutY="55.0" text="Betalningsuppgifter" />
+      <Label alignment="CENTER_RIGHT" layoutX="131.0" layoutY="47.0" text="Personuppgifter" />
+      <Label alignment="CENTER_RIGHT" layoutX="342.0" layoutY="47.0" text="Betalningsuppgifter" />
       <RadioButton fx:id="cardRadioButton" layoutX="342.0" layoutY="89.0" mnemonicParsing="false" selected="true" text="Kort">
          <toggleGroup>
             <ToggleGroup fx:id="paygroup" />

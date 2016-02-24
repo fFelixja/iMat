@@ -3,6 +3,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -10,9 +11,14 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
+import se.chalmers.ait.dat215.project.IMatDataHandler;
+import se.chalmers.ait.dat215.project.Product;
 import se.chalmers.ait.dat215.project.ProductCategory;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 
@@ -37,11 +43,14 @@ public class TopMenuController extends AnchorPane implements Initializable{
 
     @FXML private GridPane categoryGridPane;
 
+    private List<Integer[]> productID = new ArrayList<>();
+
     @Override
     public void initialize(URL url, ResourceBundle bundle){
-//        System.out.println("a");
+        populateProductID();
+        initializeCategoryView();
         backButtonImage.setImage(new Image("img/backbutton.png"));
-        CategoryController categoryPane = new CategoryController();
+       /** CategoryController categoryPane = new CategoryController();
 
         categoryPane.setCategoryName(DataHandler.getCategory(1));
         categoryPane.setCategoryImage(DataHandler.getCategoryImage(ProductCategory.BERRY));
@@ -83,6 +92,43 @@ public class TopMenuController extends AnchorPane implements Initializable{
         categoryPane6.setCategoryImage(DataHandler.getCategoryImage(ProductCategory.BERRY));
 
         categoryGridPane.add(categoryPane6, 3, 1);
+        **/
+    }
+
+    private void populateProductID(){
+
+        Integer[] kfm = {13,8,4};
+        Integer[] kol = {18,16,2};
+        Integer[] fr = {4,7,14,10};
+        Integer[] green = {21,3,19};
+        Integer[] ovrigt = {17,1,11,5};
+        productID.add(kfm);
+        productID.add(kol);
+        productID.add(fr);
+        productID.add(green);
+        productID.add(ovrigt);
+
+    }
+
+    private void initializeCategoryView(){
+        ProductCategory[] enumForCategories = ProductCategory.values();
+        IMatDataHandler dataHandler = IMatDataHandler.getInstance();
+        int tempIndex = 1;
+        for(int i = 0; i < productID.size(); i++){
+            Integer[] intTemp = productID.get(i);
+
+            for (int j = 0; j <intTemp.length; j++){
+                //New categoryview to add
+                CategoryController categoryPane = new CategoryController();
+                //Sets the name of the category
+                categoryPane.setCategoryName(enumForCategories[intTemp[j] - 1].toString());
+                //Sets the image
+                categoryPane.setCategoryImage(DataHandler.getCategoryImage(enumForCategories[intTemp[j] - 1]));
+
+                categoryGridPane.add(categoryPane,j,2*i + 1);
+
+            }
+        }
     }
 
     @FXML
