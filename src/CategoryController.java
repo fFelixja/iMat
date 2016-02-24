@@ -8,11 +8,11 @@ import javafx.scene.layout.AnchorPane;
 import java.io.IOException;
 
 public class CategoryController extends AnchorPane {
-    @FXML private ImageView categoryImage;
 
+    @FXML private ImageView categoryImage;
     @FXML private Label categoryLabel;
 
-    public CategoryController(String kött) {
+    public CategoryController (String categoryName, Image categoryImage) {
         try {
 
             FXMLLoader loader = new FXMLLoader(getClass().getResource("FXML/Category.fxml"));
@@ -22,7 +22,8 @@ public class CategoryController extends AnchorPane {
         } catch (IOException e) {
             System.out.println("fel");
         }
-        categoryImage.setImage(new Image("placeholder.png"));
-        categoryLabel.setText(kött);
+        this.categoryLabel.setText(categoryName);
+        this.categoryImage.setImage(categoryImage);
     }
+
 }
