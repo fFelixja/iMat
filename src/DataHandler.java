@@ -27,4 +27,9 @@ public class DataHandler {
         IMatDataHandler dataHandler = IMatDataHandler.getInstance();
         dataHandler.getShoppingCart().addProduct(product, amount);
     }
+
+    public static Product getProduct(int idNumber) {
+        IMatDataHandler dataHandler = IMatDataHandler.getInstance();
+        return dataHandler.getProduct(idNumber);
+    }
 }
