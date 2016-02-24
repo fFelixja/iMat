@@ -97,15 +97,17 @@ public class TopMenuController extends AnchorPane implements Initializable{
 
     private void populateProductID(){
 
-        Integer[] kfm = {13,8,4};
-        Integer[] kol = {18,16,2};
-        Integer[] fr = {4,7,14,10};
-        Integer[] green = {21,3,19};
-        Integer[] ovrigt = {17,1,11,5};
+        Integer[] kfm = {11,8,12};
+        Integer[] kol = {17,16,2};
+        Integer[] fr = {4,7,13,19};
+        Integer[] green = {9,10,18};
+        Integer[] green2 = {1,3,21};
+        Integer[] ovrigt = {20,14,15,5};
         productID.add(kfm);
         productID.add(kol);
         productID.add(fr);
         productID.add(green);
+        productID.add(green2);
         productID.add(ovrigt);
 
     }
@@ -125,7 +127,12 @@ public class TopMenuController extends AnchorPane implements Initializable{
                 //Sets the image
                 categoryPane.setCategoryImage(DataHandler.getCategoryImage(enumForCategories[intTemp[j] - 1]));
 
-                categoryGridPane.add(categoryPane,j,2*i + 1);
+                if (i == 4) {
+                    categoryGridPane.add(categoryPane,j, 8);
+                } else {
+
+                    categoryGridPane.add(categoryPane,j,2*i + 1);
+                }
 
             }
         }

@@ -32,9 +32,9 @@
       <Separator layoutX="-7.0" layoutY="53.0" prefHeight="8.0" prefWidth="608.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="53.0" />
       <StackPane fx:id="baseStackPane" layoutX="11.0" layoutY="68.0" prefHeight="306.0" prefWidth="574.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
          <children>
-            <ScrollPane fx:id="categoryScrollPane" prefHeight="200.0" prefWidth="200.0">
+            <ScrollPane fx:id="categoryScrollPane" maxHeight="1.7976931348623157E308">
                <content>
-                  <GridPane fx:id="categoryGridPane" hgap="5.0" prefHeight="411.0" prefWidth="451.0" vgap="5.0">
+                  <GridPane fx:id="categoryGridPane" hgap="5.0" maxHeight="1.7976931348623157E308" vgap="5.0">
                     <columnConstraints>
                         <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" />
                         <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" />
