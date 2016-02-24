@@ -40,7 +40,7 @@ public class TopMenuController extends AnchorPane implements Initializable{
     public void initialize(URL url, ResourceBundle bundle){
 //        System.out.println("a");
         backButtonImage.setImage(new Image("img/backbutton.png"));
-        CategoryController categoryPane = new CategoryController();
+        CategoryController categoryPane = new CategoryController("Kött");
         categoryGridPane.add(categoryPane, 1, 1);
     }
 

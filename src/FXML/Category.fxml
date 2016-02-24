@@ -11,5 +11,5 @@
             <Font size="39.0" />
          </font>
       </Label>
-      <ImageView fx:id="categoryImage" fitHeight="152.0" fitWidth="300.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="categoryImage" fitHeight="152.0" fitWidth="210.0" layoutX="95.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="95.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
 </fx:root>
