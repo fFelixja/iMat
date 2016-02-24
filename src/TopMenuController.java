@@ -2,6 +2,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.ScrollPane;
@@ -11,14 +13,17 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
+
 import se.chalmers.ait.dat215.project.IMatDataHandler;
-import se.chalmers.ait.dat215.project.Product;
 import se.chalmers.ait.dat215.project.ProductCategory;
 
+import javax.xml.crypto.Data;
+import java.io.IOException;
+import java.lang.reflect.Array;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
+
 import java.util.ResourceBundle;
 
 
@@ -43,12 +48,19 @@ public class TopMenuController extends AnchorPane implements Initializable{
 
     @FXML private GridPane categoryGridPane;
 
-    private List<Integer[]> productID = new ArrayList<>();
+
+    private ArrayList<CategoryController> categoryList;
+
+
+
+        private List<Integer[]> productID = new ArrayList<>();
+
 
     @Override
     public void initialize(URL url, ResourceBundle bundle){
         populateProductID();
         initializeCategoryView();
+
         backButtonImage.setImage(new Image("img/backbutton.png"));
        /** CategoryController categoryPane = new CategoryController();
 
@@ -92,6 +104,7 @@ public class TopMenuController extends AnchorPane implements Initializable{
         categoryPane6.setCategoryImage(DataHandler.getCategoryImage(ProductCategory.BERRY));
 
         categoryGridPane.add(categoryPane6, 3, 1);
+
         **/
     }
 
@@ -136,6 +149,7 @@ public class TopMenuController extends AnchorPane implements Initializable{
 
             }
         }
+
     }
 
     @FXML
@@ -144,10 +158,12 @@ public class TopMenuController extends AnchorPane implements Initializable{
     }
 
     @FXML
-    protected void profileButtonActionPerformed(ActionEvent event){
+    protected void profileButtonActionPerformed(ActionEvent event)throws IOException {
+        ProfileViewController profile = new ProfileViewController();
+
+
         System.out.println("Profilknapp fungerar");
-        ProfileViewController profileController = new ProfileViewController();
-        profileController.toFront();
+
     }
 
 }
