@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@../css/topMenuStyle.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TopMenuController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="661.0" prefWidth="690.0" stylesheets="@../css/topMenuStyle.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TopMenuController">
    <children>
       <AnchorPane layoutX="-4.0" prefHeight="53.0" prefWidth="608.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
@@ -25,42 +25,47 @@
                </graphic>
                <cursor>
                   <Cursor fx:constant="HAND" />
-               </cursor></Button>
+               </cursor>
+            </Button>
             <Button fx:id="homeButton" layoutX="69.0" mnemonicParsing="false" onAction="#homeButtonActionPerformed" prefHeight="56.0" prefWidth="59.0" style="-fx-background-radius: 0;" text="Hem" AnchorPane.leftAnchor="59.0">
                <cursor>
                   <Cursor fx:constant="HAND" />
-               </cursor></Button>
+               </cursor>
+            </Button>
             <Button fx:id="profileButton" layoutX="472.0" layoutY="15.0" mnemonicParsing="false" onAction="#profileButtonActionPerformed" prefHeight="25.0" prefWidth="100.0" text="Profil" AnchorPane.rightAnchor="228.0" AnchorPane.topAnchor="15.0">
                <cursor>
                   <Cursor fx:constant="HAND" />
-               </cursor></Button>
+               </cursor>
+            </Button>
             <Button fx:id="purchaseHistoryButton" layoutX="582.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="Tidigare inköp" AnchorPane.rightAnchor="118.0" AnchorPane.topAnchor="15.0">
                <cursor>
                   <Cursor fx:constant="HAND" />
-               </cursor></Button>
+               </cursor>
+            </Button>
             <Button fx:id="shoppingCartButton" layoutX="692.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="Kundvagn" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="15.0">
                <cursor>
                   <Cursor fx:constant="HAND" />
-               </cursor></Button>
+               </cursor>
+            </Button>
             <Label layoutX="152.0" layoutY="20.0" text="Sök" AnchorPane.topAnchor="20.0" />
+            <Separator prefHeight="8.0" prefWidth="608.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="53.0" />
          </children>
       </AnchorPane>
-      <Separator layoutX="-7.0" layoutY="53.0" prefHeight="8.0" prefWidth="608.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="53.0" />
       <StackPane fx:id="baseStackPane" layoutX="11.0" layoutY="68.0" prefHeight="306.0" prefWidth="574.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
          <children>
             <ScrollPane fx:id="categoryScrollPane" maxHeight="1.7976931348623157E308">
                <content>
                   <GridPane fx:id="categoryGridPane" hgap="5.0" maxHeight="1.7976931348623157E308" vgap="20.0">
-                    <columnConstraints>
+                     <columnConstraints>
                         <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" />
                         <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" />
-                      <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="0.0" />
-                      <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="0.0" />
-                    </columnConstraints>
-                    <rowConstraints>
-                      <RowConstraints vgrow="SOMETIMES" />
-                      <RowConstraints valignment="TOP" vgrow="ALWAYS" />
-                      <RowConstraints vgrow="SOMETIMES" />
+                        <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="0.0" />
+                        <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="0.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints vgrow="SOMETIMES" />
+                        <RowConstraints valignment="TOP" vgrow="ALWAYS" />
+                        <RowConstraints vgrow="SOMETIMES" />
                         <RowConstraints valignment="TOP" vgrow="ALWAYS" />
                         <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
                         <RowConstraints valignment="TOP" vgrow="ALWAYS" />
@@ -69,33 +74,39 @@
                         <RowConstraints maxHeight="1.7976931348623157E308" vgrow="SOMETIMES" />
                         <RowConstraints minHeight="1.0" valignment="TOP" vgrow="ALWAYS" />
                         <RowConstraints minHeight="0.0" vgrow="SOMETIMES" />
-                    </rowConstraints>
+                     </rowConstraints>
                      <children>
                         <Label prefHeight="20.0" text="Kött, fisk, mejeri">
                            <font>
                               <Font name="System Bold" size="32.0" />
-                           </font></Label>
+                           </font>
+                        </Label>
                         <Label text="Kolhydrater" GridPane.rowIndex="2">
                            <font>
                               <Font name="System Bold" size="32.0" />
-                           </font></Label>
+                           </font>
+                        </Label>
                         <Label text="Frukt" GridPane.rowIndex="4">
                            <font>
                               <Font name="System Bold" size="32.0" />
-                           </font></Label>
+                           </font>
+                        </Label>
                         <Label text="Grönt" GridPane.rowIndex="6">
                            <font>
                               <Font name="System Bold" size="32.0" />
-                           </font></Label>
+                           </font>
+                        </Label>
                         <Label text="Övrigt" GridPane.rowIndex="9">
                            <font>
                               <Font name="System Bold" size="32.0" />
-                           </font></Label>
+                           </font>
+                        </Label>
                      </children>
                   </GridPane>
                </content>
             </ScrollPane>
-         </children></StackPane>
+         </children>
+      </StackPane>
       <Label fx:id="allCategories" layoutX="305.0" layoutY="61.0" text="Alla kategorier" AnchorPane.topAnchor="61.0">
          <font>
             <Font size="26.0" />

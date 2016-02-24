@@ -4,6 +4,8 @@ import se.chalmers.ait.dat215.project.Product;
 import se.chalmers.ait.dat215.project.ProductCategory;
 import se.chalmers.ait.dat215.project.ShoppingCart;
 
+import java.util.List;
+
 public class DataHandler {
 
 //    IMatDataHandler dataHandler;
@@ -31,5 +33,11 @@ public class DataHandler {
     public static Product getProduct(int idNumber) {
         IMatDataHandler dataHandler = IMatDataHandler.getInstance();
         return dataHandler.getProduct(idNumber);
+    }
+
+    public static List<Product> getProducts(ProductCategory category) {
+        IMatDataHandler dataHandler = IMatDataHandler.getInstance();
+        return dataHandler.getProducts(category);
+
     }
 }

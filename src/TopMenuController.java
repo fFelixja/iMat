@@ -22,6 +22,7 @@ import java.io.IOException;
 import java.lang.reflect.Array;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import java.util.ResourceBundle;
@@ -59,6 +60,8 @@ public class TopMenuController extends AnchorPane implements Initializable{
         populateProductID();
         initializeCategoryView();
         backButtonImage.setImage(new Image("img/backbutton.png"));
+        Date date = new Date();
+        System.out.println(date.getTime());
     }
 
     private void populateProductID(){
@@ -86,9 +89,8 @@ public class TopMenuController extends AnchorPane implements Initializable{
 
             for (int j = 0; j <intTemp.length; j++){
                 //New categoryview to add
-                CategoryController categoryPane = new CategoryController(categoryName[count],DataHandler.getCategoryImage(enumForCategories[intTemp[j] - 1]));
-                count++;
-                
+                CategoryController categoryPane = new CategoryController(enumForCategories[intTemp[j] - 1], categoryName[count++],DataHandler.getCategoryImage(enumForCategories[intTemp[j] - 1]));
+
                 if (i == 4) {
                     categoryGridPane.add(categoryPane,j, 8);
                 } else {
