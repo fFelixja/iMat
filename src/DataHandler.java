@@ -30,6 +30,7 @@ public class DataHandler {
         dataHandler.getCustomer().setPostAddress(postAdress);
         dataHandler.getCustomer().setPhoneNumber(telephone);
     }
+
     public static void saveCard(String cardType, String cardNumber, String cardHolder, int expireMonth, int expireYear, int ccv ){
         IMatDataHandler dataHandler = IMatDataHandler.getInstance();
         //Save all card details.
@@ -48,7 +49,6 @@ public class DataHandler {
         }
 
     }
-
 
     public static void addToCart(Product product, double amount) {
         IMatDataHandler dataHandler = IMatDataHandler.getInstance();

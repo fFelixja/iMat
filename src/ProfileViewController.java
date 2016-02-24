@@ -71,6 +71,27 @@ public class ProfileViewController extends AnchorPane {
     }
 
     @FXML
+    public void radioButtonActionPerformed(ActionEvent event){
+        if(invoiceRadioButton.isSelected()){
+            cardTypeChoiceBox.setDisable(true);
+            cardNumberTextField.setDisable(true);
+            cardHolderTextField.setDisable(true);
+            expirationMonthTextField.setDisable(true);
+            expirationYearTextField.setDisable(true);
+            ccvTextField.setDisable(true);
+            ccvHelpButton.setDisable(true);
+        }else {
+            cardTypeChoiceBox.setDisable(false);
+            cardNumberTextField.setDisable(false);
+            cardHolderTextField.setDisable(false);
+            expirationMonthTextField.setDisable(false);
+            expirationYearTextField.setDisable(false);
+            ccvTextField.setDisable(false);
+            ccvHelpButton.setDisable(false);
+        }
+    }
+
+    @FXML
     public void saveButtonActionPerformed(ActionEvent event){
         if(!isError) {
             getPersonalData();
@@ -91,6 +112,7 @@ public class ProfileViewController extends AnchorPane {
         telephone = checkString(telephoneTextField.getText());
         savePersonalData();
     }
+
     private void getCardData(){
         cardType = cardTypeChoiceBox.getValue().toString();
         cardNumber = checkString(cardNumberTextField.getText());
@@ -100,12 +122,14 @@ public class ProfileViewController extends AnchorPane {
         cardCCV = checkStringToInt(ccvTextField.getText());
         saveCardData();
     }
+
     private int checkStringToInt(String s){
         if (s == null){
             return 0;
         }
         return Integer.parseInt(s);
     }
+
     private String checkString(String s) {
         if (s == null) {
             return "";
