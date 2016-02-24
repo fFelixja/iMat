@@ -28,7 +28,7 @@ public class ProductViewController extends AnchorPane {
 
     private Product product;
 
-    public ProductViewController(Product product, String name, Image image, int spinnerSpinAmount) {
+    public ProductViewController(Product product, String productName, Image productImage, int spinnerSpinAmount) {
 
         try {
 
@@ -41,8 +41,8 @@ public class ProductViewController extends AnchorPane {
         }
 
         this.product = product;
-        nameLabel.setText(name);
-        productImage.setImage(image);
+        this.nameLabel.setText(productName);
+        this.productImage.setImage(productImage);
 
         amountSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, Integer.MAX_VALUE, 1, spinnerSpinAmount));
     }

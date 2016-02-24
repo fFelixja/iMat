@@ -50,7 +50,7 @@
          <children>
             <ScrollPane fx:id="categoryScrollPane" maxHeight="1.7976931348623157E308">
                <content>
-                  <GridPane fx:id="categoryGridPane" hgap="5.0" maxHeight="1.7976931348623157E308" vgap="5.0">
+                  <GridPane fx:id="categoryGridPane" hgap="5.0" maxHeight="1.7976931348623157E308" vgap="20.0">
                     <columnConstraints>
                         <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" />
                         <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" />
@@ -71,14 +71,26 @@
                         <RowConstraints minHeight="0.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Label prefHeight="20.0" prefWidth="216.0" text="Kött, fisk, mejeri">
+                        <Label prefHeight="20.0" text="Kött, fisk, mejeri">
                            <font>
-                              <Font size="23.0" />
+                              <Font name="System Bold" size="32.0" />
                            </font></Label>
-                        <Label text="Label2" GridPane.rowIndex="2" />
-                        <Label text="Label3" GridPane.rowIndex="4" />
-                        <Label text="Label" GridPane.rowIndex="6" />
-                        <Label text="Label" GridPane.rowIndex="9" />
+                        <Label text="Kolhydrater" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="System Bold" size="32.0" />
+                           </font></Label>
+                        <Label text="Frukt" GridPane.rowIndex="4">
+                           <font>
+                              <Font name="System Bold" size="32.0" />
+                           </font></Label>
+                        <Label text="Grönt" GridPane.rowIndex="6">
+                           <font>
+                              <Font name="System Bold" size="32.0" />
+                           </font></Label>
+                        <Label text="Övrigt" GridPane.rowIndex="9">
+                           <font>
+                              <Font name="System Bold" size="32.0" />
+                           </font></Label>
                      </children>
                   </GridPane>
                </content>
