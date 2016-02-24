@@ -80,7 +80,7 @@ public class ProfileViewController extends AnchorPane {
         }
     }
 
-git p    private void getPersonalData(){
+    private void getPersonalData(){
 
         firstname = checkString(firstnameTextField.getText());
         lastname = checkString(lastnameTextField.getText());
