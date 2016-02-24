@@ -19,13 +19,12 @@ public class CategoryController extends AnchorPane {
 
     public CategoryController (ProductCategory category, String categoryName, Image categoryImage) {
         try {
-
             FXMLLoader loader = new FXMLLoader(getClass().getResource("FXML/Category.fxml"));
             loader.setController(this);
             loader.setRoot(this);
             loader.load();
         } catch (IOException e) {
-            System.out.println("fel");
+            System.out.println("Error in constructor of CategoryController");
         }
 
         this.category = category;

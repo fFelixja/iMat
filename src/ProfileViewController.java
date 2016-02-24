@@ -2,6 +2,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.RadioButton;
@@ -9,6 +10,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import se.chalmers.ait.dat215.project.Customer;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
+
+import java.io.IOException;
 
 public class ProfileViewController extends AnchorPane {
     @FXML private TextField firstnameTextField;
@@ -65,9 +68,18 @@ public class ProfileViewController extends AnchorPane {
 
     public ProfileViewController(){
 
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("FXML/ProfileView.fxml"));
+            loader.setController(this);
+            loader.setRoot(this);
+            loader.load();
+        } catch (IOException e) {
+            System.out.println("Error in constructor of ProfileVeiwController");
+        }
         //Sets items to choicebox
         ObservableList<String> cardTypes = FXCollections.observableArrayList("Visa", "Mastercard");
         cardTypeChoiceBox.setItems(cardTypes);
+        cardTypeChoiceBox.setValue("Visa");
     }
 
     @FXML
