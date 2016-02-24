@@ -18,7 +18,7 @@
    <children>
       <AnchorPane layoutX="-4.0" prefHeight="53.0" prefWidth="608.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
-            <TextField fx:id="searchTextField" layoutX="180.0" layoutY="23.0" promptText="Sök..." AnchorPane.topAnchor="13.0" />
+            <TextField fx:id="searchTextField" layoutX="179.0" layoutY="16.0" promptText="Sök..." AnchorPane.topAnchor="16.0" />
             <Button fx:id="backButton" layoutY="1.0" mnemonicParsing="false" prefHeight="56.0" prefWidth="59.0" style="-fx-background-radius: 0;" text="Tbk" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
                <graphic>
                   <ImageView fx:id="backButtonImage" fitHeight="45.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true" />
@@ -42,7 +42,7 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
-            <Label layoutX="144.0" layoutY="18.0" text="Sök" AnchorPane.topAnchor="18.0" />
+            <Label layoutX="152.0" layoutY="20.0" text="Sök" AnchorPane.topAnchor="20.0" />
          </children>
       </AnchorPane>
       <Separator layoutX="-7.0" layoutY="53.0" prefHeight="8.0" prefWidth="608.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="53.0" />
