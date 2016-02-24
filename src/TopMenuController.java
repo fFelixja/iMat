@@ -49,6 +49,8 @@ public class TopMenuController extends AnchorPane implements Initializable{
 
     @FXML private GridPane categoryGridPane;
 
+    @FXML private ScrollPane productViewSrcollPane;
+
     private List<Integer[]> productID = new ArrayList<>();
     private String[] categoryName = {"Kött", "Fisk", "Mejeriprodukter", "Potatis & Ris",
             "Pasta", "Bröd","Citrusfrukter", "Exotiska Frukter", "Meloner","Stenfrukter",
@@ -60,8 +62,6 @@ public class TopMenuController extends AnchorPane implements Initializable{
         populateProductID();
         initializeCategoryView();
         backButtonImage.setImage(new Image("img/backbutton.png"));
-        Date date = new Date();
-        System.out.println(date.getTime());
     }
 
     private void populateProductID(){
