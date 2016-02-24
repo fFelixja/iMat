@@ -54,8 +54,8 @@
                     <columnConstraints>
                         <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" />
                         <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" />
-                      <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" />
-                      <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" />
+                      <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="0.0" />
+                      <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="0.0" />
                     </columnConstraints>
                     <rowConstraints>
                       <RowConstraints vgrow="SOMETIMES" />
@@ -71,7 +71,10 @@
                         <RowConstraints minHeight="0.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Label prefHeight="20.0" prefWidth="39.0" text="Label1" />
+                        <Label prefHeight="20.0" prefWidth="216.0" text="Kött, fisk, mejeri">
+                           <font>
+                              <Font size="23.0" />
+                           </font></Label>
                         <Label text="Label2" GridPane.rowIndex="2" />
                         <Label text="Label3" GridPane.rowIndex="4" />
                         <Label text="Label" GridPane.rowIndex="6" />
