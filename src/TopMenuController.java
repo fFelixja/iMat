@@ -48,18 +48,16 @@ public class TopMenuController extends AnchorPane implements Initializable{
 
     @FXML private GridPane categoryGridPane;
 
-
-    private ArrayList<CategoryController> categoryList;
-
-
     private List<Integer[]> productID = new ArrayList<>();
-
+    private String[] categoryName = {"Kött", "Fisk", "Mejeriprodukter", "Potatis & Ris",
+            "Pasta", "Bröd","Citrusfrukter", "Exotiska Frukter", "Meloner","Stenfrukter",
+            "Grönsaker", "Kål", "Rotfrukter", "Baljväxter", "Bär", "Örtkryddor", "Sötsaker",
+            "Torrvaror", "Nötter & Frön", "Dryck"};
 
     @Override
     public void initialize(URL url, ResourceBundle bundle){
         populateProductID();
         initializeCategoryView();
-
         backButtonImage.setImage(new Image("img/backbutton.png"));
     }
 
@@ -82,19 +80,15 @@ public class TopMenuController extends AnchorPane implements Initializable{
 
     private void initializeCategoryView(){
         ProductCategory[] enumForCategories = ProductCategory.values();
-        IMatDataHandler dataHandler = IMatDataHandler.getInstance();
-        int tempIndex = 1;
+        int count = 0;
         for(int i = 0; i < productID.size(); i++){
             Integer[] intTemp = productID.get(i);
 
             for (int j = 0; j <intTemp.length; j++){
                 //New categoryview to add
-                CategoryController categoryPane = new CategoryController();
-                //Sets the name of the category
-                categoryPane.setCategoryName(enumForCategories[intTemp[j] - 1].toString());
-                //Sets the image
-                categoryPane.setCategoryImage(DataHandler.getCategoryImage(enumForCategories[intTemp[j] - 1]));
-
+                CategoryController categoryPane = new CategoryController(categoryName[count],DataHandler.getCategoryImage(enumForCategories[intTemp[j] - 1]));
+                count++;
+                
                 if (i == 4) {
                     categoryGridPane.add(categoryPane,j, 8);
                 } else {
