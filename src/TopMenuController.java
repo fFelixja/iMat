@@ -111,12 +111,13 @@ public class TopMenuController extends AnchorPane implements Initializable{
 
     @FXML
     protected void homeButtonActionPerformed(ActionEvent event) {
-        System.out.println("hej");
+        categoryViewToFront();
     }
 
     @FXML
     protected void profileButtonActionPerformed(ActionEvent event)throws IOException {
         ProfileViewController profile = new ProfileViewController();
+        categoryScrollPane.setContent(profile);
 
         System.out.println("Profilknapp fungerar");
 
