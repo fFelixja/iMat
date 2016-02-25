@@ -123,6 +123,10 @@ public class TopMenuController extends AnchorPane implements Initializable{
 
     }
 
+    public void clearProductGridPane() {
+        productGridPane.getChildren().removeAll(productGridPane.getChildren());
+    }
+
     public void productViewToFront() {
         productScrollPane.toFront();
     }

@@ -40,6 +40,8 @@ public class CategoryController extends AnchorPane {
 
     @FXML
     protected void categoryPressedActionPerformed(MouseEvent event) {
+        controller.clearProductGridPane();
+
         controller.productViewToFront();
 
         List<Product> productList = DataHandler.getProducts(category);
