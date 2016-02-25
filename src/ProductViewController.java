@@ -28,7 +28,7 @@ public class ProductViewController extends AnchorPane {
 
     private Product product;
 
-    public ProductViewController(Product product, String productName, Image productImage, int spinnerSpinAmount, String amountUnit) {
+    public ProductViewController(Product product, int spinnerSpinAmount) {
 
         try {
 
@@ -44,7 +44,7 @@ public class ProductViewController extends AnchorPane {
         this.nameLabel.setText(product.getName());
         this.productImage.setImage(DataHandler.getProductImage(product));
         priceUnitLabel.setText(Double.toString(product.getPrice()) + " " + product.getUnit());
-        amountUnitLabel.setText(amountUnit);
+        amountUnitLabel.setText(product.getUnitSuffix());
 
         amountSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, Integer.MAX_VALUE, 1, spinnerSpinAmount));
     }

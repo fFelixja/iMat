@@ -158,8 +158,7 @@ public class TopMenuController extends AnchorPane implements Initializable{
     }
 
     public void addProductToGrid(Product product, int column, int row) {
-        ProductViewController productView = new ProductViewController(product, product.getName(),
-                DataHandler.getProductImage(product), 1, product.getUnitSuffix());
+        ProductViewController productView = new ProductViewController(product, 1);
         productGridPane.add(productView, column, row);
     }
 }
