@@ -157,4 +157,5 @@ public class ProfileViewController extends AnchorPane {
     private void saveCardData(){
         DataHandler.saveCard(cardType, cardNumber, cardHolder, cardExpireMonth, cardExpireYear, cardCCV);
     }
+
 }

@@ -13,7 +13,7 @@ public class iMat extends Application {
 
         Scene scene = new Scene(root, 1200, 800);
 
-        stage.setTitle("Ett fint namn");
+        stage.setTitle("iMatVersionRune");
         stage.setScene(scene);
         stage.show();
 
