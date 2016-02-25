@@ -51,11 +51,11 @@
             <Separator prefHeight="8.0" prefWidth="608.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="53.0" />
          </children>
       </AnchorPane>
-      <StackPane fx:id="baseStackPane" layoutX="11.0" layoutY="68.0" prefHeight="306.0" prefWidth="574.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
+      <StackPane id="testStack" fx:id="baseStackPane" layoutX="11.0" layoutY="68.0" prefHeight="306.0" prefWidth="574.0" stylesheets="@../css/topMenuStyle.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
          <children>
             <ScrollPane fx:id="categoryScrollPane" maxHeight="1.7976931348623157E308">
                <content>
-                  <GridPane fx:id="categoryGridPane" hgap="5.0" maxHeight="1.7976931348623157E308" vgap="20.0">
+                  <GridPane id="categoryGridPane" fx:id="categoryGridPane" hgap="5.0" maxHeight="1.7976931348623157E308" stylesheets="@../css/topMenuStyle.css" vgap="20.0">
                      <columnConstraints>
                         <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" />
                         <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" />
@@ -102,6 +102,24 @@
                            </font>
                         </Label>
                      </children>
+                  </GridPane>
+               </content>
+            </ScrollPane>
+            <ScrollPane id="productView" fx:id="productScrollPane" prefHeight="200.0" prefWidth="200.0" stylesheets="@../css/topMenuStyle.css">
+               <content>
+                  <GridPane id="productGridPane" fx:id="productGridPane" stylesheets="@../css/topMenuStyle.css">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
                   </GridPane>
                </content>
             </ScrollPane>

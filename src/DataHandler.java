@@ -20,6 +20,12 @@ public class DataHandler {
         IMatDataHandler dataHandler = IMatDataHandler.getInstance();
         return dataHandler.getFXImage(dataHandler.getProducts(category).get(0));
     }
+
+    public static Image getProductImage(Product product) {
+        IMatDataHandler dataHandler = IMatDataHandler.getInstance();
+        return dataHandler.getFXImage(product);
+    }
+
     public static void saveCustomer(String firstname, String lastname, String adress, String zipcode, String postAdress, String telephone){
         IMatDataHandler dataHandler = IMatDataHandler.getInstance();
         //Save customer information

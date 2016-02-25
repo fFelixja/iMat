@@ -14,12 +14,8 @@
 	-fx-background-color:#ecf0f1;
 }
 
-#backButtonImage {
-	-fx-background-image:back-button.png;
-}
 #baseStackPane{
 	-fx-background-color:#FFF;
-
 }
 
 .text-field {
@@ -31,4 +27,12 @@
 
 #allCategories {
 	-fx-border-insets:50%;
+}
+
+#categoryGridPane {
+    -fx-background-color: chartreuse;
+}
+
+#productGridPane{
+    -fx-background-color: aqua;
 }

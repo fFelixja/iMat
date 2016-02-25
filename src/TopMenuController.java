@@ -15,6 +15,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 
 import se.chalmers.ait.dat215.project.IMatDataHandler;
+import se.chalmers.ait.dat215.project.Product;
 import se.chalmers.ait.dat215.project.ProductCategory;
 
 import javax.xml.crypto.Data;
@@ -49,7 +50,9 @@ public class TopMenuController extends AnchorPane implements Initializable{
 
     @FXML private GridPane categoryGridPane;
 
-    @FXML private ScrollPane productViewSrcollPane;
+    @FXML private ScrollPane productScrollPane;
+
+    @FXML private GridPane productGridPane;
 
     private List<Integer[]> productID = new ArrayList<>();
     private String[] categoryName = {"Kött", "Fisk", "Mejeriprodukter", "Potatis & Ris",
@@ -62,6 +65,8 @@ public class TopMenuController extends AnchorPane implements Initializable{
         populateProductID();
         initializeCategoryView();
         backButtonImage.setImage(new Image("img/backbutton.png"));
+
+        categoryViewToFront();
     }
 
     private void populateProductID(){
@@ -89,7 +94,8 @@ public class TopMenuController extends AnchorPane implements Initializable{
 
             for (int j = 0; j <intTemp.length; j++){
                 //New categoryview to add
-                CategoryController categoryPane = new CategoryController(enumForCategories[intTemp[j] - 1], categoryName[count++],DataHandler.getCategoryImage(enumForCategories[intTemp[j] - 1]));
+                CategoryController categoryPane = new CategoryController(enumForCategories[intTemp[j] - 1],
+                        categoryName[count++],DataHandler.getCategoryImage(enumForCategories[intTemp[j] - 1]), this);
 
                 if (i == 4) {
                     categoryGridPane.add(categoryPane,j, 8);
@@ -112,9 +118,21 @@ public class TopMenuController extends AnchorPane implements Initializable{
     protected void profileButtonActionPerformed(ActionEvent event)throws IOException {
         ProfileViewController profile = new ProfileViewController();
 
-
         System.out.println("Profilknapp fungerar");
 
     }
 
+    public void productViewToFront() {
+        productScrollPane.toFront();
+    }
+
+    public void categoryViewToFront() {
+        categoryScrollPane.toFront();
+    }
+
+    public void addProductToGrid(Product product, int column, int row) {
+        ProductViewController productView = new ProductViewController(product, product.getName(),
+                DataHandler.getProductImage(product), 1, product.getUnitSuffix());
+        productGridPane.add(productView, column, row);
+    }
 }
