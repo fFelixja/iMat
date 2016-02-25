@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -104,6 +105,9 @@
                      </children>
                   </GridPane>
                </content>
+               <StackPane.margin>
+                  <Insets left="2.0" />
+               </StackPane.margin>
             </ScrollPane>
          </children>
       </StackPane>
