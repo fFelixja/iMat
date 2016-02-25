@@ -26,6 +26,11 @@ public class DataHandler {
         return dataHandler.getFXImage(product);
     }
 
+    public static List<Product> searchProducts(String search) {
+        IMatDataHandler dataHandler = IMatDataHandler.getInstance();
+        return dataHandler.findProducts(search);
+    }
+
     public static void saveCustomer(String firstname, String lastname, String adress, String zipcode, String postAdress, String telephone){
         IMatDataHandler dataHandler = IMatDataHandler.getInstance();
         //Save customer information

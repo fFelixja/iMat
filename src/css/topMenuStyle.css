@@ -36,3 +36,7 @@
 #productGridPane{
     -fx-background-color: aqua;
 }
+
+#profileView {
+    -fx-background-color: #ecf0f1;
+}

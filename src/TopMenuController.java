@@ -10,6 +10,7 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
@@ -30,6 +31,7 @@ import java.util.ResourceBundle;
 
 
 public class TopMenuController extends AnchorPane implements Initializable{
+
     @FXML private TextField searchTextField;
 
     @FXML private Button backButton;
@@ -54,6 +56,8 @@ public class TopMenuController extends AnchorPane implements Initializable{
 
     @FXML private GridPane productGridPane;
 
+    ProfileViewController profile = new ProfileViewController();
+
     private List<Integer[]> productID = new ArrayList<>();
     private String[] categoryName = {"Kött", "Fisk", "Mejeriprodukter", "Potatis & Ris",
             "Pasta", "Bröd","Citrusfrukter", "Exotiska Frukter", "Meloner","Stenfrukter",
@@ -65,6 +69,10 @@ public class TopMenuController extends AnchorPane implements Initializable{
         populateProductID();
         initializeCategoryView();
         backButtonImage.setImage(new Image("img/backbutton.png"));
+
+        baseStackPane.getChildren().add(profile);
+
+        homeButton.requestFocus();
 
         categoryViewToFront();
     }
@@ -110,17 +118,31 @@ public class TopMenuController extends AnchorPane implements Initializable{
     }
 
     @FXML
+    protected void searchTextFieldKeyPressed(ActionEvent event) {
+        clearProductGridPane();
+
+        List<Product> productList = DataHandler.searchProducts(searchTextField.getText());
+
+        for (int i = 0; i < productList.size(); i++) {
+            addProductToGrid(productList.get(i), i % 4, i / 4);
+        }
+        productViewToFront();
+
+    }
+
+    @FXML
     protected void homeButtonActionPerformed(ActionEvent event) {
         categoryViewToFront();
     }
 
     @FXML
+    protected void backButtonActionPerformed(ActionEvent event) {
+        baseStackPane.getChildren().get(baseStackPane.getChildren().size() - 1).toBack();
+    }
+
+    @FXML
     protected void profileButtonActionPerformed(ActionEvent event)throws IOException {
-        ProfileViewController profile = new ProfileViewController();
-        categoryScrollPane.setContent(profile);
-
-        System.out.println("Profilknapp fungerar");
-
+        profile.toFront();
     }
 
     public void clearProductGridPane() {

@@ -59,6 +59,7 @@ public class ProfileViewController extends AnchorPane {
     private String telephone;
     private boolean isError = false;
 
+
     private String cardType;
     private String cardNumber;
     private String cardHolder;

@@ -41,8 +41,9 @@ public class ProductViewController extends AnchorPane {
         }
 
         this.product = product;
-        this.nameLabel.setText(productName);
-        this.productImage.setImage(productImage);
+        this.nameLabel.setText(product.getName());
+        this.productImage.setImage(DataHandler.getProductImage(product));
+        priceUnitLabel.setText(Double.toString(product.getPrice()) + " " + product.getUnit());
         amountUnitLabel.setText(amountUnit);
 
         amountSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, Integer.MAX_VALUE, 1, spinnerSpinAmount));
