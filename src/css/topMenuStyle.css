@@ -40,3 +40,28 @@
 #profileView {
     -fx-background-color: #ecf0f1;
 }
+
+#mainPane {
+		-fx-background-image:url(restaurant.png);
+}
+
+#baseStackPane {
+		-fx-background-image:url(restaurant.png);
+		-fx-text-color:#FFF;
+
+}
+
+#profileAnchorPane {
+	-fx-background-color:#ecf0f1;
+	-fx-border-width:2px 0px 0px 0px;
+	-fx-border-style:solid;
+	-fx-border-color:#2c3e50;
+	-fx-margin:5px 0px 0px 0px;
+
+}
+
+#saveButton, #cancelButton{
+	-fx-border-radius:0px;
+	-fx-background-color:#16a085;
+	-fx-text-color:#FFF;
+}
