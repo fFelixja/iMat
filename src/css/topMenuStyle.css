@@ -20,9 +20,11 @@
 
 .text-field {
 	-fx-background-color:#FFF;
-	-fx-border-color:#2c3e50;
-	-fx-border-style:dotted;
-	-fx-border-width:1px;
+	-fx-background-radius:0px 0px 0px 0px;
+	-fx-border-width:0px 1px 1px 0px;
+	-fx-border-color:rgba(52, 152, 219,0.3);;
+	-fx-border-style:solid;
+
 }
 
 #allCategories {
@@ -30,7 +32,7 @@
 }
 
 #categoryGridPane {
-    -fx-background-color: chartreuse;
+    -fx-background-color:chartreuse;
 }
 
 #productGridPane{
@@ -56,12 +58,11 @@
 	-fx-border-width:2px 0px 0px 0px;
 	-fx-border-style:solid;
 	-fx-border-color:#2c3e50;
-	-fx-margin:5px 0px 0px 0px;
 
 }
 
 #saveButton, #cancelButton{
-	-fx-border-radius:0px;
+	-fx-background-radius:0px 0px 0px 0px;
 	-fx-background-color:#16a085;
 	-fx-text-color:#FFF;
 }

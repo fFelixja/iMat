@@ -11,14 +11,9 @@
 <?import javafx.scene.text.Font?>
 
 <fx:root id="profileView" fx:id="profileAnchorPane" prefHeight="500.0" prefWidth="800.0" stylesheets="@../css/topMenuStyle.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
-   <AnchorPane fx:id="profileAnchorPane" layoutY="14.0" prefHeight="685.0" prefWidth="1096.0" AnchorPane.bottomAnchor="-4.0" AnchorPane.topAnchor="14.0">
+   <AnchorPane fx:id="profileAnchorPane" prefHeight="685.0" prefWidth="1096.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <children>
-            <Button fx:id="saveButton" layoutX="560.0" layoutY="428.0" mnemonicParsing="false" onAction="#saveButtonActionPerformed" prefHeight="49.0" prefWidth="156.0" text="Spara ändringar" textFill="WHITE">
-            <font>
-               <Font name="HelveticaNeueLTPro-Roman" size="16.0" />
-            </font>
-         </Button>
-            <Button fx:id="cancelButton" layoutX="374.0" layoutY="428.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="156.0" text="Avbryt" textFill="WHITE">
+            <Button fx:id="saveButton" layoutX="499.0" layoutY="409.0" mnemonicParsing="false" onAction="#saveButtonActionPerformed" prefHeight="49.0" prefWidth="156.0" text="Spara ändringar" textFill="WHITE">
             <font>
                <Font name="HelveticaNeueLTPro-Roman" size="16.0" />
             </font>
@@ -30,7 +25,7 @@
             </Label>
          <Separator layoutY="30.0" prefHeight="17.0" prefWidth="1096.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
          <Separator layoutX="542.0" layoutY="37.0" orientation="VERTICAL" prefHeight="282.0" prefWidth="6.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="37.0" />
-         <AnchorPane layoutX="14.0" layoutY="45.0" prefHeight="362.0" prefWidth="516.0">
+         <AnchorPane layoutX="14.0" layoutY="45.0" prefHeight="362.0" prefWidth="516.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="500.0" AnchorPane.topAnchor="40.0">
             <children>
                   <TextField fx:id="firstnameTextField" layoutX="146.0" layoutY="60.0" prefHeight="26.0" prefWidth="136.0" />
                   <TextField fx:id="lastnameTextField" layoutX="146.0" layoutY="107.0" prefHeight="26.0" prefWidth="136.0" />
@@ -79,9 +74,14 @@
                      <Font name="HelveticaNeueLTPro-Roman" size="16.0" />
                   </font>
                </Label>
+                  <Button fx:id="cancelButton" layoutX="314.0" layoutY="367.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="156.0" text="Avbryt" textFill="WHITE">
+                  <font>
+                     <Font name="HelveticaNeueLTPro-Roman" size="16.0" />
+                  </font>
+               </Button>
             </children>
          </AnchorPane>
-         <AnchorPane layoutX="567.0" layoutY="51.0" prefHeight="350.0" prefWidth="489.0" AnchorPane.leftAnchor="567.0" AnchorPane.rightAnchor="43.0">
+         <AnchorPane layoutX="428.0" layoutY="47.0" prefHeight="350.0" prefWidth="344.0" AnchorPane.bottomAnchor="105.0" AnchorPane.leftAnchor="480.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="47.0">
             <children>
                   <TextField fx:id="ccvTextField" layoutX="183.0" layoutY="266.0" prefHeight="26.0" prefWidth="53.0" />
                   <TextField fx:id="cardNumberTextField" layoutX="178.0" layoutY="144.0" prefHeight="27.0" prefWidth="140.0" />
