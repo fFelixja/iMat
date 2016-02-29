@@ -49,6 +49,8 @@ public class ProfileViewController extends AnchorPane {
 
     @FXML private ChoiceBox cardTypeChoiceBox;
 
+    @FXML private Label profileLabel;
+
     @FXML private Label cardTypeLabel;
     @FXML private Label cardNumberLabel;
     @FXML private Label cardHolderLabel;
@@ -197,4 +199,7 @@ public class ProfileViewController extends AnchorPane {
         DataHandler.saveCard(cardType, cardNumber, cardHolder, cardExpireMonth, cardExpireYear, cardCCV);
     }
 
+    public String getLabel(){
+        return this.profileLabel.toString();
+    }
 }

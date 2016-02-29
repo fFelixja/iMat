@@ -4,15 +4,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 
 import se.chalmers.ait.dat215.project.IMatDataHandler;
@@ -46,6 +44,8 @@ public class TopMenuController extends AnchorPane implements Initializable{
 
     @FXML private ImageView backButtonImage;
 
+    @FXML private ImageView cartImage;
+
     @FXML private StackPane baseStackPane;
 
     @FXML private ScrollPane categoryScrollPane;
@@ -56,7 +56,13 @@ public class TopMenuController extends AnchorPane implements Initializable{
 
     @FXML private GridPane productGridPane;
 
+    @FXML public Label ViewLabel;
+
     ProfileViewController profile = new ProfileViewController();
+
+    private Pane[] panelList = {baseStackPane, profile};
+
+    private String[] panelLabelName = {"Alla kategorier","Din profil"};
 
     private List<Integer[]> productID = new ArrayList<>();
     private String[] categoryName = {"Kött", "Fisk", "Mejeriprodukter", "Potatis & Ris",
@@ -69,6 +75,8 @@ public class TopMenuController extends AnchorPane implements Initializable{
         populateProductID();
         initializeCategoryView();
         backButtonImage.setImage(new Image("img/backbutton.png"));
+        cartImage.setImage(new Image("img/shop.png"));
+        ViewLabel.setText("Alla kategorier");
 
         baseStackPane.getChildren().add(profile);
 
@@ -95,7 +103,7 @@ public class TopMenuController extends AnchorPane implements Initializable{
     }
 
     private void initializeCategoryView(){
-        ProductCategory[] enumForCategories = ProductCategory.values();
+     ProductCategory[] enumForCategories = ProductCategory.values();
         int count = 0;
         for(int i = 0; i < productID.size(); i++){
             Integer[] intTemp = productID.get(i);
@@ -133,6 +141,7 @@ public class TopMenuController extends AnchorPane implements Initializable{
     @FXML
     protected void homeButtonActionPerformed(ActionEvent event) {
         categoryViewToFront();
+        ViewLabel.setText("Alla kategorier");
     }
 
     @FXML
@@ -142,11 +151,17 @@ public class TopMenuController extends AnchorPane implements Initializable{
 
     @FXML
     protected void profileButtonActionPerformed(ActionEvent event)throws IOException {
-        profile.toFront();
+        profileViewToFront();
+
     }
 
     public void clearProductGridPane() {
         productGridPane.getChildren().removeAll(productGridPane.getChildren());
+    }
+
+    public void profileViewToFront(){
+        profile.toFront();
+        ViewLabel.setText("Din profil");
     }
 
     public void productViewToFront() {
@@ -161,4 +176,16 @@ public class TopMenuController extends AnchorPane implements Initializable{
         ProductViewController productView = new ProductViewController(product, 1);
         productGridPane.add(productView, column, row);
     }
+
+    /* TODO get current pane
+        public void setLabel(Label label){
+            Pane currentPanel = new Pane();
+            label.setText(panelLabelName[currentPanel.getChildren()]);
+
+
+
+
+    }
+*/
+
 }

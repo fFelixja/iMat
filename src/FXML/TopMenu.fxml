@@ -47,6 +47,9 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
+               <graphic>
+                  <ImageView fx:id="cartImage" fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
             </Button>
             <Label layoutX="152.0" layoutY="20.0" text="Sök" AnchorPane.topAnchor="20.0" />
             <Separator prefHeight="8.0" prefWidth="608.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="53.0" />
@@ -129,7 +132,7 @@
             </ScrollPane>
          </children>
       </StackPane>
-      <Label fx:id="allCategories" layoutX="14.0" layoutY="61.0" text="Alla kategorier" AnchorPane.topAnchor="61.0">
+      <Label fx:id="ViewLabel" layoutX="14.0" layoutY="61.0" text="Label" AnchorPane.topAnchor="61.0">
          <font>
             <Font size="22.0" />
          </font>
