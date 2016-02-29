@@ -3,11 +3,10 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 import se.chalmers.ait.dat215.project.Customer;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 
@@ -49,6 +48,28 @@ public class ProfileViewController extends AnchorPane {
     @FXML private RadioButton invoiceRadioButton;
 
     @FXML private ChoiceBox cardTypeChoiceBox;
+
+    @FXML private Label cardTypeLabel;
+    @FXML private Label cardNumberLabel;
+    @FXML private Label cardHolderLabel;
+    @FXML private Label expireDateLabel;
+    @FXML private Label monthLabel;
+    @FXML private Label yearLabel;
+    @FXML private Label ccvLabel;
+
+
+    @FXML private Label errorFirstNameLabel;
+    @FXML private Label errorLastNameLabel;
+    @FXML private Label errorAdressLabel;
+    @FXML private Label errorAdressTwoLabel;
+    @FXML private Label errorZipCodeLabel;
+    @FXML private Label errorPostAreaLabel;
+    @FXML private Label errorTelephoneLabel;
+    @FXML private Label errorCardNumberLabel;
+    @FXML private Label errorCardHolderLabel;
+    @FXML private Label errorDateNameLabel;
+    @FXML private Label errorCCVLabel;
+
 
     private String firstname;
     private String lastname;
@@ -93,6 +114,16 @@ public class ProfileViewController extends AnchorPane {
             expirationYearTextField.setDisable(true);
             ccvTextField.setDisable(true);
             ccvHelpButton.setDisable(true);
+
+
+            cardTypeLabel.setTextFill(Color.web("CCC"));
+            cardHolderLabel.setTextFill(Color.web("CCC"));
+            cardNumberLabel.setTextFill(Color.web("CCC"));
+            monthLabel.setTextFill(Color.web("CCC"));
+            yearLabel.setTextFill(Color.web("CCC"));
+            ccvLabel.setTextFill(Color.web("CCC"));
+            expireDateLabel.setTextFill(Color.web("CCC"));
+
         }else {
             cardTypeChoiceBox.setDisable(false);
             cardNumberTextField.setDisable(false);
@@ -101,6 +132,14 @@ public class ProfileViewController extends AnchorPane {
             expirationYearTextField.setDisable(false);
             ccvTextField.setDisable(false);
             ccvHelpButton.setDisable(false);
+
+            cardTypeLabel.setTextFill(Color.web("000"));
+            cardHolderLabel.setTextFill(Color.web("000"));
+            cardNumberLabel.setTextFill(Color.web("000"));
+            monthLabel.setTextFill(Color.web("000"));
+            yearLabel.setTextFill(Color.web("000"));
+            ccvLabel.setTextFill(Color.web("000"));
+            expireDateLabel.setTextFill(Color.web("000"));
         }
     }
 
