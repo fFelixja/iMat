@@ -8,143 +8,148 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.text.Font?>
 
 <fx:root id="profileView" fx:id="profileAnchorPane" prefHeight="500.0" prefWidth="800.0" stylesheets="@../css/topMenuStyle.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
-   <AnchorPane fx:id="profileAnchorPane" prefHeight="685.0" prefWidth="1096.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+   <FlowPane alignment="TOP_CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <children>
-            <Button fx:id="saveButton" layoutX="499.0" layoutY="409.0" mnemonicParsing="false" onAction="#saveButtonActionPerformed" prefHeight="49.0" prefWidth="156.0" text="Spara ändringar" textFill="WHITE">
-            <font>
-               <Font name="HelveticaNeueLTPro-Roman" size="16.0" />
-            </font>
-         </Button>
-            <Label layoutX="14.0" text="Personlig profil">
-               <font>
-                  <Font name="HelveticaNeueLTPro-Roman" size="26.0" />
-               </font>
-            </Label>
-         <Separator layoutY="30.0" prefHeight="17.0" prefWidth="1096.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
-         <Separator layoutX="542.0" layoutY="37.0" orientation="VERTICAL" prefHeight="282.0" prefWidth="6.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="37.0" />
-         <AnchorPane layoutX="14.0" layoutY="45.0" prefHeight="362.0" prefWidth="516.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="500.0" AnchorPane.topAnchor="40.0">
+         <AnchorPane fx:id="profileAnchorPane">
             <children>
-                  <TextField fx:id="firstnameTextField" layoutX="146.0" layoutY="60.0" prefHeight="26.0" prefWidth="136.0" />
-                  <TextField fx:id="lastnameTextField" layoutX="146.0" layoutY="107.0" prefHeight="26.0" prefWidth="136.0" />
-                  <TextField fx:id="adressTextField" layoutX="146.0" layoutY="143.0" prefHeight="26.0" prefWidth="136.0" />
-                  <TextField fx:id="adressTwoTextField" layoutX="146.0" layoutY="178.0" prefHeight="26.0" prefWidth="136.0" />
-                  <TextField fx:id="zipcodeTextField" layoutX="149.0" layoutY="212.0" prefHeight="26.0" prefWidth="89.0" />
-                  <TextField fx:id="cityTextField" layoutX="146.0" layoutY="251.0" prefHeight="26.0" prefWidth="136.0" />
-                  <TextField fx:id="telephoneTextField" layoutX="146.0" layoutY="289.0" prefHeight="26.0" prefWidth="136.0" />
-                  <Label alignment="CENTER_RIGHT" layoutX="62.0" layoutY="62.0" text="Förnamn:">
-                  <font>
-                     <Font name="HelveticaNeueLTPro-Roman" size="16.0" />
-                  </font>
-               </Label>
-                  <Label alignment="CENTER_RIGHT" layoutX="58.0" layoutY="109.0" text="Efternamn:">
-                  <font>
-                     <Font name="HelveticaNeueLTPro-Roman" size="16.0" />
-                  </font>
-               </Label>
-                  <Label alignment="CENTER_RIGHT" layoutX="78.0" layoutY="145.0" text="Adress:">
-                  <font>
-                     <Font name="HelveticaNeueLTPro-Roman" size="16.0" />
-                  </font>
-               </Label>
-                  <Label alignment="CENTER_RIGHT" layoutX="74.0" layoutY="180.0" text="Adress 2:">
-                  <font>
-                     <Font name="HelveticaNeueLTPro-Roman" size="16.0" />
-                  </font>
-               </Label>
-                  <Label alignment="CENTER_RIGHT" layoutX="51.0" layoutY="214.0" text="Postnummer:">
-                  <font>
-                     <Font name="HelveticaNeueLTPro-Roman" size="16.0" />
-                  </font>
-               </Label>
-                  <Label alignment="CENTER_RIGHT" layoutX="77.0" layoutY="253.0" text="Postort:">
-                  <font>
-                     <Font name="HelveticaNeueLTPro-Roman" size="16.0" />
-                  </font>
-               </Label>
-                  <Label alignment="CENTER_RIGHT" layoutX="77.0" layoutY="291.0" text="Telefon:">
-                  <font>
-                     <Font name="HelveticaNeueLTPro-Roman" size="16.0" />
-                  </font>
-               </Label>
-                  <Label alignment="CENTER_RIGHT" layoutX="18.0" layoutY="14.0" text="Personuppgifter">
-                  <font>
-                     <Font name="HelveticaNeueLTPro-Roman" size="16.0" />
-                  </font>
-               </Label>
-                  <Button fx:id="cancelButton" layoutX="314.0" layoutY="367.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="156.0" text="Avbryt" textFill="WHITE">
-                  <font>
-                     <Font name="HelveticaNeueLTPro-Roman" size="16.0" />
-                  </font>
-               </Button>
-            </children>
-         </AnchorPane>
-         <AnchorPane layoutX="428.0" layoutY="47.0" prefHeight="350.0" prefWidth="344.0" AnchorPane.bottomAnchor="105.0" AnchorPane.leftAnchor="480.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="47.0">
-            <children>
-                  <TextField fx:id="ccvTextField" layoutX="183.0" layoutY="266.0" prefHeight="26.0" prefWidth="53.0" />
-                  <TextField fx:id="cardNumberTextField" layoutX="178.0" layoutY="144.0" prefHeight="27.0" prefWidth="140.0" />
-                  <TextField fx:id="cardHolderTextField" layoutX="178.0" layoutY="181.0" prefHeight="27.0" prefWidth="140.0" />
-                  <TextField fx:id="expirationMonthTextField" layoutX="231.0" layoutY="214.0" prefHeight="26.0" prefWidth="30.0" />
-                  <TextField fx:id="expirationYearTextField" layoutX="288.0" layoutY="214.0" prefHeight="26.0" prefWidth="30.0" />
-                  <Label alignment="CENTER_RIGHT" layoutX="21.0" layoutY="14.0" text="Betalningsuppgifter">
-                  <font>
-                     <Font name="HelveticaNeueLTPro-Roman" size="16.0" />
-                  </font>
-               </Label>
-                  <RadioButton fx:id="cardRadioButton" layoutX="110.0" layoutY="48.0" mnemonicParsing="false" onAction="#radioButtonActionPerformed" selected="true" text="Kort">
-                     <toggleGroup>
-                        <ToggleGroup fx:id="paygroup" />
-                     </toggleGroup>
-                  <font>
-                     <Font name="HelveticaNeueLTPro-Roman" size="16.0" />
-                  </font>
-                  </RadioButton>
-                  <RadioButton fx:id="invoiceRadioButton" layoutX="195.0" layoutY="48.0" mnemonicParsing="false" onAction="#radioButtonActionPerformed" text="Faktura" toggleGroup="$paygroup">
-                  <font>
-                     <Font name="HelveticaNeueLTPro-Roman" size="16.0" />
-                  </font>
-               </RadioButton>
-                  <ChoiceBox fx:id="cardTypeChoiceBox" layoutX="165.0" layoutY="84.0" prefHeight="26.0" prefWidth="136.0" AnchorPane.leftAnchor="165.0" />
-                  <Label alignment="CENTER_RIGHT" layoutX="82.0" layoutY="86.0" text="Korttyp:">
-                  <font>
-                     <Font name="HelveticaNeueLTPro-Roman" size="16.0" />
-                  </font>
-               </Label>
-                  <Label alignment="CENTER_RIGHT" layoutX="68.0" layoutY="144.0" text="Kortnummer:">
-                  <font>
-                     <Font name="HelveticaNeueLTPro-Roman" size="16.0" />
-                  </font>
-               </Label>
-                  <Label alignment="CENTER_RIGHT" layoutX="53.0" layoutY="181.0" text="Kortinnehavare:">
-                  <font>
-                     <Font name="HelveticaNeueLTPro-Roman" size="16.0" />
-                  </font>
-               </Label>
-                  <Label alignment="CENTER_RIGHT" layoutX="268.0" layoutY="219.0" text="År:">
-                  <font>
-                     <Font name="HelveticaNeueLTPro-Roman" size="14.0" />
-                  </font>
-               </Label>
-                  <Label alignment="CENTER_RIGHT" layoutX="49.0" layoutY="217.0" text="Utgångsdatum:">
-                  <font>
-                     <Font name="HelveticaNeueLTPro-Roman" size="16.0" />
-                  </font>
-               </Label>
-                  <Label alignment="CENTER_RIGHT" layoutX="91.0" layoutY="269.0" text="CCV/CVC:">
-                  <font>
-                     <Font name="HelveticaNeueLTPro-Roman" size="16.0" />
-                  </font>
-               </Label>
-                  <Button fx:id="ccvHelpButton" layoutX="243.0" layoutY="266.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="19.0" text="?" />
-               <Label layoutX="178.0" layoutY="219.0" text="Månad:">
-                  <font>
-                     <Font name="HelveticaNeueLTPro-Roman" size="14.0" />
-                  </font>
-               </Label>
+                  <Label layoutX="14.0" text="Personlig profil">
+                     <font>
+                        <Font name="HelveticaNeueLTPro-Roman" size="26.0" />
+                     </font>
+                  </Label>
+               <Separator layoutY="30.0" prefHeight="17.0" prefWidth="1096.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+               <Separator layoutX="542.0" layoutY="37.0" orientation="VERTICAL" prefHeight="282.0" prefWidth="6.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="37.0" />
+               <AnchorPane layoutX="14.0" layoutY="45.0" prefHeight="350.0" prefWidth="516.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="40.0">
+                  <children>
+                        <TextField fx:id="firstnameTextField" layoutX="146.0" layoutY="60.0" prefHeight="26.0" prefWidth="136.0" />
+                        <TextField fx:id="lastnameTextField" layoutX="146.0" layoutY="107.0" prefHeight="26.0" prefWidth="136.0" />
+                        <TextField fx:id="adressTextField" layoutX="146.0" layoutY="143.0" prefHeight="26.0" prefWidth="136.0" />
+                        <TextField fx:id="adressTwoTextField" layoutX="146.0" layoutY="178.0" prefHeight="26.0" prefWidth="136.0" />
+                        <TextField fx:id="zipcodeTextField" layoutX="149.0" layoutY="212.0" prefHeight="26.0" prefWidth="89.0" />
+                        <TextField fx:id="cityTextField" layoutX="146.0" layoutY="251.0" prefHeight="26.0" prefWidth="136.0" />
+                        <TextField fx:id="telephoneTextField" layoutX="146.0" layoutY="289.0" prefHeight="26.0" prefWidth="136.0" />
+                        <Label alignment="CENTER_RIGHT" layoutX="62.0" layoutY="62.0" text="Förnamn:">
+                        <font>
+                           <Font name="HelveticaNeueLTPro-Roman" size="16.0" />
+                        </font>
+                     </Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="58.0" layoutY="109.0" text="Efternamn:">
+                        <font>
+                           <Font name="HelveticaNeueLTPro-Roman" size="16.0" />
+                        </font>
+                     </Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="78.0" layoutY="145.0" text="Adress:">
+                        <font>
+                           <Font name="HelveticaNeueLTPro-Roman" size="16.0" />
+                        </font>
+                     </Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="74.0" layoutY="180.0" text="Adress 2:">
+                        <font>
+                           <Font name="HelveticaNeueLTPro-Roman" size="16.0" />
+                        </font>
+                     </Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="51.0" layoutY="214.0" text="Postnummer:">
+                        <font>
+                           <Font name="HelveticaNeueLTPro-Roman" size="16.0" />
+                        </font>
+                     </Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="77.0" layoutY="253.0" text="Postort:">
+                        <font>
+                           <Font name="HelveticaNeueLTPro-Roman" size="16.0" />
+                        </font>
+                     </Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="77.0" layoutY="291.0" text="Telefon:">
+                        <font>
+                           <Font name="HelveticaNeueLTPro-Roman" size="16.0" />
+                        </font>
+                     </Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="18.0" layoutY="14.0" text="Personuppgifter">
+                        <font>
+                           <Font name="HelveticaNeueLTPro-Roman" size="16.0" />
+                        </font>
+                     </Label>
+                        <Button fx:id="cancelButton" layoutX="334.0" layoutY="366.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="156.0" text="Avbryt" textFill="WHITE" AnchorPane.bottomAnchor="-50.0" AnchorPane.leftAnchor="350.0">
+                        <font>
+                           <Font name="HelveticaNeueLTPro-Roman" size="16.0" />
+                        </font>
+                     </Button>
+                  </children>
+               </AnchorPane>
+               <AnchorPane layoutX="428.0" layoutY="47.0" prefHeight="350.0" prefWidth="516.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="45.0">
+                  <children>
+                        <TextField fx:id="ccvTextField" layoutX="183.0" layoutY="266.0" prefHeight="26.0" prefWidth="53.0" />
+                        <TextField fx:id="cardNumberTextField" layoutX="178.0" layoutY="144.0" prefHeight="27.0" prefWidth="140.0" />
+                        <TextField fx:id="cardHolderTextField" layoutX="178.0" layoutY="181.0" prefHeight="27.0" prefWidth="140.0" />
+                        <TextField fx:id="expirationMonthTextField" layoutX="231.0" layoutY="214.0" prefHeight="26.0" prefWidth="30.0" />
+                        <TextField fx:id="expirationYearTextField" layoutX="288.0" layoutY="214.0" prefHeight="26.0" prefWidth="30.0" />
+                        <Label alignment="CENTER_RIGHT" layoutX="21.0" layoutY="14.0" text="Betalningsuppgifter">
+                        <font>
+                           <Font name="HelveticaNeueLTPro-Roman" size="16.0" />
+                        </font>
+                     </Label>
+                        <RadioButton fx:id="cardRadioButton" layoutX="110.0" layoutY="48.0" mnemonicParsing="false" onAction="#radioButtonActionPerformed" selected="true" text="Kort">
+                           <toggleGroup>
+                              <ToggleGroup fx:id="paygroup" />
+                           </toggleGroup>
+                        <font>
+                           <Font name="HelveticaNeueLTPro-Roman" size="16.0" />
+                        </font>
+                        </RadioButton>
+                        <RadioButton fx:id="invoiceRadioButton" layoutX="195.0" layoutY="48.0" mnemonicParsing="false" onAction="#radioButtonActionPerformed" text="Faktura" toggleGroup="$paygroup">
+                        <font>
+                           <Font name="HelveticaNeueLTPro-Roman" size="16.0" />
+                        </font>
+                     </RadioButton>
+                        <ChoiceBox fx:id="cardTypeChoiceBox" layoutX="165.0" layoutY="84.0" prefHeight="26.0" prefWidth="136.0" AnchorPane.leftAnchor="165.0" />
+                        <Label alignment="CENTER_RIGHT" layoutX="82.0" layoutY="86.0" text="Korttyp:">
+                        <font>
+                           <Font name="HelveticaNeueLTPro-Roman" size="16.0" />
+                        </font>
+                     </Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="68.0" layoutY="144.0" text="Kortnummer:">
+                        <font>
+                           <Font name="HelveticaNeueLTPro-Roman" size="16.0" />
+                        </font>
+                     </Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="53.0" layoutY="181.0" text="Kortinnehavare:">
+                        <font>
+                           <Font name="HelveticaNeueLTPro-Roman" size="16.0" />
+                        </font>
+                     </Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="268.0" layoutY="219.0" text="År:">
+                        <font>
+                           <Font name="HelveticaNeueLTPro-Roman" size="14.0" />
+                        </font>
+                     </Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="49.0" layoutY="217.0" text="Utgångsdatum:">
+                        <font>
+                           <Font name="HelveticaNeueLTPro-Roman" size="16.0" />
+                        </font>
+                     </Label>
+                        <Label alignment="CENTER_RIGHT" layoutX="91.0" layoutY="269.0" text="CCV/CVC:">
+                        <font>
+                           <Font name="HelveticaNeueLTPro-Roman" size="16.0" />
+                        </font>
+                     </Label>
+                        <Button fx:id="ccvHelpButton" layoutX="243.0" layoutY="266.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="19.0" text="?" />
+                     <Label layoutX="178.0" layoutY="219.0" text="Månad:">
+                        <font>
+                           <Font name="HelveticaNeueLTPro-Roman" size="14.0" />
+                        </font>
+                     </Label>
+                        <Button fx:id="saveButton" layoutX="-28.0" layoutY="361.0" mnemonicParsing="false" onAction="#saveButtonActionPerformed" prefHeight="49.0" prefWidth="156.0" text="Spara ändringar" textFill="WHITE" AnchorPane.bottomAnchor="-50.0" AnchorPane.leftAnchor="-5.0">
+                        <font>
+                           <Font name="HelveticaNeueLTPro-Roman" size="16.0" />
+                        </font>
+                     </Button>
+                  </children>
+               </AnchorPane>
             </children>
          </AnchorPane>
       </children>
-   </AnchorPane>
+   </FlowPane>
 </fx:root>
