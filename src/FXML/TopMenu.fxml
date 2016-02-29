@@ -59,9 +59,9 @@
          <children>
             <ScrollPane fx:id="categoryScrollPane" maxHeight="1.7976931348623157E308">
                <content>
-                  <GridPane id="categoryGridPane" fx:id="categoryGridPane" hgap="5.0" maxHeight="1.7976931348623157E308" stylesheets="@../css/topMenuStyle.css" vgap="20.0">
+                  <GridPane id="categoryGridPane" fx:id="categoryGridPane" hgap="5.0" maxHeight="1.7976931348623157E308" stylesheets="@../css/topMenuStyle.css" vgap="20.0" style="-fx-padding:10px 0px 0px 30px;">
                      <columnConstraints>
-                        <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" />
+                        <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="ALWAYS" maxWidth="1.7976931348623157E308"/>
                         <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" />
                         <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="0.0" />
                         <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="0.0" />
@@ -80,29 +80,29 @@
                         <RowConstraints minHeight="0.0" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
-                        <Label prefHeight="20.0" text="Kött, fisk, mejeri">
+                        <Label prefHeight="20.0" text="Kött, fisk, mejeri" >
                            <font>
-                              <Font name="System Bold" size="32.0" />
+                              <Font name="HelveticaNeueLT Pro 55 Roman" size="38.0"  />
                            </font>
                         </Label>
                         <Label text="Kolhydrater" GridPane.rowIndex="2">
                            <font>
-                              <Font name="System Bold" size="32.0" />
+                              <Font name="HelveticaNeueLT Pro 55 Roman" size="38.0" />
                            </font>
                         </Label>
                         <Label text="Frukt" GridPane.rowIndex="4">
                            <font>
-                              <Font name="System Bold" size="32.0" />
+                              <Font name="HelveticaNeueLT Pro 55 Roman" size="38.0" />
                            </font>
                         </Label>
                         <Label text="Grönt" GridPane.rowIndex="6">
                            <font>
-                              <Font name="System Bold" size="32.0" />
+                              <Font name="HelveticaNeueLT Pro 55 Roman" size="38.0" />
                            </font>
                         </Label>
                         <Label text="Övrigt" GridPane.rowIndex="9">
                            <font>
-                              <Font name="System Bold" size="32.0" />
+                              <Font name="HelveticaNeueLT Pro 55 Roman" size="38.0" />
                            </font>
                         </Label>
                      </children>
@@ -114,7 +114,7 @@
             </ScrollPane>
             <ScrollPane id="productView" fx:id="productScrollPane" prefHeight="200.0" prefWidth="200.0" stylesheets="@../css/topMenuStyle.css">
                <content>
-                  <GridPane id="productGridPane" fx:id="productGridPane" stylesheets="@../css/topMenuStyle.css">
+                  <GridPane id="productGridPane" fx:id="productGridPane" stylesheets="@../css/topMenuStyle.css" >
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />

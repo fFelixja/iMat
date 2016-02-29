@@ -134,6 +134,7 @@ public class TopMenuController extends AnchorPane implements Initializable{
         for (int i = 0; i < productList.size(); i++) {
             addProductToGrid(productList.get(i), i % 4, i / 4);
         }
+        productGridPane.getStyleClass().add("gridStyle");
         productViewToFront();
 
     }
@@ -175,6 +176,7 @@ public class TopMenuController extends AnchorPane implements Initializable{
     public void addProductToGrid(Product product, int column, int row) {
         ProductViewController productView = new ProductViewController(product, 1);
         productGridPane.add(productView, column, row);
+        productGridPane.getStyleClass().add("gridStyle");
     }
 
     /* TODO get current pane

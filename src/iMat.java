@@ -12,7 +12,7 @@ public class iMat extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("FXML/TopMenu.fxml"));
 
         Scene scene = new Scene(root, 1200, 800);
-
+        scene.getStylesheets().add("css/topMenuStyle.css");
         stage.setTitle("iMatVersionRune");
         stage.setScene(scene);
         stage.show();

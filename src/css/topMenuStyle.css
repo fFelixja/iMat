@@ -35,20 +35,27 @@
 
 }
 
+.gridStyle {
+	-fx-border-width:10px;
+	-fx-border-style:solid;
+	-fx-border-color:#000;	
+	
+}
+
 #allCategories {
 	-fx-border-insets:50%;
 }
 
 #categoryGridPane {
-    -fx-background-color:chartreuse;
+    -fx-background-image:url(restaurant_bright.png);
 }
 
 #productGridPane{
-    -fx-background-color: aqua;
+    -fx-background-image:url(restaurant_bright.png);
 }
 
 #profileView {
-    -fx-background-color: #ecf0f1;
+    -fx-background-image:url(restaurant_bright.png);
 }
 
 #mainPane {
@@ -62,17 +69,36 @@
 }
 
 #profileAnchorPane {
-	-fx-background-color:#ecf0f1;
+	/*-fx-background-color:#FFF;
 	-fx-border-width:2px 0px 0px 0px;
 	-fx-border-style:solid;
 	-fx-border-color:#2c3e50;
+*/
+}
 
+#personalnfoPanel, #paymentInfoPanel {
+	-fx-background-color:#FFF;
+	-fx-border-width:0px 0px 5px 0px;
+	-fx-border-color:rgba(52, 152, 219,0.3);;
+	-fx-border-style:solid;
+
+}
+
+#personalInfoLabel, #paymentInfoLabel {
+	-fx-background-color:#FFF;
+	
+	-fx-border-width:0px 0px 2px 0px;
+	-fx-border-color:rgba(52, 152, 219,0.3);;
+	-fx-border-style:solid;
+	
 }
 
 #saveButton, #cancelButton{
 	-fx-background-radius:0px 0px 0px 0px;
 	-fx-background-color:#16a085;
 	-fx-text-color:#FFF;
+	
+
 }
 
 #saveButton:hover, #cancelButton:hover {
