@@ -70,7 +70,7 @@ public class ProfileViewController extends AnchorPane {
     @FXML private Label errorTelephoneLabel;
     @FXML private Label errorCardNumberLabel;
     @FXML private Label errorCardHolderLabel;
-    @FXML private Label errorDateNameLabel;
+    @FXML private Label errorDateLabel;
     @FXML private Label errorCCVLabel;
 
 
@@ -117,8 +117,12 @@ public class ProfileViewController extends AnchorPane {
         zipcodeTextField.focusedProperty().addListener(new TextFiledListner(zipcodeTextField, errorZipCodeLabel, "5 siffror långt [0-9]", 2));
         cityTextField.focusedProperty().addListener(new TextFiledListner(cityTextField, errorPostAreaLabel, "Godkända tecken [A-Ö]", 3));
         telephoneTextField.focusedProperty().addListener(new TextFiledListner(telephoneTextField, errorTelephoneLabel, "10 tecken, bara siffror [0-9]", 4));
-
+        cardNumberTextField.focusedProperty().addListener(new TextFiledListner(cardHolderTextField,errorCardNumberLabel,"xxxx-xxxx-xxxxx-xxxx", 5));
         cardHolderTextField.focusedProperty().addListener(new TextFiledListner(cardHolderTextField,errorCardHolderLabel,"Förnamn Efternamn", 6));
+        expirationMonthTextField.focusedProperty().addListener(new TextFiledListner(expirationMonthTextField,errorDateLabel, "Två tecken [0-9] i vardera", 7));
+        expirationYearTextField.focusedProperty().addListener(new TextFiledListner(expirationYearTextField,errorDateLabel, "Två tecken [0-9] i vardera", 8));
+        ccvTextField.focusedProperty().addListener(new TextFiledListner(ccvTextField,errorCCVLabel, "Tre siffror [0-9]", 9));
+
     }
 
     @FXML
