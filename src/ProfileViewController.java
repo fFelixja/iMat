@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 
@@ -56,6 +57,7 @@ public class ProfileViewController extends AnchorPane {
     @FXML private Label yearLabel;
     @FXML private Label ccvLabel;
     @FXML private Label cardLabel;
+    @FXML private ImageView cardImage;
 
     @FXML private Label errorFirstNameLabel;
     @FXML private Label errorLastNameLabel;
@@ -120,7 +122,7 @@ public class ProfileViewController extends AnchorPane {
         expirationMonthTextField.focusedProperty().addListener(new TextFieldListener(expirationMonthTextField,errorDateLabel, "Två tecken [0-9] i vardera", 7));
         expirationYearTextField.focusedProperty().addListener(new TextFieldListener(expirationYearTextField,errorDateLabel, "Två tecken [0-9] i vardera", 8));
         ccvTextField.focusedProperty().addListener(new TextFieldListener(ccvTextField,errorCCVLabel, "Tre siffror [0-9]", 9));
-        cardNumberListener.setCardLabel(cardLabel);
+        cardNumberListener.setCardNumberGUI(cardLabel, cardImage);
 
     }
 

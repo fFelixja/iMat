@@ -1,10 +1,14 @@
+import javafx.scene.image.*;
+
 import java.awt.*;
 import java.util.Calendar;
 import java.util.regex.*;
+import javafx.scene.image.Image;
 
 public class CheckUtils {
 
     private String cardType = "";
+    private Image cardImage;
 
     public boolean check(int checkType, String txt){
         switch (checkType){
@@ -170,21 +174,28 @@ public class CheckUtils {
         Pattern pattern = Pattern.compile("^4(\\d{3})(?!\\1{3})([\\ \\-]?)(?!(\\d)\\3{3})(\\d{4})\\2(?!\\4|(\\d)\\5{3}|1234|2345|3456|5678|7890)(\\d{4})\\2(?!\\6|(\\d)\\7{3}|1234|3456)\\d{4}$", Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(txt);
         if(matcher.find()){
-            cardType = "Korttyp: Visa";
+            cardType = "Visa";
+            cardImage = new Image("img/visa.png");
             return true;
         }
         //Mastercard
         pattern = Pattern.compile("\\b(?<!\\-|\\.)5([1-5]\\d{2})(?!\\1{3})([\\ \\-]?)(?<!\\d\\ \\d{4}\\ )(?!(\\d)\\3{3})(\\d{4})\\2(?!\\4|(\\d)\\5{3}|1234|2345|3456|5678|7890)(\\d{4})(?!\\ \\d{4}\\ \\d)\\2(?!\\6|(\\d)\\7{3}|1234|3456)\\d{4}(?!\\-)(?!\\.\\d)\\b", Pattern.CASE_INSENSITIVE);
         matcher = pattern.matcher(txt);
         if(matcher.find()){
-            cardType = "Korttyp: Mastercard";
+            cardType = "Mastercard";
+            cardImage = new Image("img/mastercard.png");
+
             return true;
         }else {
             cardType = "Ogiltligt kort";
+            cardImage = null;
             return false;
         }
     }
     public String getCardType(){
         return cardType;
+    }
+    public Image getCardImage(){
+        return cardImage;
     }
 }

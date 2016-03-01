@@ -3,12 +3,14 @@ import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 
 public class TextFieldListener implements ChangeListener<Boolean>{
 
     @FXML
     private TextField textField;
     private Label errorMessageLabel;
+    private ImageView cardImage;
     private  int checkType;
     private String errorMessage;
     private boolean isOk;
@@ -31,11 +33,8 @@ public class TextFieldListener implements ChangeListener<Boolean>{
                 isOk = utils.check(checkType, textField.getText());
                 setErrorMessageLabel(errorMessage);
                 if(checkType == 5){
-                    System.out.println("checkType is 5");
-                    System.out.println("TextField.text().lengt is: " + textField.getText().length());
-                    String cardType = utils.getCardType();
-                    System.out.println("cardTyp is: "+cardType);
-                    cardLabel.setText(cardType);
+                    cardLabel.setText(utils.getCardType());
+                    cardImage.setImage(utils.getCardImage());
                 }
             }
     }
@@ -52,8 +51,9 @@ public class TextFieldListener implements ChangeListener<Boolean>{
         return isOk;
     }
 
-    public void setCardLabel(Label cardLabel){
+    public void setCardNumberGUI(Label cardLabel, ImageView cardImage){
         this.cardLabel = cardLabel;
+        this.cardImage = cardImage;
     }
 
 
