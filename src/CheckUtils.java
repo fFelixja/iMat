@@ -12,6 +12,8 @@ public final class CheckUtils {
                 return zipCheck(txt);
             case 3:
                 return cityCheck(txt);
+            case 4:
+                return phoneCheck(txt);
 
 
 
@@ -38,8 +40,16 @@ public final class CheckUtils {
     }
 
     private static boolean cityCheck(String txt){
-
         Pattern pattern = Pattern.compile("([a-zA-Z]$|[a-zA-Z]$\\s[a-zA-Z]$)",Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(txt);
+        return matcher.find();
+    }
+
+    private static boolean phoneCheck(String txt){
+        if(txt.length() > 10){
+            return false;
+        }
+        Pattern pattern = Pattern.compile("[0-9]{5,10}\\b$",Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(txt);
         return matcher.find();
     }

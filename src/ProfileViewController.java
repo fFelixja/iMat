@@ -1,3 +1,4 @@
+import com.sun.xml.internal.messaging.saaj.util.TeeInputStream;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -115,7 +116,7 @@ public class ProfileViewController extends AnchorPane {
         adressTwoTextField.focusedProperty().addListener(new TextFiledListner(adressTextField, errorAdressTwoLabel, "Godkända tecken [A-Z][0-9][. , -]" , 1));
         zipcodeTextField.focusedProperty().addListener(new TextFiledListner(zipcodeTextField, errorZipCodeLabel, "5 siffror långt [0-9]", 2));
         cityTextField.focusedProperty().addListener(new TextFiledListner(cityTextField, errorPostAreaLabel, "Godkända tecken [A-Ö]", 3));
-
+        telephoneTextField.focusedProperty().addListener(new TextFiledListner(telephoneTextField, errorTelephoneLabel, "10 tecken, bara siffror [0-9]", 4));
     }
 
     @FXML
