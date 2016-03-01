@@ -55,7 +55,7 @@ public class ProfileViewController extends AnchorPane {
     @FXML private Label monthLabel;
     @FXML private Label yearLabel;
     @FXML private Label ccvLabel;
-
+    @FXML private Label cardLabel;
 
     @FXML private Label errorFirstNameLabel;
     @FXML private Label errorLastNameLabel;
@@ -101,11 +101,11 @@ public class ProfileViewController extends AnchorPane {
         ObservableList<String> cardTypes = FXCollections.observableArrayList("Visa", "Mastercard");
         cardTypeChoiceBox.setItems(cardTypes);
         cardTypeChoiceBox.setValue("Visa");
-        initializeListners();
+        initializeListeners();
 
     }
 
-    private void initializeListners(){
+    private void initializeListeners(){
 
         firstnameTextField.focusedProperty().addListener(new TextFieldListener(firstnameTextField, errorFirstNameLabel, "Godkända tecken [A-Z][. , -]" ,0));
         lastnameTextField.focusedProperty().addListener(new TextFieldListener(lastnameTextField,errorLastNameLabel, "Godkända tecken [A-Z][. , -]" ,0));
@@ -114,11 +114,14 @@ public class ProfileViewController extends AnchorPane {
         zipcodeTextField.focusedProperty().addListener(new TextFieldListener(zipcodeTextField, errorZipCodeLabel, "5 siffror långt [0-9]", 2));
         cityTextField.focusedProperty().addListener(new TextFieldListener(cityTextField, errorPostAreaLabel, "Godkända tecken [A-Ö]", 3));
         telephoneTextField.focusedProperty().addListener(new TextFieldListener(telephoneTextField, errorTelephoneLabel, "10 tecken, bara siffror [0-9]", 4));
-        cardNumberTextField.focusedProperty().addListener(new TextFieldListener(cardHolderTextField,errorCardNumberLabel,"xxxx-xxxx-xxxxx-xxxx", 5));
+        TextFieldListener cardNumberListener = new TextFieldListener(cardHolderTextField,errorCardNumberLabel,"xxxx-xxxx-xxxxx-xxxx", 5);
+        cardNumberTextField.focusedProperty().addListener(cardNumberListener);
         cardHolderTextField.focusedProperty().addListener(new TextFieldListener(cardHolderTextField,errorCardHolderLabel,"Förnamn Efternamn", 6));
         expirationMonthTextField.focusedProperty().addListener(new TextFieldListener(expirationMonthTextField,errorDateLabel, "Två tecken [0-9] i vardera", 7));
         expirationYearTextField.focusedProperty().addListener(new TextFieldListener(expirationYearTextField,errorDateLabel, "Två tecken [0-9] i vardera", 8));
         ccvTextField.focusedProperty().addListener(new TextFieldListener(ccvTextField,errorCCVLabel, "Tre siffror [0-9]", 9));
+        cardNumberListener.setCardLabel(cardLabel);
+
     }
 
     @FXML

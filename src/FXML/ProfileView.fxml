@@ -74,7 +74,7 @@
                <AnchorPane fx:id="paymentInfoPanel" layoutX="575.0" layoutY="45.0" prefHeight="331.0" prefWidth="516.0" AnchorPane.bottomAnchor="176.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="45.0">
                   <children>
                         <TextField fx:id="ccvTextField" layoutX="183.0" layoutY="266.0" prefHeight="26.0" prefWidth="53.0" />
-                        <TextField fx:id="cardNumberTextField" layoutX="178.0" layoutY="144.0" prefHeight="27.0" prefWidth="140.0" />
+                        <TextField fx:id="cardNumberTextField" layoutX="156.0" layoutY="144.0" prefHeight="27.0" prefWidth="178.0" />
                         <TextField fx:id="cardHolderTextField" layoutX="178.0" layoutY="181.0" prefHeight="27.0" prefWidth="140.0" />
                         <TextField fx:id="expirationMonthTextField" layoutX="217.0" layoutY="214.0" prefHeight="27.0" prefWidth="37.0" />
                         <TextField fx:id="expirationYearTextField" layoutX="280.0" layoutY="214.0" prefHeight="27.0" prefWidth="37.0" />
@@ -91,8 +91,8 @@
                            <Font name="HelveticaNeueLTPro-Roman" size="16.0" />
                         </font>
                      </RadioButton>
-                        <ChoiceBox fx:id="cardTypeChoiceBox" layoutX="165.0" layoutY="84.0" prefHeight="26.0" prefWidth="136.0" AnchorPane.leftAnchor="165.0" />
-                        <Label fx:id="cardTypeLabel" alignment="CENTER_RIGHT" layoutX="83.0" layoutY="86.0" text="Korttyp:">
+                        <ChoiceBox fx:id="cardTypeChoiceBox" layoutX="165.0" layoutY="84.0" prefHeight="26.0" prefWidth="136.0" visible="false" AnchorPane.leftAnchor="165.0" />
+                        <Label fx:id="cardTypeLabel" alignment="CENTER_RIGHT" layoutX="83.0" layoutY="86.0" text="Korttyp:" visible="false">
                         <font>
                            <Font name="HelveticaNeueLTPro-Roman" size="16.0" />
                         </font>
@@ -128,10 +128,11 @@
                            <Font name="HelveticaNeueLTPro-Roman" size="14.0" />
                         </font>
                      </Label>
-                     <Label fx:id="errorCardNumberLabel" layoutX="328.0" layoutY="148.0" prefWidth="190.0" textFill="#da1515" AnchorPane.leftAnchor="325.0" AnchorPane.rightAnchor="5.0" />
+                     <Label fx:id="errorCardNumberLabel" layoutX="334.0" layoutY="148.0" prefWidth="190.0" textFill="#da1515" AnchorPane.leftAnchor="334.0" AnchorPane.rightAnchor="-4.0" />
                      <Label fx:id="errorCardHolderLabel" layoutX="328.0" layoutY="183.0" prefWidth="190.0" textFill="#da1515" AnchorPane.leftAnchor="325.0" AnchorPane.rightAnchor="5.0" />
                      <Label fx:id="errorDateLabel" layoutX="324.0" layoutY="220.0" prefWidth="190.0" textFill="#da1515" AnchorPane.leftAnchor="325.0" AnchorPane.rightAnchor="5.0" />
                      <Label fx:id="errorCCVLabel" layoutX="324.0" layoutY="272.0" prefWidth="190.0" textFill="#da1515" AnchorPane.leftAnchor="325.0" AnchorPane.rightAnchor="5.0" />
+                     <Label fx:id="cardLabel" layoutX="218.0" layoutY="110.0" />
                   </children>
                </AnchorPane>
                   <Button fx:id="cancelButton" layoutX="386.0" layoutY="434.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="156.0" text="Avbryt" textFill="WHITE" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="380.0">

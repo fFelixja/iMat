@@ -1,9 +1,12 @@
+import java.awt.*;
 import java.util.Calendar;
 import java.util.regex.*;
 
-public final class CheckUtils {
+public class CheckUtils {
 
-    public static boolean check(int checkType, String txt){
+    private String cardType = "";
+
+    public boolean check(int checkType, String txt){
         switch (checkType){
             case 0:
                 return nameCheck(txt);
@@ -39,7 +42,7 @@ public final class CheckUtils {
      * @param txt
      * @return
      */
-    private static boolean nameCheck(String txt){
+    private boolean nameCheck(String txt){
         Pattern pattern = Pattern.compile("^[A-Za-zs]{1,}[.]{0,1}[A-Za-zs]{0,}$",Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(txt);
         return matcher.find();
@@ -50,7 +53,7 @@ public final class CheckUtils {
      * @param txt
      * @return
      */
-    private static boolean adressCheck(String txt){
+    private boolean adressCheck(String txt){
         Pattern pattern = Pattern.compile("[^¤/()=?^£:;_<>|¦&%$#@!~]$",Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(txt);
         return matcher.find();
@@ -61,7 +64,7 @@ public final class CheckUtils {
      * @param txt
      * @return
      */
-    private static boolean zipCheck(String txt){
+    private boolean zipCheck(String txt){
         Pattern pattern = Pattern.compile("\\d{5}",Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(txt);
         return matcher.find();
@@ -72,7 +75,7 @@ public final class CheckUtils {
      * @param txt
      * @return
      */
-    private static boolean cityCheck(String txt){
+    private boolean cityCheck(String txt){
         Pattern pattern = Pattern.compile("([a-zA-Z]$|[a-zA-Z]$\\s[a-zA-Z]$)",Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(txt);
         return matcher.find();
@@ -83,7 +86,7 @@ public final class CheckUtils {
      * @param txt
      * @return
      */
-    private static boolean phoneCheck(String txt){
+    private  boolean phoneCheck(String txt){
         if(txt.length() > 10){
             return false;
         }
@@ -97,7 +100,7 @@ public final class CheckUtils {
      * @param txt
      * @return
      */
-    private static boolean cardHolderCheck(String txt){
+    private boolean cardHolderCheck(String txt){
         if(txt.contains(" ")) {
             String[] tmp = txt.split(" ");
             return  nameCheck(tmp[0]) && nameCheck(tmp[1]);
@@ -111,7 +114,7 @@ public final class CheckUtils {
      * @param txt
      * @return
      */
-    private static boolean monthCheck(String txt){
+    private boolean monthCheck(String txt){
         if(txt.length() != 2) {
             return false;
         }else {
@@ -130,7 +133,7 @@ public final class CheckUtils {
      * @param txt
      * @return
      */
-    private static boolean yearCheck(String txt){
+    private boolean yearCheck(String txt){
         if(txt.length() != 2) {
             return false;
         }else {
@@ -149,7 +152,7 @@ public final class CheckUtils {
      * @param txt
      * @return
      */
-    private static boolean ccvCheck(String txt){
+    private boolean ccvCheck(String txt){
         if(txt.length() != 3){
             return false;
         }else{
@@ -161,7 +164,35 @@ public final class CheckUtils {
 
     }
 
-    private static boolean cardNumberCheck(String txt){
-        return false;
+    private boolean cardNumberCheck(String txt){
+
+        //Visa card
+        Pattern pattern = Pattern.compile("\\b(?<!\\-|\\.)4(\\d{3})(?!\\1{3})([\\ \\-]?)(?<!\\d\\ \\d{4}\\ )(?!(\\d)\\3{3})(\\d{4})\\2(?!\\4|(\\d)\\5{3}|1234|2345|3456|5678|7890)(\\d{4})(?!\\ \\d{4}\\ \\d)\\2(?!\\6|(\\d)\\7{3}|1234|3456)\\d{4}(?!\\-)(?!\\.\\d)\\b", Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(txt);
+        if(!matcher.find()){
+            cardType = "Visa";
+            return true;
+        }
+        //Mastercard
+        pattern = Pattern.compile("^5[1-5][0-9]{14}$", Pattern.CASE_INSENSITIVE);
+        matcher = pattern.matcher(txt);
+        if(matcher.find()){
+            cardType = "Mastercard";
+            return true;
+        }
+        //American Express
+        pattern = Pattern.compile("^5[1-5][0-9]{14}$", Pattern.CASE_INSENSITIVE);
+        matcher = pattern.matcher(txt);
+         if(matcher.find()){
+            cardType = "American Express";
+            return true;
+        }else{
+             cardType = "Ogiltligt kort";
+             return false;
+         }
+
+    }
+    public String getCardType(){
+        return cardType;
     }
 }
