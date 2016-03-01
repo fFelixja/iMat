@@ -114,6 +114,7 @@ public class ProfileViewController extends AnchorPane {
         adressTextField.focusedProperty().addListener(new TextFiledListner(adressTextField,errorAdressLabel, "Godkända tecken [A-Z][0-9][. , -]",1));
         adressTwoTextField.focusedProperty().addListener(new TextFiledListner(adressTextField, errorAdressTwoLabel, "Godkända tecken [A-Z][0-9][. , -]" , 1));
         zipcodeTextField.focusedProperty().addListener(new TextFiledListner(zipcodeTextField, errorZipCodeLabel, "5 siffror långt [0-9]", 2));
+        cityTextField.focusedProperty().addListener(new TextFiledListner(cityTextField, errorPostAreaLabel, "Godkända tecken [A-Ö]", 3));
 
     }
 

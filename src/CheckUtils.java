@@ -10,6 +10,8 @@ public final class CheckUtils {
                 return adressCheck(txt);
             case 2:
                 return zipCheck(txt);
+            case 3:
+                return cityCheck(txt);
 
 
 
@@ -31,6 +33,13 @@ public final class CheckUtils {
 
     private static boolean zipCheck(String txt){
         Pattern pattern = Pattern.compile("\\d{5}",Pattern.CASE_INSENSITIVE);
+        Matcher matcher = pattern.matcher(txt);
+        return matcher.find();
+    }
+
+    private static boolean cityCheck(String txt){
+
+        Pattern pattern = Pattern.compile("([a-zA-Z]$|[a-zA-Z]$\\s[a-zA-Z]$)",Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(txt);
         return matcher.find();
     }
