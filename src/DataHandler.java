@@ -76,4 +76,18 @@ public class DataHandler {
         return dataHandler.getProducts(category);
 
     }
+
+    public static List<Order> getPastOrders(){
+        IMatDataHandler dataHandler = IMatDataHandler.getInstance();
+        return dataHandler.getOrders();
+    }
+
+    // Returns the total cost of an order
+    public static double getOrderTotal(Order order){
+        double total = 0;
+        for (ShoppingItem item : order.getItems()){
+            total = total + item.getTotal();
+        }
+        return total;
+    }
 }

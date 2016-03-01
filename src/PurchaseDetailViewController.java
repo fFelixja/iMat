@@ -8,7 +8,6 @@ import se.chalmers.ait.dat215.project.Order;
 import se.chalmers.ait.dat215.project.ShoppingItem;
 
 import java.io.IOException;
-import java.util.Date;
 import java.util.List;
 
 public class PurchaseDetailViewController extends AnchorPane{
@@ -20,10 +19,10 @@ public class PurchaseDetailViewController extends AnchorPane{
 
     @FXML private GridPane productGrid;
 
-    private List<ShoppingItem> productList;
+    private List<ShoppingItem> productList; //TODO add all the products into the grid
 
 
-    public PurchaseDetailViewController(Order order) {
+    public PurchaseDetailViewController() {
 
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("FXML/PurchaseDetailView.fxml"));
@@ -33,22 +32,12 @@ public class PurchaseDetailViewController extends AnchorPane{
         } catch (IOException e) {
             System.out.println("fel");
         }
+    }
 
-
-        /* So maybe this shit should be moved to separate methods... TODO */
-
-        productList = order.getItems();
-        double orderTotal = 0.0;
-
-        for (ShoppingItem i : productList){
-            orderTotal = orderTotal + i.getTotal();
-        }
-
+    public void setOrder(Order order){
         dateBoughtLabel.setText(order.getDate().toString());
         nbrOfProductsLabel.setText(order.getItems().size() + " st");
-        priceLabel.setText(orderTotal + " kr");
-
-
+        priceLabel.setText(DataHandler.getOrderTotal(order) + " kr");
     }
 
 

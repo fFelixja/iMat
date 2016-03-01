@@ -3,12 +3,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import se.chalmers.ait.dat215.project.Order;
 
+import java.awt.event.ActionEvent;
 import java.io.IOException;
 
 public class PastPurchasePanelController extends AnchorPane {
 
-    @FXML private Label datePurchasedtLabel;
+    @FXML private Label datePurchasedLabel;
 
     @FXML private Label nbrOfProductsLabel;
 
@@ -16,7 +18,9 @@ public class PastPurchasePanelController extends AnchorPane {
 
     @FXML private Button viewDetailsButton;
 
-    public PastPurchasePanelController () {
+    private TopMenuController topController;
+
+    public PastPurchasePanelController (Order order, TopMenuController controller) {
 
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("FXML/PastPurchasePanel.fxml"));
@@ -27,6 +31,18 @@ public class PastPurchasePanelController extends AnchorPane {
             System.out.println("fel");
         }
 
+
+        datePurchasedLabel.setText(order.getDate().toString());
+        nbrOfProductsLabel.setText(order.getItems().size() + "st");
+        priceLabel.setText(DataHandler.getOrderTotal(order) + "kr");
+
+        topController = controller;
+
+    }
+
+    protected void viewDetailsButtonActionPerformed (ActionEvent event){
+       // topController.pastPurchaseDetailViewToFront(Order order);
+        System.out.println("hej");
     }
 
 }

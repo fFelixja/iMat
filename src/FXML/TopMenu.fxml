@@ -38,7 +38,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="purchaseHistoryButton" layoutX="582.0" layoutY="15.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="Tidigare inköp" AnchorPane.rightAnchor="118.0" AnchorPane.topAnchor="15.0">
+            <Button fx:id="purchaseHistoryButton" layoutX="582.0" layoutY="15.0" mnemonicParsing="false" onAction="#purchaseHistoryButtonActionPerformed" prefHeight="25.0" prefWidth="100.0" text="Tidigare inköp" AnchorPane.rightAnchor="118.0" AnchorPane.topAnchor="15.0">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -59,9 +59,9 @@
          <children>
             <ScrollPane fx:id="categoryScrollPane" maxHeight="1.7976931348623157E308">
                <content>
-                  <GridPane id="categoryGridPane" fx:id="categoryGridPane" hgap="5.0" maxHeight="1.7976931348623157E308" stylesheets="@../css/topMenuStyle.css" vgap="20.0" style="-fx-padding:10px 0px 0px 30px;">
+                  <GridPane id="categoryGridPane" fx:id="categoryGridPane" hgap="5.0" maxHeight="1.7976931348623157E308" style="-fx-padding:10px 0px 0px 30px;" stylesheets="@../css/topMenuStyle.css" vgap="20.0">
                      <columnConstraints>
-                        <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="ALWAYS" maxWidth="1.7976931348623157E308"/>
+                        <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" />
                         <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" />
                         <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="0.0" />
                         <ColumnConstraints fillWidth="false" halignment="LEFT" hgrow="ALWAYS" maxWidth="1.7976931348623157E308" minWidth="0.0" />
@@ -80,9 +80,9 @@
                         <RowConstraints minHeight="0.0" vgrow="SOMETIMES" />
                      </rowConstraints>
                      <children>
-                        <Label prefHeight="20.0" text="Kött, fisk, mejeri" >
+                        <Label prefHeight="20.0" text="Kött, fisk, mejeri">
                            <font>
-                              <Font name="HelveticaNeueLT Pro 55 Roman" size="38.0"  />
+                              <Font name="HelveticaNeueLT Pro 55 Roman" size="38.0" />
                            </font>
                         </Label>
                         <Label text="Kolhydrater" GridPane.rowIndex="2">
@@ -114,7 +114,7 @@
             </ScrollPane>
             <ScrollPane id="productView" fx:id="productScrollPane" prefHeight="200.0" prefWidth="200.0" stylesheets="@../css/topMenuStyle.css">
                <content>
-                  <GridPane id="productGridPane" fx:id="productGridPane" stylesheets="@../css/topMenuStyle.css" >
+                  <GridPane id="productGridPane" fx:id="productGridPane" stylesheets="@../css/topMenuStyle.css">
                     <columnConstraints>
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
                       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />

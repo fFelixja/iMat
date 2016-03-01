@@ -14,6 +14,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 
 import se.chalmers.ait.dat215.project.IMatDataHandler;
+import se.chalmers.ait.dat215.project.Order;
 import se.chalmers.ait.dat215.project.Product;
 import se.chalmers.ait.dat215.project.ProductCategory;
 
@@ -60,6 +61,10 @@ public class TopMenuController extends AnchorPane implements Initializable{
 
     ProfileViewController profile = new ProfileViewController();
 
+    private PurchaseHistoryViewController history  = new PurchaseHistoryViewController(this);
+
+    private PurchaseDetailViewController pastDetails = new PurchaseDetailViewController();
+
     private Pane[] panelList = {baseStackPane, profile};
 
     private String[] panelLabelName = {"Alla kategorier","Din profil"};
@@ -79,6 +84,8 @@ public class TopMenuController extends AnchorPane implements Initializable{
         ViewLabel.setText("Alla kategorier");
 
         baseStackPane.getChildren().add(profile);
+        baseStackPane.getChildren().add(history);
+        baseStackPane.getChildren().add(pastDetails);
 
         homeButton.requestFocus();
 
@@ -156,6 +163,11 @@ public class TopMenuController extends AnchorPane implements Initializable{
 
     }
 
+    @FXML
+    protected void purchaseHistoryButtonActionPerformed(ActionEvent event) throws IOException {
+        historyViewToFront();
+    }
+
     public void clearProductGridPane() {
         productGridPane.getChildren().removeAll(productGridPane.getChildren());
     }
@@ -171,6 +183,16 @@ public class TopMenuController extends AnchorPane implements Initializable{
 
     public void categoryViewToFront() {
         categoryScrollPane.toFront();
+    }
+
+    public void historyViewToFront() {
+        history.toFront();
+        ViewLabel.setText("Tidigare inköp");
+    }
+
+    public void pastPurchaseDetailViewToFront(Order order){
+        pastDetails.setOrder(order);
+        pastDetails.toFront();
     }
 
     public void addProductToGrid(Product product, int column, int row) {
