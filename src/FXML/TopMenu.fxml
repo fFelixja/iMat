@@ -132,7 +132,7 @@
             </ScrollPane>
          </children>
       </StackPane>
-      <Label fx:id="ViewLabel" layoutX="14.0" layoutY="61.0" text="Label" AnchorPane.topAnchor="61.0">
+      <Label fx:id="viewLabel" layoutX="14.0" layoutY="61.0" text="Label" AnchorPane.topAnchor="61.0">
          <font>
             <Font size="22.0" />
          </font>
