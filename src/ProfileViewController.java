@@ -104,8 +104,16 @@ public class ProfileViewController extends AnchorPane {
         ObservableList<String> cardTypes = FXCollections.observableArrayList("Visa", "Mastercard");
         cardTypeChoiceBox.setItems(cardTypes);
         cardTypeChoiceBox.setValue("Visa");
+        initializeListners();
 
-        firstnameTextField.focusedProperty().addListener(new TextFiledListner(firstnameTextField, errorFirstNameLabel, 0, saveButton));
+    }
+
+    private void initializeListners(){
+        firstnameTextField.focusedProperty().addListener(new TextFiledListner(firstnameTextField, errorFirstNameLabel, "Godkända tecken [A-Z][. , -]" ,0));
+        lastnameTextField.focusedProperty().addListener(new TextFiledListner(lastnameTextField,errorLastNameLabel, "Godkända tecken [A-Z][. , -]" ,0));
+        adressTextField.focusedProperty().addListener(new TextFiledListner(adressTextField,errorAdressLabel, "Godkända tecken [A-Z][0-9][. , -]",1));
+        adressTwoTextField.focusedProperty().addListener(new TextFiledListner(adressTextField, errorAdressTwoLabel, "Godkända tecken [A-Z][0-9][. , -]" , 1));
+        zipcodeTextField.focusedProperty().addListener(new TextFiledListner(zipcodeTextField, errorZipCodeLabel, "5 siffror långt [0-9]", 2));
 
     }
 
