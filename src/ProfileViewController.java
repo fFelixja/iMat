@@ -104,6 +104,9 @@ public class ProfileViewController extends AnchorPane {
         ObservableList<String> cardTypes = FXCollections.observableArrayList("Visa", "Mastercard");
         cardTypeChoiceBox.setItems(cardTypes);
         cardTypeChoiceBox.setValue("Visa");
+
+        firstnameTextField.focusedProperty().addListener(new TextFiledListner(firstnameTextField));
+
     }
 
     @FXML
