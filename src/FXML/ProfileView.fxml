@@ -132,9 +132,9 @@
                      <Label fx:id="errorCardHolderLabel" layoutX="328.0" layoutY="183.0" prefWidth="190.0" textFill="#da1515" AnchorPane.leftAnchor="325.0" AnchorPane.rightAnchor="5.0" />
                      <Label fx:id="errorDateLabel" layoutX="324.0" layoutY="220.0" prefWidth="190.0" textFill="#da1515" AnchorPane.leftAnchor="325.0" AnchorPane.rightAnchor="5.0" />
                      <Label fx:id="errorCCVLabel" layoutX="324.0" layoutY="272.0" prefWidth="190.0" textFill="#da1515" AnchorPane.leftAnchor="325.0" AnchorPane.rightAnchor="5.0" />
-                     <Label fx:id="cardLabel" layoutX="129.0" layoutY="110.0" prefHeight="20.0" prefWidth="206.0" text="Korttyp: ">
+                     <Label fx:id="cardLabel" layoutX="108.0" layoutY="106.0" prefHeight="20.0" prefWidth="206.0" text="Korttyp: ">
                         <font>
-                           <Font size="16.0" />
+                           <Font size="25.0" />
                         </font>
                      </Label>
                   </children>
