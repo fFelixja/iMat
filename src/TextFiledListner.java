@@ -24,9 +24,7 @@ public class TextFiledListner implements ChangeListener<Boolean>{
     @Override
     public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
             if(!newValue) {
-                System.out.println("Start:" + texField.getText()+ ":End");
                 isOk = CheckUtils.check(checkType, texField.getText());
-                System.out.println(isOk);
                 setErrorMessageLabel(errorMessage);
             }
     }

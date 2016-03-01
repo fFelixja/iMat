@@ -15,6 +15,11 @@ public final class CheckUtils {
             case 4:
                 return phoneCheck(txt);
 
+            case 5:
+                return false;
+
+            case 6:
+                return cardHolderCheck(txt);
 
 
 
@@ -32,19 +37,16 @@ public final class CheckUtils {
         Matcher matcher = pattern.matcher(txt);
         return matcher.find();
     }
-
     private static boolean zipCheck(String txt){
         Pattern pattern = Pattern.compile("\\d{5}",Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(txt);
         return matcher.find();
     }
-
     private static boolean cityCheck(String txt){
         Pattern pattern = Pattern.compile("([a-zA-Z]$|[a-zA-Z]$\\s[a-zA-Z]$)",Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(txt);
         return matcher.find();
     }
-
     private static boolean phoneCheck(String txt){
         if(txt.length() > 10){
             return false;
@@ -52,5 +54,13 @@ public final class CheckUtils {
         Pattern pattern = Pattern.compile("[0-9]{5,10}\\b$",Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(txt);
         return matcher.find();
+    }
+    private static boolean cardHolderCheck(String txt){
+        if(txt.contains(" ")) {
+            String[] tmp = txt.split(" ");
+            return  nameCheck(tmp[0]) && nameCheck(tmp[1]);
+        }else{
+            return false;
+        }
     }
 }
