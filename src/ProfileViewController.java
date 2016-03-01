@@ -105,7 +105,7 @@ public class ProfileViewController extends AnchorPane {
         cardTypeChoiceBox.setItems(cardTypes);
         cardTypeChoiceBox.setValue("Visa");
 
-        firstnameTextField.focusedProperty().addListener(new TextFiledListner(firstnameTextField));
+        firstnameTextField.focusedProperty().addListener(new TextFiledListner(firstnameTextField, errorFirstNameLabel, 0, saveButton));
 
     }
 
@@ -150,7 +150,7 @@ public class ProfileViewController extends AnchorPane {
 
     @FXML
     public void saveButtonActionPerformed(ActionEvent event){
-        if(!isError) {
+        if(false) {
             getPersonalData();
             if(cardRadioButton.isSelected()) {
                 getCardData();
