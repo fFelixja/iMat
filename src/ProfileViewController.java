@@ -114,7 +114,7 @@ public class ProfileViewController extends AnchorPane {
         zipcodeTextField.focusedProperty().addListener(new TextFieldListener(zipcodeTextField, errorZipCodeLabel, "5 siffror långt [0-9]", 2));
         cityTextField.focusedProperty().addListener(new TextFieldListener(cityTextField, errorPostAreaLabel, "Godkända tecken [A-Ö]", 3));
         telephoneTextField.focusedProperty().addListener(new TextFieldListener(telephoneTextField, errorTelephoneLabel, "10 tecken, bara siffror [0-9]", 4));
-        TextFieldListener cardNumberListener = new TextFieldListener(cardHolderTextField,errorCardNumberLabel,"xxxx-xxxx-xxxxx-xxxx", 5);
+        TextFieldListener cardNumberListener = new TextFieldListener(cardNumberTextField,errorCardNumberLabel,"xxxx-xxxx-xxxxx-xxxx", 5);
         cardNumberTextField.focusedProperty().addListener(cardNumberListener);
         cardHolderTextField.focusedProperty().addListener(new TextFieldListener(cardHolderTextField,errorCardHolderLabel,"Förnamn Efternamn", 6));
         expirationMonthTextField.focusedProperty().addListener(new TextFieldListener(expirationMonthTextField,errorDateLabel, "Två tecken [0-9] i vardera", 7));

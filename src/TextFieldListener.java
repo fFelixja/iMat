@@ -7,16 +7,17 @@ import javafx.scene.control.TextField;
 public class TextFieldListener implements ChangeListener<Boolean>{
 
     @FXML
-    private final TextField texField;
-    private final Label errorMessageLabel;
-    private  final int checkType;
-    private final String errorMessage;
+    private TextField textField;
+    private Label errorMessageLabel;
+    private  int checkType;
+    private String errorMessage;
     private boolean isOk;
     private Label cardLabel;
     private CheckUtils utils;
 
     public TextFieldListener(TextField textField, Label errorMessageLabel, String errorMessage, int checkType){
-        this.texField = textField;
+        this.textField = new TextField();
+        this.textField = textField;
         this.errorMessageLabel = errorMessageLabel;
         this.errorMessage = errorMessage;
         this.checkType = checkType;
@@ -27,10 +28,13 @@ public class TextFieldListener implements ChangeListener<Boolean>{
     @Override
     public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
             if(!newValue) {
-                isOk = utils.check(checkType, texField.getText());
+                isOk = utils.check(checkType, textField.getText());
                 setErrorMessageLabel(errorMessage);
                 if(checkType == 5){
+                    System.out.println("checkType is 5");
+                    System.out.println("TextField.text().lengt is: " + textField.getText().length());
                     String cardType = utils.getCardType();
+                    System.out.println("cardTyp is: "+cardType);
                     cardLabel.setText(cardType);
                 }
             }
