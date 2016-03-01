@@ -170,27 +170,19 @@ public class CheckUtils {
         Pattern pattern = Pattern.compile("\\b(?<!\\-|\\.)4(\\d{3})(?!\\1{3})([\\ \\-]?)(?<!\\d\\ \\d{4}\\ )(?!(\\d)\\3{3})(\\d{4})\\2(?!\\4|(\\d)\\5{3}|1234|2345|3456|5678|7890)(\\d{4})(?!\\ \\d{4}\\ \\d)\\2(?!\\6|(\\d)\\7{3}|1234|3456)\\d{4}(?!\\-)(?!\\.\\d)\\b", Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(txt);
         if(!matcher.find()){
-            cardType = "Visa";
+            cardType = "Korttyp: Visa";
             return true;
         }
         //Mastercard
-        pattern = Pattern.compile("^5[1-5][0-9]{14}$", Pattern.CASE_INSENSITIVE);
+        pattern = Pattern.compile("\\b(?<!\\-|\\.)5([1-5]\\d{2})(?!\\1{3})([\\ \\-]?)(?<!\\d\\ \\d{4}\\ )(?!(\\d)\\3{3})(\\d{4})\\2(?!\\4|(\\d)\\5{3}|1234|2345|3456|5678|7890)(\\d{4})(?!\\ \\d{4}\\ \\d)\\2(?!\\6|(\\d)\\7{3}|1234|3456)\\d{4}(?!\\-)(?!\\.\\d)\\b", Pattern.CASE_INSENSITIVE);
         matcher = pattern.matcher(txt);
         if(matcher.find()){
-            cardType = "Mastercard";
+            cardType = "Korttyp: Mastercard";
             return true;
+        }else {
+            cardType = "Ogiltligt kort";
+            return false;
         }
-        //American Express
-        pattern = Pattern.compile("^5[1-5][0-9]{14}$", Pattern.CASE_INSENSITIVE);
-        matcher = pattern.matcher(txt);
-         if(matcher.find()){
-            cardType = "American Express";
-            return true;
-        }else{
-             cardType = "Ogiltligt kort";
-             return false;
-         }
-
     }
     public String getCardType(){
         return cardType;

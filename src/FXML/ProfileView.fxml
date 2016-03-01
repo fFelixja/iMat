@@ -71,7 +71,7 @@
                      <Label fx:id="errorTelephoneLabel" layoutX="295.0" layoutY="275.0" prefWidth="200.0" textFill="#da1515" AnchorPane.leftAnchor="295.0" />
                   </children>
                </AnchorPane>
-               <AnchorPane fx:id="paymentInfoPanel" layoutX="575.0" layoutY="45.0" prefHeight="331.0" prefWidth="516.0" AnchorPane.bottomAnchor="176.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="45.0">
+               <AnchorPane fx:id="paymentInfoPanel" layoutX="575.0" layoutY="46.0" prefHeight="331.0" prefWidth="516.0" AnchorPane.bottomAnchor="175.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="46.0">
                   <children>
                         <TextField fx:id="ccvTextField" layoutX="183.0" layoutY="266.0" prefHeight="26.0" prefWidth="53.0" />
                         <TextField fx:id="cardNumberTextField" layoutX="156.0" layoutY="144.0" prefHeight="27.0" prefWidth="178.0" />
@@ -132,7 +132,11 @@
                      <Label fx:id="errorCardHolderLabel" layoutX="328.0" layoutY="183.0" prefWidth="190.0" textFill="#da1515" AnchorPane.leftAnchor="325.0" AnchorPane.rightAnchor="5.0" />
                      <Label fx:id="errorDateLabel" layoutX="324.0" layoutY="220.0" prefWidth="190.0" textFill="#da1515" AnchorPane.leftAnchor="325.0" AnchorPane.rightAnchor="5.0" />
                      <Label fx:id="errorCCVLabel" layoutX="324.0" layoutY="272.0" prefWidth="190.0" textFill="#da1515" AnchorPane.leftAnchor="325.0" AnchorPane.rightAnchor="5.0" />
-                     <Label fx:id="cardLabel" layoutX="218.0" layoutY="110.0" />
+                     <Label fx:id="cardLabel" layoutX="129.0" layoutY="110.0" prefHeight="20.0" prefWidth="206.0" text="Korttyp: ">
+                        <font>
+                           <Font size="16.0" />
+                        </font>
+                     </Label>
                   </children>
                </AnchorPane>
                   <Button fx:id="cancelButton" layoutX="386.0" layoutY="434.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="156.0" text="Avbryt" textFill="WHITE" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="380.0">
