@@ -4,6 +4,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import se.chalmers.ait.dat215.project.ShoppingItem;
 
 import java.io.IOException;
 
@@ -23,7 +24,9 @@ public class ShoppingCartItemController extends AnchorPane {
 
     @FXML private ImageView productImageView;
 
-    public ShoppingCartItemController() {
+    private ShoppingItem shoppingItem;
+
+    public ShoppingCartItemController(ShoppingItem shoppingItem) {
 
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("FXML/ShoppingCartItem.fxml"));
@@ -33,5 +36,13 @@ public class ShoppingCartItemController extends AnchorPane {
         } catch (IOException e) {
             System.out.println("Error in constructor of ShoppingCartItemController");
         }
+
+        this.shoppingItem = shoppingItem;
+
+        nameLabel.setText(shoppingItem.getProduct().getName());
+        amountLabel.setText(Double.toString(shoppingItem.getAmount()));
+        pricePerUnitLabel.setText(shoppingItem.getProduct().getUnit());
+        totalPriceLabel.setText(Double.toString(shoppingItem.getTotal()));
+        productImageView.setImage(DataHandler.getProductImage(shoppingItem.getProduct()));
     }
 }

@@ -8,8 +8,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-
-<fx:root type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root id="shoppingCart" stylesheets="@../css/topMenuStyle.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
   <ScrollPane layoutY="79.0" prefHeight="408.0" prefWidth="699.0">
      <content>
         <GridPane fx:id="productGridPane" prefHeight="353.0" prefWidth="638.0">

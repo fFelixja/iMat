@@ -4,6 +4,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import se.chalmers.ait.dat215.project.ShoppingCart;
+import se.chalmers.ait.dat215.project.ShoppingItem;
 
 import java.io.IOException;
 
@@ -29,5 +31,17 @@ public class ShoppingCartViewController extends AnchorPane{
         } catch (IOException e) {
             System.out.println("Error in constructor of ShoppingCartViewController");
         }
+    }
+
+    public void populateProductGridPane(ShoppingCart shoppingCart) {
+        clearProductGridPane();
+        for (int i = 0; i < shoppingCart.getItems().size(); i++) {
+            ShoppingCartItemController shoppingItem = new ShoppingCartItemController(shoppingCart.getItems().get(i));
+            productGridPane.add(shoppingItem, i % 2, i / 2);
+        }
+    }
+
+    private void clearProductGridPane() {
+        productGridPane.getChildren().removeAll(productGridPane.getChildren());
     }
 }

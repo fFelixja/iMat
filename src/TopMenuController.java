@@ -59,11 +59,13 @@ public class TopMenuController extends AnchorPane implements Initializable{
 
     @FXML public Label ViewLabel;
 
-    ProfileViewController profile = new ProfileViewController();
+    private ProfileViewController profile = new ProfileViewController();
 
     private PurchaseHistoryViewController history  = new PurchaseHistoryViewController(this);
 
     private PurchaseDetailViewController pastDetails = new PurchaseDetailViewController();
+
+    private ShoppingCartViewController shoppingCart = new ShoppingCartViewController();
 
     private Pane[] panelList = {baseStackPane, profile};
 
@@ -86,6 +88,7 @@ public class TopMenuController extends AnchorPane implements Initializable{
         baseStackPane.getChildren().add(profile);
         baseStackPane.getChildren().add(history);
         baseStackPane.getChildren().add(pastDetails);
+        baseStackPane.getChildren().add(shoppingCart);
 
         homeButton.requestFocus();
 
@@ -168,6 +171,11 @@ public class TopMenuController extends AnchorPane implements Initializable{
         historyViewToFront();
     }
 
+    @FXML
+    protected void shoppingCartButtonActionPerformed(ActionEvent event)throws IOException {
+        shoppingCartViewToFront();
+    }
+
     public void clearProductGridPane() {
         productGridPane.getChildren().removeAll(productGridPane.getChildren());
     }
@@ -188,6 +196,11 @@ public class TopMenuController extends AnchorPane implements Initializable{
     public void historyViewToFront() {
         history.toFront();
         ViewLabel.setText("Tidigare inköp");
+    }
+
+    public void shoppingCartViewToFront() {
+        shoppingCart.populateProductGridPane(DataHandler.getShoppingCart());
+        shoppingCart.toFront();
     }
 
     public void pastPurchaseDetailViewToFront(Order order){

@@ -61,9 +61,22 @@ public class DataHandler {
 
     }
 
+    public static ShoppingCart getShoppingCart() {
+        IMatDataHandler dataHandler = IMatDataHandler.getInstance();
+        return dataHandler.getShoppingCart();
+    }
+
     public static void addToCart(Product product, double amount) {
         IMatDataHandler dataHandler = IMatDataHandler.getInstance();
-        dataHandler.getShoppingCart().addProduct(product, amount);
+
+        //Checks if the shopping cart already contains the product as to not create duplicates
+        //TODO: funkar nog inte, måste kanske vara exakt amount i shoppingItem?
+//        if (dataHandler.getShoppingCart().getItems().contains(new ShoppingItem(product))) {
+//            dataHandler.getShoppingCart().getItems().get(
+//                    dataHandler.getShoppingCart().getItems().indexOf(new ShoppingItem(product))).setAmount(amount);
+//        } else {
+            dataHandler.getShoppingCart().addProduct(product, amount);
+//        }
     }
 
     public static Product getProduct(int idNumber) {
