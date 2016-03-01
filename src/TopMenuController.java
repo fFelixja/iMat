@@ -1,28 +1,21 @@
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 
-import se.chalmers.ait.dat215.project.IMatDataHandler;
+import se.chalmers.ait.dat215.project.Order;
 import se.chalmers.ait.dat215.project.Product;
 import se.chalmers.ait.dat215.project.ProductCategory;
 
-import javax.xml.crypto.Data;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import java.util.ResourceBundle;
@@ -56,9 +49,15 @@ public class TopMenuController extends AnchorPane implements Initializable{
 
     @FXML private GridPane productGridPane;
 
-    @FXML public Label ViewLabel;
+    @FXML public Label viewLabel; //TODO: set to name of category
 
-    ProfileViewController profile = new ProfileViewController();
+    private ProfileViewController profile = new ProfileViewController();
+
+    private PurchaseHistoryViewController history  = new PurchaseHistoryViewController(this);
+
+    private PurchaseDetailViewController pastDetails = new PurchaseDetailViewController();
+
+    private ShoppingCartViewController shoppingCart = new ShoppingCartViewController();
 
     private Pane[] panelList = {baseStackPane, profile};
 
@@ -76,9 +75,12 @@ public class TopMenuController extends AnchorPane implements Initializable{
         initializeCategoryView();
         backButtonImage.setImage(new Image("img/backbutton.png"));
         cartImage.setImage(new Image("img/shop.png"));
-        ViewLabel.setText("Alla kategorier");
+        viewLabel.setText("Alla kategorier");
 
         baseStackPane.getChildren().add(profile);
+        baseStackPane.getChildren().add(history);
+        baseStackPane.getChildren().add(pastDetails);
+        baseStackPane.getChildren().add(shoppingCart);
 
         homeButton.requestFocus();
 
@@ -142,7 +144,7 @@ public class TopMenuController extends AnchorPane implements Initializable{
     @FXML
     protected void homeButtonActionPerformed(ActionEvent event) {
         categoryViewToFront();
-        ViewLabel.setText("Alla kategorier");
+        viewLabel.setText("Alla kategorier");
     }
 
     @FXML
@@ -156,13 +158,23 @@ public class TopMenuController extends AnchorPane implements Initializable{
 
     }
 
+    @FXML
+    protected void purchaseHistoryButtonActionPerformed(ActionEvent event) throws IOException {
+        historyViewToFront();
+    }
+
+    @FXML
+    protected void shoppingCartButtonActionPerformed(ActionEvent event)throws IOException {
+        shoppingCartViewToFront();
+    }
+
     public void clearProductGridPane() {
         productGridPane.getChildren().removeAll(productGridPane.getChildren());
     }
 
     public void profileViewToFront(){
         profile.toFront();
-        ViewLabel.setText("Din profil");
+        viewLabel.setText("Din profil");
     }
 
     public void productViewToFront() {
@@ -171,6 +183,22 @@ public class TopMenuController extends AnchorPane implements Initializable{
 
     public void categoryViewToFront() {
         categoryScrollPane.toFront();
+    }
+
+    public void historyViewToFront() {
+        history.toFront();
+        viewLabel.setText("Tidigare inköp");
+    }
+
+    public void shoppingCartViewToFront() {
+        shoppingCart.populateProductGridPane(DataHandler.getShoppingCart());
+        viewLabel.setText("Kundvagn");
+        shoppingCart.toFront();
+    }
+
+    public void pastPurchaseDetailViewToFront(Order order){
+        pastDetails.setOrder(order);
+        pastDetails.toFront();
     }
 
     public void addProductToGrid(Product product, int column, int row) {

@@ -5,38 +5,38 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<fx:root  type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
-      <Label fx:id="datePurchasedLabel" layoutX="79.0" layoutY="16.0" text="XXXX-XX-XX" AnchorPane.leftAnchor="79.0">
+<fx:root prefHeight="88.0" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
+      <Label fx:id="datePurchasedLabel" layoutX="80.0" layoutY="12.0" text="XXXX-XX-XX" AnchorPane.leftAnchor="80.0">
          <font>
             <Font size="25.0" />
          </font>
       </Label>
-      <Label layoutX="14.0" layoutY="60.0" text="Antal varor: " AnchorPane.leftAnchor="15.0">
+      <Label layoutX="17.0" layoutY="48.0" text="Antal varor: " AnchorPane.leftAnchor="17.0">
          <font>
             <Font size="19.0" />
          </font>
       </Label>
-      <Label layoutX="217.0" layoutY="60.0" text="Totalt pris:">
+      <Label layoutX="218.0" layoutY="48.0" text="Totalt pris:">
          <font>
             <Font size="19.0" />
          </font>
       </Label>
-      <Button fx:id="viewDetailsButton" layoutX="420.0" layoutY="16.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="166.0" text="Se detaljer" AnchorPane.rightAnchor="15.0">
+      <Button fx:id="viewDetailsButton" layoutX="549.0" layoutY="12.0" mnemonicParsing="false" onAction="#viewDetailsButtonActionPerformed" prefHeight="65.0" prefWidth="166.0" text="Se detaljer" AnchorPane.rightAnchor="14.0">
          <font>
             <Font size="22.0" />
          </font>
       </Button>
-      <Label layoutX="15.0" layoutY="16.0" text="Köpt">
+      <Label layoutX="15.0" layoutY="12.0" text="Köpt">
          <font>
             <Font size="25.0" />
          </font>
       </Label>
-      <Label fx:id="nbrOfProductsLabel" layoutX="127.0" layoutY="60.0" text="XX st">
+      <Label fx:id="nbrOfProductsLabel" layoutX="128.0" layoutY="48.0" text="XX st">
          <font>
             <Font size="19.0" />
          </font>
       </Label>
-      <Label fx:id="priceLabel" layoutX="312.0" layoutY="60.0" text="XXX:XX kr">
+      <Label fx:id="priceLabel" layoutX="313.0" layoutY="48.0" text="XXX:XX kr">
          <font>
             <Font size="19.0" />
          </font>

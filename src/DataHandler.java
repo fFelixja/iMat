@@ -61,9 +61,33 @@ public class DataHandler {
 
     }
 
+    public static ShoppingCart getShoppingCart() {
+        IMatDataHandler dataHandler = IMatDataHandler.getInstance();
+        return dataHandler.getShoppingCart();
+    }
+
     public static void addToCart(Product product, double amount) {
         IMatDataHandler dataHandler = IMatDataHandler.getInstance();
-        dataHandler.getShoppingCart().addProduct(product, amount);
+
+        //Checks if the shopping cart already contains the product as to not create duplicates
+        //TODO: funkar nog inte, måste kanske vara exakt amount i shoppingItem?
+        if (dataHandler.getShoppingCart().getItems().size() < 1) {
+            dataHandler.getShoppingCart().addProduct(product, amount);
+        } else {
+            boolean productExists = false;
+            for (ShoppingItem shoppingItem : dataHandler.getShoppingCart().getItems()) {
+                if (shoppingItem.getProduct().equals(product)) {
+                    dataHandler.getShoppingCart().getItems().get(
+                            dataHandler.getShoppingCart().getItems().indexOf(shoppingItem)).setAmount(
+                            shoppingItem.getAmount() + amount);
+                    productExists = true;
+                    break;
+                }
+            }
+            if (!productExists) {
+                dataHandler.getShoppingCart().addProduct(product, amount);
+            }
+        }
     }
 
     public static Product getProduct(int idNumber) {
@@ -75,5 +99,25 @@ public class DataHandler {
         IMatDataHandler dataHandler = IMatDataHandler.getInstance();
         return dataHandler.getProducts(category);
 
+    }
+
+    public static List<Order> getPastOrders(){
+        IMatDataHandler dataHandler = IMatDataHandler.getInstance();
+        return dataHandler.getOrders();
+    }
+
+    public static void removeShoppingItem(ShoppingItem shoppingItem) {
+        IMatDataHandler dataHandler = IMatDataHandler.getInstance();
+        dataHandler.getShoppingCart().removeItem(shoppingItem);
+
+    }
+
+    // Returns the total cost of an order
+    public static double getOrderTotal(Order order){
+        double total = 0;
+        for (ShoppingItem item : order.getItems()){
+            total = total + item.getTotal();
+        }
+        return total;
     }
 }

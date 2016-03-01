@@ -68,6 +68,10 @@
 
 }
 
+#shoppingCart {
+	-fx-background-color: chartreuse;
+}
+
 #profileAnchorPane {
 	/*-fx-background-color:#FFF;
 	-fx-border-width:2px 0px 0px 0px;

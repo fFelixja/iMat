@@ -1,4 +1,3 @@
-import com.sun.xml.internal.messaging.saaj.util.TeeInputStream;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -7,9 +6,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
-import se.chalmers.ait.dat215.project.Customer;
-import se.chalmers.ait.dat215.project.IMatDataHandler;
 
 import java.io.IOException;
 
@@ -110,19 +106,19 @@ public class ProfileViewController extends AnchorPane {
     }
 
     private void initializeListners(){
-        firstnameTextField.focusedProperty().addListener(new TextFiledListner(firstnameTextField, errorFirstNameLabel, "Godkända tecken [A-Z][. , -]" ,0));
-        lastnameTextField.focusedProperty().addListener(new TextFiledListner(lastnameTextField,errorLastNameLabel, "Godkända tecken [A-Z][. , -]" ,0));
-        adressTextField.focusedProperty().addListener(new TextFiledListner(adressTextField,errorAdressLabel, "Godkända tecken [A-Z][0-9][. , -]",1));
-        adressTwoTextField.focusedProperty().addListener(new TextFiledListner(adressTextField, errorAdressTwoLabel, "Godkända tecken [A-Z][0-9][. , -]" , 1));
-        zipcodeTextField.focusedProperty().addListener(new TextFiledListner(zipcodeTextField, errorZipCodeLabel, "5 siffror långt [0-9]", 2));
-        cityTextField.focusedProperty().addListener(new TextFiledListner(cityTextField, errorPostAreaLabel, "Godkända tecken [A-Ö]", 3));
-        telephoneTextField.focusedProperty().addListener(new TextFiledListner(telephoneTextField, errorTelephoneLabel, "10 tecken, bara siffror [0-9]", 4));
-        cardNumberTextField.focusedProperty().addListener(new TextFiledListner(cardHolderTextField,errorCardNumberLabel,"xxxx-xxxx-xxxxx-xxxx", 5));
-        cardHolderTextField.focusedProperty().addListener(new TextFiledListner(cardHolderTextField,errorCardHolderLabel,"Förnamn Efternamn", 6));
-        expirationMonthTextField.focusedProperty().addListener(new TextFiledListner(expirationMonthTextField,errorDateLabel, "Två tecken [0-9] i vardera", 7));
-        expirationYearTextField.focusedProperty().addListener(new TextFiledListner(expirationYearTextField,errorDateLabel, "Två tecken [0-9] i vardera", 8));
-        ccvTextField.focusedProperty().addListener(new TextFiledListner(ccvTextField,errorCCVLabel, "Tre siffror [0-9]", 9));
 
+        firstnameTextField.focusedProperty().addListener(new TextFieldListener(firstnameTextField, errorFirstNameLabel, "Godkända tecken [A-Z][. , -]" ,0));
+        lastnameTextField.focusedProperty().addListener(new TextFieldListener(lastnameTextField,errorLastNameLabel, "Godkända tecken [A-Z][. , -]" ,0));
+        adressTextField.focusedProperty().addListener(new TextFieldListener(adressTextField,errorAdressLabel, "Godkända tecken [A-Z][0-9][. , -]",1));
+        adressTwoTextField.focusedProperty().addListener(new TextFieldListener(adressTextField, errorAdressTwoLabel, "Godkända tecken [A-Z][0-9][. , -]" , 1));
+        zipcodeTextField.focusedProperty().addListener(new TextFieldListener(zipcodeTextField, errorZipCodeLabel, "5 siffror långt [0-9]", 2));
+        cityTextField.focusedProperty().addListener(new TextFieldListener(cityTextField, errorPostAreaLabel, "Godkända tecken [A-Ö]", 3));
+        telephoneTextField.focusedProperty().addListener(new TextFieldListener(telephoneTextField, errorTelephoneLabel, "10 tecken, bara siffror [0-9]", 4));
+        cardNumberTextField.focusedProperty().addListener(new TextFieldListener(cardHolderTextField,errorCardNumberLabel,"xxxx-xxxx-xxxxx-xxxx", 5));
+        cardHolderTextField.focusedProperty().addListener(new TextFieldListener(cardHolderTextField,errorCardHolderLabel,"Förnamn Efternamn", 6));
+        expirationMonthTextField.focusedProperty().addListener(new TextFieldListener(expirationMonthTextField,errorDateLabel, "Två tecken [0-9] i vardera", 7));
+        expirationYearTextField.focusedProperty().addListener(new TextFieldListener(expirationYearTextField,errorDateLabel, "Två tecken [0-9] i vardera", 8));
+        ccvTextField.focusedProperty().addListener(new TextFieldListener(ccvTextField,errorCCVLabel, "Tre siffror [0-9]", 9));
     }
 
     @FXML

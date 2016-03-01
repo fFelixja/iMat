@@ -4,7 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-public class TextFiledListner implements ChangeListener<Boolean>{
+public class TextFieldListener implements ChangeListener<Boolean>{
 
     @FXML
     private final TextField texField;
@@ -13,7 +13,7 @@ public class TextFiledListner implements ChangeListener<Boolean>{
     private final String errorMessage;
     private boolean isOk;
 
-    public TextFiledListner(TextField textField, Label errorMessageLabel, String errorMessage, int checkType){
+    public TextFieldListener(TextField textField, Label errorMessageLabel, String errorMessage, int checkType){
         this.texField = textField;
         this.errorMessageLabel = errorMessageLabel;
         this.errorMessage = errorMessage;
