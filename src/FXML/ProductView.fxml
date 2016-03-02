@@ -7,8 +7,8 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<fx:root type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
-      <ImageView fx:id="productImage" fitHeight="240.0" fitWidth="333.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+<fx:root fx:id="productPane" prefHeight="282.0" prefWidth="246.0" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
+      <ImageView fx:id="productImage" fitHeight="166.0" fitWidth="300.0" layoutX="24.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true" />
       <Label fx:id="nameLabel" layoutX="24.0" layoutY="261.0" text="GrytBitar">
          <font>
             <Font size="26.0" />
