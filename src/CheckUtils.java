@@ -1,6 +1,3 @@
-import javafx.scene.image.*;
-
-import java.awt.*;
 import java.util.Calendar;
 import java.util.regex.*;
 import javafx.scene.image.Image;
@@ -184,7 +181,6 @@ public class CheckUtils {
         if(matcher.find()){
             cardType = "Mastercard";
             cardImage = new Image("img/mastercard.png");
-
             return true;
         }else {
             cardType = "Ogiltligt kort";

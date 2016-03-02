@@ -74,11 +74,11 @@
                </AnchorPane>
                <AnchorPane fx:id="paymentInfoPanel" layoutX="575.0" layoutY="46.0" prefHeight="331.0" prefWidth="516.0" AnchorPane.bottomAnchor="175.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="46.0">
                   <children>
-                        <TextField fx:id="ccvTextField" layoutX="183.0" layoutY="266.0" prefHeight="26.0" prefWidth="53.0" />
-                        <TextField fx:id="cardNumberTextField" layoutX="156.0" layoutY="144.0" prefHeight="27.0" prefWidth="178.0" />
-                        <TextField fx:id="cardHolderTextField" layoutX="178.0" layoutY="181.0" prefHeight="27.0" prefWidth="140.0" />
-                        <TextField fx:id="expirationMonthTextField" layoutX="217.0" layoutY="214.0" prefHeight="27.0" prefWidth="37.0" />
-                        <TextField fx:id="expirationYearTextField" layoutX="280.0" layoutY="214.0" prefHeight="27.0" prefWidth="37.0" />
+                        <TextField fx:id="ccvTextField" layoutX="183.0" layoutY="266.0" prefHeight="26.0" prefWidth="53.0" promptText="123" />
+                        <TextField fx:id="cardNumberTextField" layoutX="156.0" layoutY="144.0" prefHeight="27.0" prefWidth="178.0" promptText="xxxx-xxxx-xxxx-xxxx" />
+                        <TextField fx:id="cardHolderTextField" layoutX="178.0" layoutY="181.0" prefHeight="27.0" prefWidth="140.0" promptText="Karl Karlsson" />
+                        <TextField fx:id="expirationMonthTextField" layoutX="217.0" layoutY="214.0" prefHeight="27.0" prefWidth="37.0" promptText="xx" />
+                        <TextField fx:id="expirationYearTextField" layoutX="280.0" layoutY="214.0" prefHeight="27.0" prefWidth="37.0" promptText="xx" />
                         <RadioButton fx:id="cardRadioButton" layoutX="110.0" layoutY="48.0" mnemonicParsing="false" onAction="#radioButtonActionPerformed" selected="true" text="Kort">
                            <toggleGroup>
                               <ToggleGroup fx:id="paygroup" />
