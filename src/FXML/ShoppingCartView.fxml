@@ -24,7 +24,7 @@
         </GridPane>
      </content>
   </ScrollPane>
-  <Button fx:id="continueShoppingButton" layoutX="32.0" layoutY="506.0" mnemonicParsing="false" text="Fortsätt handla" />
+  <Button fx:id="continueShoppingButton" layoutX="32.0" layoutY="506.0" mnemonicParsing="false" onAction="#continueShoppingButtonActionPerformed" text="Fortsätt handla" />
   <Button fx:id="checkoutButton" layoutX="562.0" layoutY="506.0" mnemonicParsing="false" text="Till kassan" />
   <Label fx:id="totalPriceLabel" layoutX="195.0" layoutY="45.0" text="10 kr" />
   <Label fx:id="amountItemsLabel" layoutX="376.0" layoutY="45.0" text="4 saker" />
