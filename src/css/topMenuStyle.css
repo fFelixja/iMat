@@ -35,12 +35,7 @@
 
 }
 
-.gridStyle {
-	-fx-border-width:10px;
-	-fx-border-style:solid;
-	-fx-border-color:#000;	
-	
-}
+
 
 #allCategories {
 	-fx-border-insets:50%;
@@ -122,6 +117,13 @@
 	-fx-border-style:solid;
 	-fx-background-color:#FFF;
 
+}
+
+#productPane {
+	-fx-border-width:2px;
+	-fx-border-color:rgba(52, 152, 219,0.3);
+	-fx-border-style:solid;
+	-fx-background-color:#FFF;
 }
 
 
