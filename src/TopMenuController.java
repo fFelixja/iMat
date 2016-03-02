@@ -52,7 +52,11 @@ public class TopMenuController extends AnchorPane implements Initializable{
 
     private CategoryController latestCategory;
 
+    private ConfirmViewController confirmView = new ConfirmViewController();
+
     private ProfileViewController profile = new ProfileViewController();
+
+    private CheckoutViewController checkout = new CheckoutViewController();
 
     private PurchaseHistoryViewController history  = new PurchaseHistoryViewController(this);
 
@@ -81,6 +85,8 @@ public class TopMenuController extends AnchorPane implements Initializable{
         baseStackPane.getChildren().add(pastDetails);
 
         baseStackPane.getChildren().add(shoppingCart);
+
+        baseStackPane.getChildren().add(checkout);
 
         homeButton.requestFocus();
 
@@ -115,6 +121,12 @@ public class TopMenuController extends AnchorPane implements Initializable{
                 CategoryController categoryPane = new CategoryController(enumForCategories[intTemp[j] - 1],
                         categoryName[count++],DataHandler.getCategoryImage(enumForCategories[intTemp[j] - 1]), this);
 
+//                Used to make meat the "default category" to eliminate errors while looping with the back button
+//                when the application starts
+                if (i == 0 && j == 0) {
+                    latestCategory = categoryPane;
+                }
+
                 if (i == 4) {
                     categoryGridPane.add(categoryPane,j, 8);
                 } else {
@@ -139,6 +151,8 @@ public class TopMenuController extends AnchorPane implements Initializable{
         productGridPane.getStyleClass().add("gridStyle");
         productViewToFront();
 
+        setViewLabel("Sökning på \"" + searchTextField.getText() + "\"");
+
     }
 
     @FXML
@@ -151,6 +165,10 @@ public class TopMenuController extends AnchorPane implements Initializable{
     protected void backButtonActionPerformed(ActionEvent event) {
         baseStackPane.getChildren().get(baseStackPane.getChildren().size() - 1).toBack();
 
+        if (baseStackPane.getChildren().get(baseStackPane.getChildren().size() - 1).getId().equals("productView")) {
+            latestCategory.createProductView();
+        }
+
         switch (baseStackPane.getChildren().get(baseStackPane.getChildren().size() - 1).getId()){
             case "shoppingCart": setViewLabel("Kundvagn");
                 break;
@@ -160,7 +178,11 @@ public class TopMenuController extends AnchorPane implements Initializable{
                 break;
             case "profileView": setViewLabel("Din profil");
                 break;
-            case "productView": setViewLabel(latestCategory.getName());
+            case "productView": try {
+                setViewLabel(latestCategory.getName());
+            } catch (NullPointerException e) {
+                System.out.println("Fuck iMat");
+            }
                 break;
             case "categoryScrollPane": setViewLabel("Alla kategorier");
                 break;
@@ -208,6 +230,11 @@ public class TopMenuController extends AnchorPane implements Initializable{
     public void historyViewToFront() {
         history.toFront();
         viewLabel.setText("Tidigare inköp");
+    }
+
+    public void checkoutViewToFront() {
+        checkout.toFront();
+        setViewLabel("Kassa");
     }
 
     public void shoppingCartViewToFront() {

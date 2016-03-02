@@ -35,7 +35,9 @@
 
 }
 
-
+#checkoutView {
+	-fx-background-color: darkorchid;
+}
 
 #allCategories {
 	-fx-border-insets:50%;
@@ -92,7 +94,8 @@
 	
 }
 
-#saveButton, #cancelButton, #addToCartButton{
+#saveButton, #cancelButton, #addToCartButton, #purchaseButton{
+
 	-fx-background-radius:0px 0px 0px 0px;
 	-fx-background-color:#16a085;
 	-fx-text-color:#FFF;
@@ -100,13 +103,13 @@
 
 }
 
-#saveButton:hover, #cancelButton:hover, #addToCartButton:hover {
+#saveButton:hover, #cancelButton:hover, #addToCartButton:hover, #purchaseButton:hover {
 	-fx-background-color:#1abc9c;
 	-fx-effect: innershadow(gaussian,rgba(52, 73, 94,0.4),3,1,0,0);
 
 }
 
-#saveButton:pressed, #cancelButton:pressed, #addToCartButton:pressed {
+#saveButton:pressed, #cancelButton:pressed, #addToCartButton:pressed, #purchaseButton:pressed {
 	-fx-background-color:#16a085;
 	-fx-effect: innershadow(gaussian,#16a085,3,1,0,0);
 }

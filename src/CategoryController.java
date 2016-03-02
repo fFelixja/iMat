@@ -55,6 +55,12 @@ public class CategoryController extends AnchorPane {
 
         controller.setLatestCategory(this);
 
+        createProductView();
+
+    }
+
+    public void createProductView() {
+
         List<Product> productList = DataHandler.getProducts(category);
         if (category.equals(ProductCategory.HOT_DRINKS)) {
             productList.addAll(DataHandler.getProducts(ProductCategory.COLD_DRINKS));
@@ -63,6 +69,5 @@ public class CategoryController extends AnchorPane {
         for (int i = 0; i < productList.size(); i++) {
             controller.addProductToGrid(productList.get(i), i % 4, i / 4);
         }
-
     }
 }

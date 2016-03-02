@@ -119,4 +119,10 @@ public class DataHandler {
         }
         return total;
     }
+
+    public static void placeOrder() {
+        IMatDataHandler dataHandler = IMatDataHandler.getInstance();
+        dataHandler.placeOrder(true);
+        System.out.println(dataHandler.getOrders().size());
+    }
 }
