@@ -19,7 +19,7 @@ public class PurchaseDetailViewController extends AnchorPane{
 
     @FXML private GridPane productGrid;
 
-    private List<ShoppingItem> productList; //TODO add all the products into the grid
+    private List<ShoppingItem> productList;
 
 
     public PurchaseDetailViewController() {
@@ -38,8 +38,20 @@ public class PurchaseDetailViewController extends AnchorPane{
         dateBoughtLabel.setText(order.getDate().toString());
         nbrOfProductsLabel.setText(order.getItems().size() + " st");
         priceLabel.setText(DataHandler.getOrderTotal(order) + " kr");
+
+        productList = order.getItems();
+        addProducts();
+
     }
 
+    private void addProducts(){
+       for (int i = 0; i < productList.size(); i++){
 
+
+           HistoryProductItemController productItem = new HistoryProductItemController(productList.get(i));
+           productGrid.add(productItem, i%2, i/2);
+       }
+
+    }
 
 }
