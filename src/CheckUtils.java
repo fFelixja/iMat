@@ -142,7 +142,7 @@ public class CheckUtils {
             Matcher matcher = pattern.matcher(txt);
 
             int currentYear = Calendar.getInstance().get(Calendar.YEAR);
-            int txtMonth = Integer.parseInt(txt);
+            int txtMonth = 2000 + Integer.parseInt(txt);
 
             return matcher.find() && (txtMonth - currentYear >= 0);
         }

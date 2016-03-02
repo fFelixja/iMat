@@ -9,6 +9,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ProfileViewController extends AnchorPane {
     @FXML private TextField firstnameTextField;
@@ -70,6 +72,9 @@ public class ProfileViewController extends AnchorPane {
     @FXML private Label errorCardHolderLabel;
     @FXML private Label errorDateLabel;
     @FXML private Label errorCCVLabel;
+    @FXML private Label feedBackLabel;
+
+    private List<TextFieldListener> textFieldListenerList;
 
 
     private String firstname;
@@ -79,7 +84,7 @@ public class ProfileViewController extends AnchorPane {
     private String zipcode;
     private String postCity;
     private String telephone;
-    private boolean isError = false;
+    private boolean isOk;
 
 
     private String cardType;
@@ -108,20 +113,53 @@ public class ProfileViewController extends AnchorPane {
     }
 
     private void initializeListeners(){
+       textFieldListenerList = new ArrayList<>();
+        TextFieldListener firstnameListener = new TextFieldListener(firstnameTextField, errorFirstNameLabel, "Godkända tecken [A-Z]" ,0);
+        textFieldListenerList.add(firstnameListener);
+        firstnameTextField.focusedProperty().addListener(firstnameListener);
 
-        firstnameTextField.focusedProperty().addListener(new TextFieldListener(firstnameTextField, errorFirstNameLabel, "Godkända tecken [A-Z][. , -]" ,0));
-        lastnameTextField.focusedProperty().addListener(new TextFieldListener(lastnameTextField,errorLastNameLabel, "Godkända tecken [A-Z][. , -]" ,0));
-        adressTextField.focusedProperty().addListener(new TextFieldListener(adressTextField,errorAdressLabel, "Godkända tecken [A-Z][0-9][. , -]",1));
-        adressTwoTextField.focusedProperty().addListener(new TextFieldListener(adressTextField, errorAdressTwoLabel, "Godkända tecken [A-Z][0-9][. , -]" , 1));
-        zipcodeTextField.focusedProperty().addListener(new TextFieldListener(zipcodeTextField, errorZipCodeLabel, "5 siffror långt [0-9]", 2));
-        cityTextField.focusedProperty().addListener(new TextFieldListener(cityTextField, errorPostAreaLabel, "Godkända tecken [A-Ö]", 3));
-        telephoneTextField.focusedProperty().addListener(new TextFieldListener(telephoneTextField, errorTelephoneLabel, "10 tecken, bara siffror [0-9]", 4));
+        TextFieldListener lastnameListener = new TextFieldListener(lastnameTextField,errorLastNameLabel, "Godkända tecken [A-Z]" ,0);
+        textFieldListenerList.add(lastnameListener);
+        lastnameTextField.focusedProperty().addListener(lastnameListener);
+
+        TextFieldListener adressListener = new TextFieldListener(adressTextField,errorAdressLabel, "Godkända tecken [A-Z][0-9][. , -]",1);
+        textFieldListenerList.add(adressListener);
+        adressTextField.focusedProperty().addListener(adressListener);
+        TextFieldListener adressTwoListner = new TextFieldListener(adressTextField, errorAdressTwoLabel, "Godkända tecken [A-Z][0-9][. , -]" , 1);
+        textFieldListenerList.add(adressTwoListner);
+        adressTwoTextField.focusedProperty().addListener(adressTwoListner);
+
+        TextFieldListener zipCodeListener = new TextFieldListener(zipcodeTextField, errorZipCodeLabel, "5 siffror långt [0-9]", 2);
+        textFieldListenerList.add(zipCodeListener);
+        zipcodeTextField.focusedProperty().addListener(zipCodeListener);
+
+        TextFieldListener cityListener = new TextFieldListener(cityTextField, errorPostAreaLabel, "Godkända tecken [A-Ö]", 3);
+        textFieldListenerList.add(cityListener);
+        cityTextField.focusedProperty().addListener(cityListener);
+
+        TextFieldListener telephoneListener = new TextFieldListener(telephoneTextField, errorTelephoneLabel, "10 tecken, bara siffror [0-9]", 4);
+        textFieldListenerList.add(telephoneListener);
+        telephoneTextField.focusedProperty().addListener(telephoneListener);
+
         TextFieldListener cardNumberListener = new TextFieldListener(cardNumberTextField,errorCardNumberLabel,"xxxx-xxxx-xxxxx-xxxx", 5);
+        textFieldListenerList.add(cardNumberListener);
         cardNumberTextField.focusedProperty().addListener(cardNumberListener);
-        cardHolderTextField.focusedProperty().addListener(new TextFieldListener(cardHolderTextField,errorCardHolderLabel,"Förnamn Efternamn", 6));
-        expirationMonthTextField.focusedProperty().addListener(new TextFieldListener(expirationMonthTextField,errorDateLabel, "Två tecken [0-9] i vardera", 7));
-        expirationYearTextField.focusedProperty().addListener(new TextFieldListener(expirationYearTextField,errorDateLabel, "Två tecken [0-9] i vardera", 8));
-        ccvTextField.focusedProperty().addListener(new TextFieldListener(ccvTextField,errorCCVLabel, "Tre siffror [0-9]", 9));
+
+        TextFieldListener cardHolderListener = new TextFieldListener(cardHolderTextField,errorCardHolderLabel,"Förnamn Efternamn", 6);
+        textFieldListenerList.add(cardHolderListener);
+        cardHolderTextField.focusedProperty().addListener(cardHolderListener);
+
+        TextFieldListener expireMonthListener = new TextFieldListener(expirationMonthTextField,errorDateLabel, "Två tecken [0-9] i vardera", 7);
+        textFieldListenerList.add(expireMonthListener);
+        expirationMonthTextField.focusedProperty().addListener(expireMonthListener);
+
+        TextFieldListener expireYearListener = new TextFieldListener(expirationYearTextField,errorDateLabel, "Två tecken [0-9] i vardera", 8);
+        textFieldListenerList.add(expireYearListener);
+        expirationYearTextField.focusedProperty().addListener(expireYearListener);
+
+        TextFieldListener ccvListener = new TextFieldListener(ccvTextField,errorCCVLabel, "Tre siffror [0-9]", 9);
+        textFieldListenerList.add(ccvListener);
+        ccvTextField.focusedProperty().addListener(ccvListener);
         cardNumberListener.setCardNumberGUI(cardLabel, cardImage);
 
     }
@@ -166,12 +204,24 @@ public class ProfileViewController extends AnchorPane {
     }
 
     @FXML
-    public void saveButtonActionPerformed(ActionEvent event){
-        if(false) {
+    public void saveButtonActionPerformed(ActionEvent event) {
+        int i = 0;
+        isOk = true;
+        while (isOk || i < textFieldListenerList.size()) {
+            isOk = textFieldListenerList.get(i).getIsOk();
+            i++;
+        }
+
+        if(isOk) {
             getPersonalData();
             if(cardRadioButton.isSelected()) {
                 getCardData();
             }
+            feedBackLabel.setTextFill(Color.web("#038610"));
+            feedBackLabel.setText("Dina uppgiter är sparade!");
+        }else{
+            feedBackLabel.setTextFill(Color.web("#da1515"));
+            feedBackLabel.setText("Du kan inte spara när det är fel!");
         }
     }
 
