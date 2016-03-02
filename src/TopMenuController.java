@@ -57,7 +57,7 @@ public class TopMenuController extends AnchorPane implements Initializable{
 
     private PurchaseDetailViewController pastDetails = new PurchaseDetailViewController();
 
-    private ShoppingCartViewController shoppingCart = new ShoppingCartViewController();
+    private ShoppingCartViewController shoppingCart = new ShoppingCartViewController(this);
 
     private Pane[] panelList = {baseStackPane, profile};
 

@@ -70,7 +70,6 @@ public class DataHandler {
         IMatDataHandler dataHandler = IMatDataHandler.getInstance();
 
         //Checks if the shopping cart already contains the product as to not create duplicates
-        //TODO: funkar nog inte, måste kanske vara exakt amount i shoppingItem?
         if (dataHandler.getShoppingCart().getItems().size() < 1) {
             dataHandler.getShoppingCart().addProduct(product, amount);
         } else {

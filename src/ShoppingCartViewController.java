@@ -1,3 +1,4 @@
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -21,7 +22,9 @@ public class ShoppingCartViewController extends AnchorPane{
 
     @FXML private GridPane productGridPane;
 
-    public ShoppingCartViewController() {
+    private TopMenuController topMenu;
+
+    public ShoppingCartViewController(TopMenuController topMenu) {
 
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("FXML/ShoppingCartView.fxml"));
@@ -31,17 +34,24 @@ public class ShoppingCartViewController extends AnchorPane{
         } catch (IOException e) {
             System.out.println("Error in constructor of ShoppingCartViewController");
         }
+
+        this.topMenu = topMenu;
     }
 
     public void populateProductGridPane(ShoppingCart shoppingCart) {
         clearProductGridPane();
         for (int i = 0; i < shoppingCart.getItems().size(); i++) {
-            ShoppingCartItemController shoppingItem = new ShoppingCartItemController(shoppingCart.getItems().get(i));
+            ShoppingCartItemController shoppingItem = new ShoppingCartItemController(shoppingCart.getItems().get(i), this);
             productGridPane.add(shoppingItem, i % 2, i / 2);
         }
     }
 
     private void clearProductGridPane() {
         productGridPane.getChildren().removeAll(productGridPane.getChildren());
+    }
+
+    @FXML
+    protected void continueShoppingButtonActionPerformed(ActionEvent event) {
+        topMenu.categoryViewToFront();
     }
 }

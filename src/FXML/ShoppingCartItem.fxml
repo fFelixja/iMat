@@ -13,5 +13,5 @@
    <Button fx:id="increaseAmountButton" layoutX="205.0" layoutY="82.0" mnemonicParsing="false" onAction="#increaseAmountButtonActionPerformed" text="+" />
    <Button fx:id="decreaseAmountButton" layoutX="155.0" layoutY="82.0" mnemonicParsing="false" onAction="#decreaseAmountButtonActionPerformed" text="-" />
    <ImageView fx:id="productImageView" fitHeight="123.0" fitWidth="150.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
-   <Button fx:id="removeProductButton" layoutX="231.0" layoutY="52.0" mnemonicParsing="false" text="Ta bort" />
+   <Button fx:id="removeProductButton" layoutX="231.0" layoutY="52.0" mnemonicParsing="false" onAction="#removeProductButtonActionPerformed" text="Ta bort" />
 </fx:root>

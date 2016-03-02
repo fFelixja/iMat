@@ -29,7 +29,9 @@ public class ShoppingCartItemController extends AnchorPane {
 
     private ShoppingItem shoppingItem;
 
-    public ShoppingCartItemController(ShoppingItem shoppingItem) {
+    private ShoppingCartViewController shoppingCart;
+
+    public ShoppingCartItemController(ShoppingItem shoppingItem, ShoppingCartViewController shoppingCart) {
 
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("FXML/ShoppingCartItem.fxml"));
@@ -39,6 +41,8 @@ public class ShoppingCartItemController extends AnchorPane {
         } catch (IOException e) {
             System.out.println("Error in constructor of ShoppingCartItemController");
         }
+
+        this.shoppingCart = shoppingCart;
 
         this.shoppingItem = shoppingItem;
 
@@ -53,7 +57,6 @@ public class ShoppingCartItemController extends AnchorPane {
         productImageView.setImage(DataHandler.getProductImage(shoppingItem.getProduct()));
     }
 
-
     @FXML
     protected void increaseAmountButtonActionPerformed(ActionEvent event) {
         shoppingItem.setAmount(shoppingItem.getAmount() + 1);
@@ -62,15 +65,21 @@ public class ShoppingCartItemController extends AnchorPane {
 
     @FXML
     protected void decreaseAmountButtonActionPerformed(ActionEvent event) {
-        if (shoppingItem.getAmount() > 0) {
+        if (shoppingItem.getAmount() > 1) {
             shoppingItem.setAmount(shoppingItem.getAmount() - 1);
+            updateValues();
+        } else {
+            removeProduct();
         }
-        updateValues();
     }
 
     @FXML
     protected void removeProductButtonActionPerformed(ActionEvent event) {
+        removeProduct();
+    }
+
+    private void removeProduct() {
         DataHandler.removeShoppingItem(shoppingItem);
-        updateValues();
+        shoppingCart.populateProductGridPane(DataHandler.getShoppingCart());
     }
 }
