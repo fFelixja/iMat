@@ -92,7 +92,7 @@
 	
 }
 
-#saveButton, #cancelButton{
+#saveButton, #cancelButton, #addToCartButton{
 	-fx-background-radius:0px 0px 0px 0px;
 	-fx-background-color:#16a085;
 	-fx-text-color:#FFF;
@@ -100,13 +100,13 @@
 
 }
 
-#saveButton:hover, #cancelButton:hover {
+#saveButton:hover, #cancelButton:hover, #addToCartButton:hover {
 	-fx-background-color:#1abc9c;
 	-fx-effect: innershadow(gaussian,rgba(52, 73, 94,0.4),3,1,0,0);
 
 }
 
-#saveButton:pressed, #cancelButton:pressed {
+#saveButton:pressed, #cancelButton:pressed, #addToCartButton:pressed {
 	-fx-background-color:#16a085;
 	-fx-effect: innershadow(gaussian,#16a085,3,1,0,0);
 }
@@ -124,6 +124,8 @@
 	-fx-border-color:rgba(52, 152, 219,0.3);
 	-fx-border-style:solid;
 	-fx-background-color:#FFF;
+	-fx-padding:20px;
+	-fx-background-insets:20px;
 }
 
 
