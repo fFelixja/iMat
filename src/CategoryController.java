@@ -21,6 +21,8 @@ public class CategoryController extends AnchorPane {
 
     private TopMenuController controller;
 
+    private String categoryName;
+
     public CategoryController (ProductCategory category, String categoryName, Image categoryImage, TopMenuController controller) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("FXML/Category.fxml"));
@@ -32,10 +34,15 @@ public class CategoryController extends AnchorPane {
         }
 
         this.controller = controller;
+        this.categoryName = categoryName;
 
         this.category = category;
         this.categoryLabel.setText(categoryName);
         this.categoryImage.setImage(categoryImage);
+    }
+
+    public String getName(){
+        return categoryName;
     }
 
     @FXML
@@ -43,6 +50,10 @@ public class CategoryController extends AnchorPane {
         controller.clearProductGridPane();
 
         controller.productViewToFront();
+
+        controller.setViewLabel(categoryName);
+
+        controller.setLatestCategory(this);
 
         List<Product> productList = DataHandler.getProducts(category);
         if (category.equals(ProductCategory.HOT_DRINKS)) {

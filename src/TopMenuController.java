@@ -6,7 +6,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 
 import se.chalmers.ait.dat215.project.Order;
@@ -49,7 +48,9 @@ public class TopMenuController extends AnchorPane implements Initializable{
 
     @FXML private GridPane productGridPane;
 
-    @FXML public Label viewLabel; //TODO: set to name of category
+    @FXML public Label viewLabel;
+
+    private CategoryController latestCategory;
 
     private ProfileViewController profile = new ProfileViewController();
 
@@ -58,10 +59,6 @@ public class TopMenuController extends AnchorPane implements Initializable{
     private PurchaseDetailViewController pastDetails = new PurchaseDetailViewController();
 
     private ShoppingCartViewController shoppingCart = new ShoppingCartViewController(this);
-
-    private Pane[] panelList = {baseStackPane, profile};
-
-    private String[] panelLabelName = {"Alla kategorier","Din profil"};
 
     private List<Integer[]> productID = new ArrayList<>();
     private String[] categoryName = {"Kött", "Fisk", "Mejeriprodukter", "Potatis & Ris",
@@ -78,8 +75,11 @@ public class TopMenuController extends AnchorPane implements Initializable{
         viewLabel.setText("Alla kategorier");
 
         baseStackPane.getChildren().add(profile);
+
         baseStackPane.getChildren().add(history);
+
         baseStackPane.getChildren().add(pastDetails);
+
         baseStackPane.getChildren().add(shoppingCart);
 
         homeButton.requestFocus();
@@ -150,6 +150,22 @@ public class TopMenuController extends AnchorPane implements Initializable{
     @FXML
     protected void backButtonActionPerformed(ActionEvent event) {
         baseStackPane.getChildren().get(baseStackPane.getChildren().size() - 1).toBack();
+
+        switch (baseStackPane.getChildren().get(baseStackPane.getChildren().size() - 1).getId()){
+            case "shoppingCart": setViewLabel("Kundvagn");
+                break;
+            case "purchaseDetailView": setViewLabel("Skriv bra text här");
+                break;
+            case "purchaseHistoryView": setViewLabel("Tidigare inköp");
+                break;
+            case "profileView": setViewLabel("Din profil");
+                break;
+            case "productView": setViewLabel(latestCategory.getName());
+                break;
+            case "categoryScrollPane": setViewLabel("Alla kategorier");
+                break;
+            default: break;
+        }
     }
 
     @FXML
@@ -166,6 +182,10 @@ public class TopMenuController extends AnchorPane implements Initializable{
     @FXML
     protected void shoppingCartButtonActionPerformed(ActionEvent event)throws IOException {
         shoppingCartViewToFront();
+    }
+
+    public void setLatestCategory(CategoryController category) {
+        latestCategory = category;
     }
 
     public void clearProductGridPane() {
@@ -207,15 +227,8 @@ public class TopMenuController extends AnchorPane implements Initializable{
         productGridPane.getStyleClass().add("gridStyle");
     }
 
-    /* TODO get current pane
-        public void setLabel(Label label){
-            Pane currentPanel = new Pane();
-            label.setText(panelLabelName[currentPanel.getChildren()]);
-
-
-
-
+    public void setViewLabel(String text) {
+        viewLabel.setText(text);
     }
-*/
 
 }
