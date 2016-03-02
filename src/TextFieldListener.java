@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.paint.Color;
 
 public class TextFieldListener implements ChangeListener<Boolean>{
 
@@ -41,9 +42,11 @@ public class TextFieldListener implements ChangeListener<Boolean>{
 
     private void setErrorMessageLabel(String message){
         if(!isOk){
+            errorMessageLabel.setTextFill(Color.web("#da1515"));
             errorMessageLabel.setText(message);
         }else{
-            errorMessageLabel.setText(null);
+            errorMessageLabel.setTextFill(Color.web("#038610"));
+            errorMessageLabel.setText("OK");
         }
     }
 

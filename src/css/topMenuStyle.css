@@ -35,12 +35,7 @@
 
 }
 
-.gridStyle {
-	-fx-border-width:10px;
-	-fx-border-style:solid;
-	-fx-border-color:#000;	
-	
-}
+
 
 #allCategories {
 	-fx-border-insets:50%;
@@ -92,7 +87,7 @@
 	-fx-background-color:#FFF;
 	
 	-fx-border-width:0px 0px 2px 0px;
-	-fx-border-color:rgba(52, 152, 219,0.3);;
+	-fx-border-color:rgba(52, 152, 219,0.3);
 	-fx-border-style:solid;
 	
 }
@@ -114,6 +109,21 @@
 #saveButton:pressed, #cancelButton:pressed {
 	-fx-background-color:#16a085;
 	-fx-effect: innershadow(gaussian,#16a085,3,1,0,0);
+}
+
+#categoryPane {
+	-fx-border-width:5px;
+	-fx-border-color:rgba(52, 152, 219,0.3);
+	-fx-border-style:solid;
+	-fx-background-color:#FFF;
+
+}
+
+#productPane {
+	-fx-border-width:2px;
+	-fx-border-color:rgba(52, 152, 219,0.3);
+	-fx-border-style:solid;
+	-fx-background-color:#FFF;
 }
 
 
