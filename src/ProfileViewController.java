@@ -4,9 +4,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
+import se.chalmers.ait.dat215.project.CreditCard;
+import se.chalmers.ait.dat215.project.Customer;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -75,6 +78,7 @@ public class ProfileViewController extends AnchorPane {
     @FXML private Label feedBackLabel;
 
     private List<TextFieldListener> textFieldListenerList;
+    private TextFieldListener cardNumberListener;
 
 
     private String firstname;
@@ -104,11 +108,8 @@ public class ProfileViewController extends AnchorPane {
         } catch (IOException e) {
             System.out.println("Error in constructor of ProfileVeiwController");
         }
-        //Sets items to choicebox
-        ObservableList<String> cardTypes = FXCollections.observableArrayList("Visa", "Mastercard");
-        cardTypeChoiceBox.setItems(cardTypes);
-        cardTypeChoiceBox.setValue("Visa");
         initializeListeners();
+        populateTextFields();
 
     }
 
@@ -141,7 +142,7 @@ public class ProfileViewController extends AnchorPane {
         textFieldListenerList.add(telephoneListener);
         telephoneTextField.focusedProperty().addListener(telephoneListener);
 
-        TextFieldListener cardNumberListener = new TextFieldListener(cardNumberTextField,errorCardNumberLabel,"xxxx-xxxx-xxxxx-xxxx", 5);
+        cardNumberListener = new TextFieldListener(cardNumberTextField,errorCardNumberLabel,"xxxx-xxxx-xxxxx-xxxx", 5);
         textFieldListenerList.add(cardNumberListener);
         cardNumberTextField.focusedProperty().addListener(cardNumberListener);
 
@@ -161,6 +162,32 @@ public class ProfileViewController extends AnchorPane {
         textFieldListenerList.add(ccvListener);
         ccvTextField.focusedProperty().addListener(ccvListener);
         cardNumberListener.setCardNumberGUI(cardLabel, cardImage);
+
+    }
+    private void populateTextFields(){
+        Customer customer = DataHandler.getCustomer();
+        CreditCard creditCard = DataHandler.getCreditCard();
+        //Set all info about customer
+        firstnameTextField.setText(customer.getFirstName());
+        lastnameTextField.setText(customer.getLastName());
+        adressTextField.setText(customer.getAddress());
+        zipcodeTextField.setText(customer.getPostCode());
+        cityTextField.setText(customer.getPostAddress());
+        telephoneTextField.setText(customer.getPhoneNumber());
+        //Set all info about creditcard
+        ccvTextField.setText(Integer.toString(creditCard.getVerificationCode()));
+        cardHolderTextField.setText(creditCard.getHoldersName());
+        expirationMonthTextField.setText(Integer.toString(creditCard.getValidMonth()));
+        expirationYearTextField.setText(Integer.toString(creditCard.getValidYear()));
+        if(creditCard.getCardType().equals("Visa")){
+            cardLabel.setText("Visa");
+            cardImage.setImage(new Image("img/visa.png"));
+        }else if(creditCard.getCardType().equals("Mastercard")){
+            cardLabel.setText("Mastercard");
+            cardImage.setImage(new Image("img/mastercard.png"));
+        }
+        cardNumberTextField.setText(creditCard.getCardNumber());
+
 
     }
 
@@ -238,7 +265,7 @@ public class ProfileViewController extends AnchorPane {
     }
 
     private void getCardData(){
-        cardType = cardTypeChoiceBox.getValue().toString();
+        cardType = cardNumberListener.getCardType();
         cardNumber = checkString(cardNumberTextField.getText());
         cardHolder = checkString(cardHolderTextField.getText());
         cardExpireMonth = checkStringToInt(expirationMonthTextField.getText());

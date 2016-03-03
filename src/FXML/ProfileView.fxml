@@ -2,7 +2,6 @@
 
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.Separator?>
@@ -79,7 +78,7 @@
                         <TextField fx:id="cardHolderTextField" layoutX="178.0" layoutY="181.0" prefHeight="27.0" prefWidth="140.0" promptText="Karl Karlsson" />
                         <TextField fx:id="expirationMonthTextField" layoutX="217.0" layoutY="214.0" prefHeight="27.0" prefWidth="37.0" promptText="xx" />
                         <TextField fx:id="expirationYearTextField" layoutX="280.0" layoutY="214.0" prefHeight="27.0" prefWidth="37.0" promptText="xx" />
-                        <RadioButton fx:id="cardRadioButton" layoutX="110.0" layoutY="48.0" mnemonicParsing="false" onAction="#radioButtonActionPerformed" selected="true" text="Kort">
+                        <RadioButton fx:id="cardRadioButton" layoutX="150.0" layoutY="68.0" mnemonicParsing="false" onAction="#radioButtonActionPerformed" selected="true" text="Kort">
                            <toggleGroup>
                               <ToggleGroup fx:id="paygroup" />
                            </toggleGroup>
@@ -87,17 +86,11 @@
                            <Font name="HelveticaNeueLTPro-Roman" size="16.0" />
                         </font>
                         </RadioButton>
-                        <RadioButton fx:id="invoiceRadioButton" layoutX="195.0" layoutY="48.0" mnemonicParsing="false" onAction="#radioButtonActionPerformed" text="Faktura" toggleGroup="$paygroup">
+                        <RadioButton fx:id="invoiceRadioButton" layoutX="235.0" layoutY="68.0" mnemonicParsing="false" onAction="#radioButtonActionPerformed" text="Faktura" toggleGroup="$paygroup">
                         <font>
                            <Font name="HelveticaNeueLTPro-Roman" size="16.0" />
                         </font>
                      </RadioButton>
-                        <ChoiceBox fx:id="cardTypeChoiceBox" layoutX="165.0" layoutY="84.0" prefHeight="26.0" prefWidth="136.0" visible="false" AnchorPane.leftAnchor="165.0" />
-                        <Label fx:id="cardTypeLabel" alignment="CENTER_RIGHT" layoutX="83.0" layoutY="86.0" text="Korttyp:" visible="false">
-                        <font>
-                           <Font name="HelveticaNeueLTPro-Roman" size="16.0" />
-                        </font>
-                     </Label>
                         <Label fx:id="cardNumberLabel" alignment="CENTER_RIGHT" layoutX="12.0" layoutY="144.0" prefWidth="140.0" text="Kortnummer:" AnchorPane.leftAnchor="12.0">
                         <font>
                            <Font name="HelveticaNeueLTPro-Roman" size="16.0" />
@@ -140,6 +133,11 @@
                         <graphic>
                            <ImageView fx:id="cardImage" fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true" />
                         </graphic>
+                     </Label>
+                     <Label layoutX="88.0" layoutY="33.0" text="Accepterade kort: Visa &amp; Mastercard">
+                        <font>
+                           <Font size="19.0" />
+                        </font>
                      </Label>
                   </children>
                </AnchorPane>

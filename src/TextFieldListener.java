@@ -54,6 +54,10 @@ public class TextFieldListener implements ChangeListener<Boolean>{
         return isOk;
     }
 
+    public String getCardType(){
+        return utils.getCardType();
+    }
+
     public void setCardNumberGUI(Label cardLabel, ImageView cardImage){
         this.cardLabel = cardLabel;
         this.cardImage = cardImage;
