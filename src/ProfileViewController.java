@@ -207,7 +207,7 @@ public class ProfileViewController extends AnchorPane {
     public void saveButtonActionPerformed(ActionEvent event) {
         int i = 0;
         isOk = true;
-        while (isOk || i < textFieldListenerList.size()) {
+        while (isOk && i < textFieldListenerList.size()) {
             isOk = textFieldListenerList.get(i).getIsOk();
             i++;
         }
@@ -221,7 +221,7 @@ public class ProfileViewController extends AnchorPane {
             feedBackLabel.setText("Dina uppgiter är sparade!");
         }else{
             feedBackLabel.setTextFill(Color.web("#da1515"));
-            feedBackLabel.setText("Du kan inte spara när det är fel!");
+            feedBackLabel.setText("Dina uppgifter kunde inte sparas!");
         }
     }
 
@@ -248,14 +248,17 @@ public class ProfileViewController extends AnchorPane {
     }
 
     private int checkStringToInt(String s){
-        if (s == null){
+        if (s.length() < 1){
             return 0;
+        }
+        if(s.contains("-") || s.contains(" ")){
+            s = formatCardNumber(s);
         }
         return Integer.parseInt(s);
     }
 
     private String checkString(String s) {
-        if (s == null) {
+        if (s.length() < 1) {
             return "";
         }
         return s;
@@ -267,6 +270,12 @@ public class ProfileViewController extends AnchorPane {
 
     private void saveCardData(){
         DataHandler.saveCard(cardType, cardNumber, cardHolder, cardExpireMonth, cardExpireYear, cardCCV);
+    }
+
+    private String formatCardNumber(String s){
+        s = s.replaceAll(" ", "");
+        s = s.replaceAll("-", "");
+        return s;
     }
 
     public String getLabel(){

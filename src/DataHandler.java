@@ -61,6 +61,16 @@ public class DataHandler {
 
     }
 
+    public static Customer getCustomer(){
+        IMatDataHandler dataHandler = IMatDataHandler.getInstance();
+        return dataHandler.getCustomer();
+    }
+    public static CreditCard getCreditCard(){
+        IMatDataHandler dataHandler = IMatDataHandler.getInstance();
+        return dataHandler.getCreditCard();
+    }
+
+
     public static ShoppingCart getShoppingCart() {
         IMatDataHandler dataHandler = IMatDataHandler.getInstance();
         return dataHandler.getShoppingCart();
