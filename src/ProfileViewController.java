@@ -95,10 +95,11 @@ public class ProfileViewController extends AnchorPane {
     private int cardExpireMonth;
     private int cardExpireYear;
     private int cardCCV;
+    private TopMenuController topMenuController;
 
     private boolean needCheck = true;
 
-    public ProfileViewController(){
+    public ProfileViewController(TopMenuController topMenuController){
 
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("FXML/ProfileView.fxml"));
@@ -108,6 +109,7 @@ public class ProfileViewController extends AnchorPane {
         } catch (IOException e) {
             System.out.println("Error in constructor of ProfileVeiwController");
         }
+        this.topMenuController = topMenuController;
         initializeListeners();
         populateTextFields();
 
@@ -311,4 +313,9 @@ public class ProfileViewController extends AnchorPane {
     public String getLabel(){
         return this.profileLabel.toString();
     }
+
+    public void cancleButtonActionPerformed(ActionEvent event){
+        topMenuController.backButtonActionPerformed(event);
+    }
+
 }
