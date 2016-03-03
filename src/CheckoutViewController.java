@@ -94,7 +94,9 @@ public class CheckoutViewController extends AnchorPane {
     private int cardExpireYear;
     private int cardCCV;
 
-    public CheckoutViewController(){
+    private TopMenuController controller;
+
+    public CheckoutViewController(TopMenuController controller){
 
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("FXML/CheckoutView.fxml"));
@@ -109,6 +111,8 @@ public class CheckoutViewController extends AnchorPane {
         cardTypeChoiceBox.setItems(cardTypes);
         cardTypeChoiceBox.setValue("Visa");
         initializeListeners();
+
+        this.controller = controller;
 
     }
 
@@ -220,6 +224,7 @@ public class CheckoutViewController extends AnchorPane {
             feedBackLabel.setTextFill(Color.web("#038610"));
             feedBackLabel.setText("Ditt köp är slutfört!");
             DataHandler.placeOrder();
+            controller.confirmViewToFront();
         }else{
             feedBackLabel.setTextFill(Color.web("#da1515"));
             feedBackLabel.setText("Du kan inte spara när det är fel!");

@@ -1,8 +1,10 @@
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
 public class iMat extends Application {
 
@@ -16,6 +18,13 @@ public class iMat extends Application {
         stage.setTitle("iMatVersionRune");
         stage.setScene(scene);
         stage.show();
+
+        stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+          public void handle(WindowEvent we) {
+              DataHandler.shutdown();
+              System.exit(0);
+          }
+      });
 
 
     }

@@ -39,6 +39,10 @@
 	-fx-background-color: darkorchid;
 }
 
+#confirmView {
+    -fx-background-color: deeppink;
+}
+
 #allCategories {
 	-fx-border-insets:50%;
 }

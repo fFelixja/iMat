@@ -70,6 +70,11 @@ public class DataHandler {
         return dataHandler.getCreditCard();
     }
 
+    public static void shutdown() {
+        IMatDataHandler dataHandler = IMatDataHandler.getInstance();
+        dataHandler.shutDown();
+
+    }
 
     public static ShoppingCart getShoppingCart() {
         IMatDataHandler dataHandler = IMatDataHandler.getInstance();

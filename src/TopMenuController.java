@@ -56,7 +56,7 @@ public class TopMenuController extends AnchorPane implements Initializable{
 
     private ProfileViewController profile = new ProfileViewController();
 
-    private CheckoutViewController checkout = new CheckoutViewController();
+    private CheckoutViewController checkout = new CheckoutViewController(this);
 
     private PurchaseHistoryViewController history  = new PurchaseHistoryViewController(this);
 
@@ -87,6 +87,8 @@ public class TopMenuController extends AnchorPane implements Initializable{
         baseStackPane.getChildren().add(shoppingCart);
 
         baseStackPane.getChildren().add(checkout);
+
+        baseStackPane.getChildren().add(confirmView);
 
         homeButton.requestFocus();
 
@@ -186,6 +188,8 @@ public class TopMenuController extends AnchorPane implements Initializable{
                 break;
             case "categoryScrollPane": setViewLabel("Alla kategorier");
                 break;
+            case "confirmView": setViewLabel("Bekräftelsevy");
+                break;
             default: break;
         }
     }
@@ -241,6 +245,11 @@ public class TopMenuController extends AnchorPane implements Initializable{
         shoppingCart.populateProductGridPane(DataHandler.getShoppingCart());
         viewLabel.setText("Kundvagn");
         shoppingCart.toFront();
+    }
+
+    public void confirmViewToFront() {
+        confirmView.toFront();
+        setViewLabel("Bekräftelsevy");
     }
 
     public void pastPurchaseDetailViewToFront(Order order){
