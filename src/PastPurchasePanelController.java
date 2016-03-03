@@ -49,4 +49,6 @@ public class PastPurchasePanelController extends AnchorPane {
         controller.pastPurchaseDetailViewToFront(order);
     }
 
+
+
 }
