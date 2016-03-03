@@ -7,6 +7,7 @@
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
@@ -85,11 +86,17 @@
                         <font>
                            <Font name="HelveticaNeueLTPro-Roman" size="16.0" />
                         </font>
+                        <tooltip>
+                           <Tooltip text="Betala med kort" />
+                        </tooltip>
                         </RadioButton>
                         <RadioButton fx:id="invoiceRadioButton" layoutX="235.0" layoutY="68.0" mnemonicParsing="false" onAction="#radioButtonActionPerformed" text="Faktura" toggleGroup="$paygroup">
                         <font>
                            <Font name="HelveticaNeueLTPro-Roman" size="16.0" />
                         </font>
+                        <tooltip>
+                           <Tooltip text="Betala med faktura" />
+                        </tooltip>
                      </RadioButton>
                         <Label fx:id="cardNumberLabel" alignment="CENTER_RIGHT" layoutX="12.0" layoutY="144.0" prefWidth="140.0" text="Kortnummer:" AnchorPane.leftAnchor="12.0">
                         <font>
@@ -141,13 +148,16 @@
                      </Label>
                   </children>
                </AnchorPane>
-                  <Button fx:id="cancelButton" layoutX="386.0" layoutY="434.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="156.0" text="Avbryt" textFill="WHITE" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="380.0">
+                  <Button fx:id="cancelButton" layoutX="386.0" layoutY="434.0" mnemonicParsing="false" onAction="#cancleButtonActionPerformed" prefHeight="49.0" prefWidth="156.0" text="Avbryt" textFill="WHITE" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="380.0">
                   <font>
                      <Font name="HelveticaNeueLTPro-Roman" size="16.0" />
                   </font>
                   <cursor>
                      <Cursor fx:constant="HAND" />
                   </cursor>
+                  <tooltip>
+                     <Tooltip text="Spara inte ändringar, gå tillbaka" />
+                  </tooltip>
                </Button>
                   <Button fx:id="saveButton" layoutX="573.0" layoutY="437.0" mnemonicParsing="false" onAction="#saveButtonActionPerformed" prefHeight="49.0" prefWidth="156.0" text="Spara ändringar" textFill="WHITE" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="573.0" AnchorPane.rightAnchor="367.0">
                   <font>
@@ -156,6 +166,9 @@
                   <cursor>
                      <Cursor fx:constant="HAND" />
                   </cursor>
+                  <tooltip>
+                     <Tooltip text="Spara alla dina ändringar" />
+                  </tooltip>
                </Button>
                <Label fx:id="personalInfoLabel" layoutY="8.0" prefHeight="34.0" prefWidth="250.0" text="Personuppgifter">
                   <font>
