@@ -6,13 +6,12 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import se.chalmers.ait.dat215.project.ShoppingCart;
-import se.chalmers.ait.dat215.project.ShoppingItem;
 
 import java.io.IOException;
 
 public class ShoppingCartViewController extends AnchorPane{
 
-    @FXML private Label amountUnitLabel;
+    @FXML private Label amountItemsLabel;
 
     @FXML private Label totalPriceLabel;
 
@@ -22,9 +21,9 @@ public class ShoppingCartViewController extends AnchorPane{
 
     @FXML private GridPane productGridPane;
 
-    private TopMenuController topMenu;
+    private TopMenuController controller;
 
-    public ShoppingCartViewController(TopMenuController topMenu) {
+    public ShoppingCartViewController(TopMenuController controller) {
 
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("FXML/ShoppingCartView.fxml"));
@@ -35,7 +34,7 @@ public class ShoppingCartViewController extends AnchorPane{
             System.out.println("Error in constructor of ShoppingCartViewController");
         }
 
-        this.topMenu = topMenu;
+        this.controller = controller;
     }
 
     public void populateProductGridPane(ShoppingCart shoppingCart) {
@@ -44,6 +43,9 @@ public class ShoppingCartViewController extends AnchorPane{
             ShoppingCartItemController shoppingItem = new ShoppingCartItemController(shoppingCart.getItems().get(i), this);
             productGridPane.add(shoppingItem, i % 2, i / 2);
         }
+
+        amountItemsLabel.setText(Integer.toString(shoppingCart.getItems().size()));
+        totalPriceLabel.setText(Double.toString(shoppingCart.getTotal()));
     }
 
     private void clearProductGridPane() {
@@ -52,6 +54,11 @@ public class ShoppingCartViewController extends AnchorPane{
 
     @FXML
     protected void continueShoppingButtonActionPerformed(ActionEvent event) {
-        topMenu.categoryViewToFront();
+        controller.categoryViewToFront();
+    }
+
+    @FXML
+    protected void checkoutButtonButtonActionPerformed(ActionEvent event) {
+        controller.checkoutViewToFront();
     }
 }
