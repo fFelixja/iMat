@@ -198,7 +198,6 @@ public class ProfileViewController extends AnchorPane {
     @FXML
     public void radioButtonActionPerformed(ActionEvent event){
         if(invoiceRadioButton.isSelected()){
-            cardTypeChoiceBox.setDisable(true);
             cardNumberTextField.setDisable(true);
             cardHolderTextField.setDisable(true);
             expirationMonthTextField.setDisable(true);
@@ -207,7 +206,6 @@ public class ProfileViewController extends AnchorPane {
             ccvHelpButton.setDisable(true);
 
 
-            cardTypeLabel.setTextFill(Color.web("CCC"));
             cardHolderLabel.setTextFill(Color.web("CCC"));
             cardNumberLabel.setTextFill(Color.web("CCC"));
             monthLabel.setTextFill(Color.web("CCC"));
@@ -216,7 +214,6 @@ public class ProfileViewController extends AnchorPane {
             expireDateLabel.setTextFill(Color.web("CCC"));
 
         }else {
-            cardTypeChoiceBox.setDisable(false);
             cardNumberTextField.setDisable(false);
             cardHolderTextField.setDisable(false);
             expirationMonthTextField.setDisable(false);
@@ -224,7 +221,6 @@ public class ProfileViewController extends AnchorPane {
             ccvTextField.setDisable(false);
             ccvHelpButton.setDisable(false);
 
-            cardTypeLabel.setTextFill(Color.web("000"));
             cardHolderLabel.setTextFill(Color.web("000"));
             cardNumberLabel.setTextFill(Color.web("000"));
             monthLabel.setTextFill(Color.web("000"));

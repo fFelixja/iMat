@@ -50,8 +50,6 @@ public class CheckoutViewController extends AnchorPane {
 
     @FXML private RadioButton invoiceRadioButton;
 
-    @FXML private ChoiceBox cardTypeChoiceBox;
-
     @FXML private Label profileLabel;
 
     @FXML private Label cardTypeLabel;
@@ -112,7 +110,6 @@ public class CheckoutViewController extends AnchorPane {
         } catch (IOException e) {
             System.out.println("Error in constructor of CheckoutViewController");
         }
-        //Sets items to choicebox
         initializeListeners();
         populateTextFields();
         this.controller = controller;
@@ -203,7 +200,6 @@ public class CheckoutViewController extends AnchorPane {
     @FXML
     public void radioButtonActionPerformed(ActionEvent event){
         if(invoiceRadioButton.isSelected()){
-            cardTypeChoiceBox.setDisable(true);
             cardNumberTextField.setDisable(true);
             cardHolderTextField.setDisable(true);
             expirationMonthTextField.setDisable(true);
@@ -212,7 +208,6 @@ public class CheckoutViewController extends AnchorPane {
             ccvHelpButton.setDisable(true);
 
 
-            cardTypeLabel.setTextFill(Color.web("CCC"));
             cardHolderLabel.setTextFill(Color.web("CCC"));
             cardNumberLabel.setTextFill(Color.web("CCC"));
             monthLabel.setTextFill(Color.web("CCC"));
@@ -221,7 +216,6 @@ public class CheckoutViewController extends AnchorPane {
             expireDateLabel.setTextFill(Color.web("CCC"));
 
         }else {
-            cardTypeChoiceBox.setDisable(false);
             cardNumberTextField.setDisable(false);
             cardHolderTextField.setDisable(false);
             expirationMonthTextField.setDisable(false);
@@ -229,7 +223,6 @@ public class CheckoutViewController extends AnchorPane {
             ccvTextField.setDisable(false);
             ccvHelpButton.setDisable(false);
 
-            cardTypeLabel.setTextFill(Color.web("000"));
             cardHolderLabel.setTextFill(Color.web("000"));
             cardNumberLabel.setTextFill(Color.web("000"));
             monthLabel.setTextFill(Color.web("000"));
