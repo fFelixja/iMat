@@ -79,6 +79,7 @@ public class CheckoutViewController extends AnchorPane {
 
     private List<TextFieldListener> textFieldListenerList;
 
+    private TextFieldListener cardNumberListener;
 
     private String firstname;
     private String lastname;
@@ -172,7 +173,7 @@ public class CheckoutViewController extends AnchorPane {
         textFieldListenerList.add(telephoneListener);
         telephoneTextField.focusedProperty().addListener(telephoneListener);
 
-        TextFieldListener cardNumberListener = new TextFieldListener(cardNumberTextField,errorCardNumberLabel,"xxxx-xxxx-xxxxx-xxxx", 5);
+        cardNumberListener = new TextFieldListener(cardNumberTextField,errorCardNumberLabel,"xxxx-xxxx-xxxxx-xxxx", 5);
         textFieldListenerList.add(cardNumberListener);
         cardNumberTextField.focusedProperty().addListener(cardNumberListener);
 
@@ -271,7 +272,7 @@ public class CheckoutViewController extends AnchorPane {
     }
 
     private void getCardData(){
-        cardType = cardTypeChoiceBox.getValue().toString();
+        cardType = cardNumberListener.getCardType();
         cardNumber = checkString(cardNumberTextField.getText());
         cardHolder = checkString(cardHolderTextField.getText());
         cardExpireMonth = checkStringToInt(expirationMonthTextField.getText());

@@ -47,6 +47,9 @@
 	-fx-border-insets:50%;
 }
 
+#categoryScrollPane {
+    -fx-background-image:url(restaurant_bright.png);
+}
 #categoryGridPane {
     -fx-background-image:url(restaurant_bright.png);
 }

@@ -1,5 +1,8 @@
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.chart.PieChart;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
@@ -19,8 +22,9 @@ public class PurchaseDetailViewController extends AnchorPane{
 
     @FXML private GridPane productGrid;
 
-    private List<ShoppingItem> productList;
+    @FXML private Button addToCartButton;
 
+    private List<ShoppingItem> productList;
 
     public PurchaseDetailViewController() {
 
@@ -45,6 +49,7 @@ public class PurchaseDetailViewController extends AnchorPane{
     }
 
     private void addProducts(){
+        clearProductGrid();
        for (int i = 0; i < productList.size(); i++){
 
 
@@ -54,4 +59,15 @@ public class PurchaseDetailViewController extends AnchorPane{
 
     }
 
+    private void clearProductGrid() {
+        productGrid.getChildren().removeAll(productGrid.getChildren());
+    }
+
+    @FXML
+    protected void addToCartButtonActionPerformed(ActionEvent event) {
+
+        for (ShoppingItem shoppingItem: productList) {
+            DataHandler.addToCart(shoppingItem.getProduct(), shoppingItem.getAmount());
+        }
+    }
 }
