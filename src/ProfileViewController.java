@@ -1,5 +1,3 @@
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -98,6 +96,8 @@ public class ProfileViewController extends AnchorPane {
     private int cardExpireYear;
     private int cardCCV;
 
+    private boolean needCheck = true;
+
     public ProfileViewController(){
 
         try {
@@ -165,6 +165,8 @@ public class ProfileViewController extends AnchorPane {
 
     }
     private void populateTextFields(){
+        needCheck = false;
+
         Customer customer = DataHandler.getCustomer();
         CreditCard creditCard = DataHandler.getCreditCard();
         //Set all info about customer
@@ -234,7 +236,7 @@ public class ProfileViewController extends AnchorPane {
     public void saveButtonActionPerformed(ActionEvent event) {
         int i = 0;
         isOk = true;
-        while (isOk && i < textFieldListenerList.size()) {
+        while (needCheck && isOk && i < textFieldListenerList.size()) {
             isOk = textFieldListenerList.get(i).getIsOk();
             i++;
         }
@@ -246,6 +248,7 @@ public class ProfileViewController extends AnchorPane {
             }
             feedBackLabel.setTextFill(Color.web("#038610"));
             feedBackLabel.setText("Dina uppgiter är sparade!");
+            needCheck = true;
         }else{
             feedBackLabel.setTextFill(Color.web("#da1515"));
             feedBackLabel.setText("Dina uppgifter kunde inte sparas!");

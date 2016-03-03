@@ -98,6 +98,8 @@ public class CheckoutViewController extends AnchorPane {
     private int cardExpireYear;
     private int cardCCV;
 
+    private boolean needCheck = true;
+
     private TopMenuController controller;
 
     public CheckoutViewController(TopMenuController controller){
@@ -118,6 +120,8 @@ public class CheckoutViewController extends AnchorPane {
     }
 
     private void populateTextFields(){
+        needCheck = false;
+
         Customer customer = DataHandler.getCustomer();
         CreditCard creditCard = DataHandler.getCreditCard();
         //Set all info about customer
@@ -239,7 +243,7 @@ public class CheckoutViewController extends AnchorPane {
     public void purchaseButtonActionPerformed(ActionEvent event) {
         int i = 1;
         isOk = true;
-        while (isOk && i < textFieldListenerList.size()) {
+        while (needCheck && isOk && i < textFieldListenerList.size()) {
             isOk = textFieldListenerList.get(i - 1).getIsOk();
             i++;
         }
@@ -253,6 +257,7 @@ public class CheckoutViewController extends AnchorPane {
             feedBackLabel.setText("Ditt köp är slutfört!");
             DataHandler.placeOrder();
             controller.confirmViewToFront();
+            needCheck = true;
         }else{
             feedBackLabel.setTextFill(Color.web("#da1515"));
             feedBackLabel.setText("Du kan inte spara när det är fel!");

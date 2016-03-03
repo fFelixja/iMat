@@ -28,6 +28,8 @@ public class TopMenuController extends AnchorPane implements Initializable{
 
     @FXML private Button homeButton;
 
+    @FXML private Button searchButton;
+
     @FXML private Button profileButton;
 
     @FXML private Button purchaseHistoryButton;
@@ -194,6 +196,10 @@ public class TopMenuController extends AnchorPane implements Initializable{
         }
     }
 
+//    @FXML
+//    protected void searchButtonActionPerformed(ActionEvent event) throws IOException {
+//        searchTextFieldKeyPressed(event);
+//    }
     @FXML
     protected void profileButtonActionPerformed(ActionEvent event)throws IOException {
         profileViewToFront();
