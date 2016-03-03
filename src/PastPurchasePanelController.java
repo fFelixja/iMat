@@ -28,13 +28,13 @@ public class PastPurchasePanelController extends AnchorPane {
             loader.setRoot(this);
             loader.load();
         } catch (IOException e) {
-            System.out.println("fel");
+            System.out.println("Fel i PastPurchasePanelController");
         }
 
 
         datePurchasedLabel.setText(order.getDate().toString());
-        nbrOfProductsLabel.setText(order.getItems().size() + "st");
-        priceLabel.setText(DataHandler.getOrderTotal(order) + "kr");
+//        nbrOfProductsLabel.setText(order.getItems().size() + "st");
+//        priceLabel.setText(DataHandler.getOrderTotal(order) + "kr");
 
         topController = controller;
 
