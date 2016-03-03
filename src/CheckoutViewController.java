@@ -104,7 +104,7 @@ public class CheckoutViewController extends AnchorPane {
             loader.setRoot(this);
             loader.load();
         } catch (IOException e) {
-            System.out.println("Error in constructor of CheckoutVeiwController");
+            System.out.println("Error in constructor of CheckoutViewController");
         }
         //Sets items to choicebox
         ObservableList<String> cardTypes = FXCollections.observableArrayList("Visa", "Mastercard");
