@@ -5,21 +5,21 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<fx:root  type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
-      <Label layoutX="198.0" layoutY="33.0" text="Bekräftelsevy">
-         <font>
-            <Font size="28.0" />
-         </font>
-      </Label>
-      <Label layoutX="186.0" layoutY="85.0" text="Ditt köp har genomförts!">
-         <font>
-            <Font size="17.0" />
-         </font>
-      </Label>
-      <Label layoutX="117.0" layoutY="182.0" text="Antal varor" />
-      <Label fx:id="totalGroceriesLabel" layoutX="198.0" layoutY="182.0" text="10st" />
-      <Label layoutX="288.0" layoutY="181.0" text="Totalkost" />
-      <Label fx:id="totalCostLabel" layoutX="362.0" layoutY="180.0" text="1000 kr" />
-      <Button fx:id="shopAgainButton" layoutX="67.0" layoutY="269.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" text="Handla Igen" />
-      <Button fx:id="exitButton" layoutX="372.0" layoutY="273.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" text="Avsluta Program" />
+<fx:root id="confirmView" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
+  <Label layoutX="198.0" layoutY="33.0" text="Bekräftelsevy">
+     <font>
+        <Font size="28.0" />
+     </font>
+  </Label>
+  <Label layoutX="186.0" layoutY="85.0" text="Ditt köp har genomförts!">
+     <font>
+        <Font size="17.0" />
+     </font>
+  </Label>
+  <Label layoutX="133.0" layoutY="180.0" text="Antal varor:" />
+  <Label fx:id="totalGroceriesLabel" layoutX="199.0" layoutY="180.0" text="10st" />
+  <Label layoutX="291.0" layoutY="180.0" text="Total kostnad:" />
+  <Label fx:id="totalCostLabel" layoutX="372.0" layoutY="180.0" text="1000 kr" />
+  <Button fx:id="shopAgainButton" layoutX="70.0" layoutY="273.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" text="Handla Igen" />
+  <Button fx:id="exitButton" layoutX="372.0" layoutY="273.0" mnemonicParsing="false" onAction="#exitButtonActionPerformed" prefHeight="40.0" prefWidth="140.0" text="Avsluta Program" />
 </fx:root>

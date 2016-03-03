@@ -1,25 +1,18 @@
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 
-import se.chalmers.ait.dat215.project.IMatDataHandler;
+import se.chalmers.ait.dat215.project.Order;
+import se.chalmers.ait.dat215.project.Product;
 import se.chalmers.ait.dat215.project.ProductCategory;
 
-import javax.xml.crypto.Data;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +21,7 @@ import java.util.ResourceBundle;
 
 
 public class TopMenuController extends AnchorPane implements Initializable{
+
     @FXML private TextField searchTextField;
 
     @FXML private Button backButton;
@@ -42,11 +36,33 @@ public class TopMenuController extends AnchorPane implements Initializable{
 
     @FXML private ImageView backButtonImage;
 
+    @FXML private ImageView cartImage;
+
     @FXML private StackPane baseStackPane;
 
     @FXML private ScrollPane categoryScrollPane;
 
     @FXML private GridPane categoryGridPane;
+
+    @FXML private ScrollPane productScrollPane;
+
+    @FXML private GridPane productGridPane;
+
+    @FXML public Label viewLabel;
+
+    private CategoryController latestCategory;
+
+    private ConfirmViewController confirmView = new ConfirmViewController();
+
+    private ProfileViewController profile = new ProfileViewController();
+
+    private CheckoutViewController checkout = new CheckoutViewController(this);
+
+    private PurchaseHistoryViewController history  = new PurchaseHistoryViewController(this);
+
+    private PurchaseDetailViewController pastDetails = new PurchaseDetailViewController();
+
+    private ShoppingCartViewController shoppingCart = new ShoppingCartViewController(this);
 
     private List<Integer[]> productID = new ArrayList<>();
     private String[] categoryName = {"Kött", "Fisk", "Mejeriprodukter", "Potatis & Ris",
@@ -59,6 +75,24 @@ public class TopMenuController extends AnchorPane implements Initializable{
         populateProductID();
         initializeCategoryView();
         backButtonImage.setImage(new Image("img/backbutton.png"));
+        cartImage.setImage(new Image("img/shop.png"));
+        viewLabel.setText("Alla kategorier");
+
+        baseStackPane.getChildren().add(profile);
+
+        baseStackPane.getChildren().add(history);
+
+        baseStackPane.getChildren().add(pastDetails);
+
+        baseStackPane.getChildren().add(shoppingCart);
+
+        baseStackPane.getChildren().add(checkout);
+
+        baseStackPane.getChildren().add(confirmView);
+
+        homeButton.requestFocus();
+
+        categoryViewToFront();
     }
 
     private void populateProductID(){
@@ -79,16 +113,22 @@ public class TopMenuController extends AnchorPane implements Initializable{
     }
 
     private void initializeCategoryView(){
-        ProductCategory[] enumForCategories = ProductCategory.values();
+     ProductCategory[] enumForCategories = ProductCategory.values();
         int count = 0;
         for(int i = 0; i < productID.size(); i++){
             Integer[] intTemp = productID.get(i);
 
             for (int j = 0; j <intTemp.length; j++){
                 //New categoryview to add
-                CategoryController categoryPane = new CategoryController(categoryName[count],DataHandler.getCategoryImage(enumForCategories[intTemp[j] - 1]));
-                count++;
-                
+                CategoryController categoryPane = new CategoryController(enumForCategories[intTemp[j] - 1],
+                        categoryName[count++],DataHandler.getCategoryImage(enumForCategories[intTemp[j] - 1]), this);
+
+//                Used to make meat the "default category" to eliminate errors while looping with the back button
+//                when the application starts
+                if (i == 0 && j == 0) {
+                    latestCategory = categoryPane;
+                }
+
                 if (i == 4) {
                     categoryGridPane.add(categoryPane,j, 8);
                 } else {
@@ -102,17 +142,129 @@ public class TopMenuController extends AnchorPane implements Initializable{
     }
 
     @FXML
+    protected void searchTextFieldKeyPressed(ActionEvent event) {
+        clearProductGridPane();
+
+        List<Product> productList = DataHandler.searchProducts(searchTextField.getText());
+
+        for (int i = 0; i < productList.size(); i++) {
+            addProductToGrid(productList.get(i), i % 4, i / 4);
+        }
+        productGridPane.getStyleClass().add("gridStyle");
+        productViewToFront();
+
+        setViewLabel("Sökning på \"" + searchTextField.getText() + "\"");
+
+    }
+
+    @FXML
     protected void homeButtonActionPerformed(ActionEvent event) {
-        System.out.println("hej");
+        categoryViewToFront();
+        viewLabel.setText("Alla kategorier");
+    }
+
+    @FXML
+    protected void backButtonActionPerformed(ActionEvent event) {
+        baseStackPane.getChildren().get(baseStackPane.getChildren().size() - 1).toBack();
+
+        if (baseStackPane.getChildren().get(baseStackPane.getChildren().size() - 1).getId().equals("productView")) {
+            latestCategory.createProductView();
+        }
+
+        switch (baseStackPane.getChildren().get(baseStackPane.getChildren().size() - 1).getId()){
+            case "shoppingCart": setViewLabel("Kundvagn");
+                break;
+            case "purchaseDetailView": setViewLabel("Skriv bra text här");
+                break;
+            case "purchaseHistoryView": setViewLabel("Tidigare inköp");
+                break;
+            case "profileView": setViewLabel("Din profil");
+                break;
+            case "productView": try {
+                setViewLabel(latestCategory.getName());
+            } catch (NullPointerException e) {
+                System.out.println("Fuck iMat");
+            }
+                break;
+            case "categoryScrollPane": setViewLabel("Alla kategorier");
+                break;
+            case "confirmView": setViewLabel("Bekräftelsevy");
+                break;
+            default: break;
+        }
     }
 
     @FXML
     protected void profileButtonActionPerformed(ActionEvent event)throws IOException {
-        ProfileViewController profile = new ProfileViewController();
+        profileViewToFront();
 
+    }
 
-        System.out.println("Profilknapp fungerar");
+    @FXML
+    protected void purchaseHistoryButtonActionPerformed(ActionEvent event) throws IOException {
+        historyViewToFront();
+    }
 
+    @FXML
+    protected void shoppingCartButtonActionPerformed(ActionEvent event)throws IOException {
+        shoppingCartViewToFront();
+    }
+
+    public void setLatestCategory(CategoryController category) {
+        latestCategory = category;
+    }
+
+    public void clearProductGridPane() {
+        productGridPane.getChildren().removeAll(productGridPane.getChildren());
+    }
+
+    public void profileViewToFront(){
+        profile.toFront();
+        viewLabel.setText("Din profil");
+    }
+
+    public void productViewToFront() {
+        productScrollPane.toFront();
+    }
+
+    public void categoryViewToFront() {
+        categoryScrollPane.toFront();
+    }
+
+    public void historyViewToFront() {
+        history.toFront();
+        viewLabel.setText("Tidigare inköp");
+    }
+
+    public void checkoutViewToFront() {
+        checkout.toFront();
+        setViewLabel("Kassa");
+    }
+
+    public void shoppingCartViewToFront() {
+        shoppingCart.populateProductGridPane(DataHandler.getShoppingCart());
+        viewLabel.setText("Kundvagn");
+        shoppingCart.toFront();
+    }
+
+    public void confirmViewToFront() {
+        confirmView.toFront();
+        setViewLabel("Bekräftelsevy");
+    }
+
+    public void pastPurchaseDetailViewToFront(Order order){
+        pastDetails.setOrder(order);
+        pastDetails.toFront();
+    }
+
+    public void addProductToGrid(Product product, int column, int row) {
+        ProductViewController productView = new ProductViewController(product, 1);
+        productGridPane.add(productView, column, row);
+        productGridPane.getStyleClass().add("gridStyle");
+    }
+
+    public void setViewLabel(String text) {
+        viewLabel.setText(text);
     }
 
 }

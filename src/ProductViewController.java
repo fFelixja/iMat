@@ -28,7 +28,7 @@ public class ProductViewController extends AnchorPane {
 
     private Product product;
 
-    public ProductViewController(Product product, String productName, Image productImage, int spinnerSpinAmount) {
+    public ProductViewController(Product product, int spinnerSpinAmount) {
 
         try {
 
@@ -37,12 +37,14 @@ public class ProductViewController extends AnchorPane {
             loader.setRoot(this);
             loader.load();
         } catch (IOException e) {
-            System.out.println("fel");
+            System.out.println("Error in constructor of ProductViewController");
         }
 
         this.product = product;
-        this.nameLabel.setText(productName);
-        this.productImage.setImage(productImage);
+        this.nameLabel.setText(product.getName());
+        this.productImage.setImage(DataHandler.getProductImage(product));
+        priceUnitLabel.setText(Double.toString(product.getPrice()) + " " + product.getUnit());
+        amountUnitLabel.setText(product.getUnitSuffix());
 
         amountSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, Integer.MAX_VALUE, 1, spinnerSpinAmount));
     }
