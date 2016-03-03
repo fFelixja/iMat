@@ -1,3 +1,4 @@
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -5,20 +6,21 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import se.chalmers.ait.dat215.project.Order;
 
-import java.awt.event.ActionEvent;
 import java.io.IOException;
 
 public class PastPurchasePanelController extends AnchorPane {
 
     @FXML private Label datePurchasedLabel;
 
-    @FXML private Label nbrOfProductsLabel;
+    @FXML private Label amountLabel;
 
-    @FXML private Label priceLabel;
+    @FXML private Label totalPriceLabel;
 
     @FXML private Button viewDetailsButton;
 
-    private TopMenuController topController;
+    private TopMenuController controller;
+
+    private Order order;
 
     public PastPurchasePanelController (Order order, TopMenuController controller) {
 
@@ -33,16 +35,18 @@ public class PastPurchasePanelController extends AnchorPane {
 
 
         datePurchasedLabel.setText(order.getDate().toString());
-//        nbrOfProductsLabel.setText(order.getItems().size() + "st");
-//        priceLabel.setText(DataHandler.getOrderTotal(order) + "kr");
+        amountLabel.setText(order.getItems().size() + "st");
+        totalPriceLabel.setText(DataHandler.getOrderTotal(order) + "kr");
 
-        topController = controller;
+        this.controller = controller;
+
+        this.order = order;
 
     }
 
+    @FXML
     protected void viewDetailsButtonActionPerformed (ActionEvent event){
-       // topController.pastPurchaseDetailViewToFront(Order order);
-        System.out.println("hej");
+        controller.pastPurchaseDetailViewToFront(order);
     }
 
 }

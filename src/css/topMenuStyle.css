@@ -89,6 +89,10 @@
 
 }
 
+#purchaseDetailView {
+    -fx-background-color: chocolate;
+}
+
 #personalInfoLabel, #paymentInfoLabel {
 	-fx-background-color:#FFF;
 	

@@ -31,6 +31,6 @@
             <Font size="25.0" />
          </font>
       </Label>
-   <Label fx:id="nbrOfProductsLabel" layoutX="140.0" layoutY="52.0" text="Label" />
-   <Label fx:id="priceLabel" layoutX="332.0" layoutY="52.0" text="Label" />
+   <Label fx:id="amountLabel" layoutX="140.0" layoutY="52.0" text="Label" />
+   <Label fx:id="totalPriceLabel" layoutX="332.0" layoutY="52.0" text="Label" />
 </fx:root>

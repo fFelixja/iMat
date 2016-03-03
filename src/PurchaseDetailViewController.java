@@ -1,4 +1,3 @@
-
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
@@ -11,6 +10,7 @@ import java.io.IOException;
 import java.util.List;
 
 public class PurchaseDetailViewController extends AnchorPane{
+
     @FXML private Label dateBoughtLabel;
 
     @FXML private Label nbrOfProductsLabel;
@@ -30,7 +30,7 @@ public class PurchaseDetailViewController extends AnchorPane{
             loader.setRoot(this);
             loader.load();
         } catch (IOException e) {
-            System.out.println("fel");
+            System.out.println("Fel i PurchaseDetailView");
         }
     }
 

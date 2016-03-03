@@ -21,7 +21,7 @@ public class PurchaseHistoryViewController extends AnchorPane {
             loader.setRoot(this);
             loader.load();
         } catch (IOException e) {
-            System.out.println("fel");
+            System.out.println("Fel i PurchaseHistoryView");
         }
 
         List<Order> pastOrders = DataHandler.getPastOrders();
