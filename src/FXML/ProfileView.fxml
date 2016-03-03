@@ -7,7 +7,6 @@
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
-<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
@@ -24,10 +23,7 @@
                         <TextField fx:id="firstnameTextField" layoutX="135.0" layoutY="42.0" prefHeight="26.0" prefWidth="136.0" AnchorPane.leftAnchor="135.0" />
                         <TextField fx:id="lastnameTextField" layoutX="135.0" layoutY="80.0" prefHeight="26.0" prefWidth="136.0" AnchorPane.leftAnchor="135.0" />
                         <TextField fx:id="adressTextField" layoutX="135.0" layoutY="119.0" prefHeight="26.0" prefWidth="136.0" AnchorPane.leftAnchor="135.0" />
-                        <TextField fx:id="adressTwoTextField" layoutX="135.0" layoutY="160.0" prefHeight="26.0" prefWidth="136.0" AnchorPane.leftAnchor="135.0">
-                        <tooltip>
-                           <Tooltip text="Denna är frivillig" />
-                        </tooltip></TextField>
+                        <TextField fx:id="adressTwoTextField" layoutX="135.0" layoutY="160.0" prefHeight="26.0" prefWidth="136.0" AnchorPane.leftAnchor="135.0" />
                         <TextField fx:id="zipcodeTextField" layoutX="135.0" layoutY="197.0" prefHeight="26.0" prefWidth="89.0" AnchorPane.leftAnchor="135.0" />
                         <TextField fx:id="cityTextField" layoutX="135.0" layoutY="233.0" prefHeight="26.0" prefWidth="136.0" AnchorPane.leftAnchor="135.0" />
                         <TextField fx:id="telephoneTextField" layoutX="135.0" layoutY="271.0" prefHeight="26.0" prefWidth="136.0" AnchorPane.leftAnchor="135.0" />
@@ -77,18 +73,9 @@
                </AnchorPane>
                <AnchorPane fx:id="paymentInfoPanel" layoutX="575.0" layoutY="46.0" prefHeight="331.0" prefWidth="516.0" AnchorPane.bottomAnchor="175.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="46.0">
                   <children>
-                        <TextField fx:id="ccvTextField" layoutX="183.0" layoutY="266.0" prefHeight="26.0" prefWidth="53.0" promptText="123">
-                        <tooltip>
-                           <Tooltip text="Tre sista siffrorna på kortets baksida" />
-                        </tooltip></TextField>
-                        <TextField fx:id="cardNumberTextField" layoutX="156.0" layoutY="144.0" prefHeight="27.0" prefWidth="178.0" promptText="xxxx-xxxx-xxxx-xxxx">
-                        <tooltip>
-                           <Tooltip text="Kortnummer i detta format:xxxx-xxxx-xxxx-xxxx" />
-                        </tooltip></TextField>
-                        <TextField fx:id="cardHolderTextField" layoutX="178.0" layoutY="181.0" prefHeight="27.0" prefWidth="140.0" promptText="Karl Karlsson">
-                        <tooltip>
-                           <Tooltip text="Namnet på kortet ska skrivas in här: Karl Karlsson" />
-                        </tooltip></TextField>
+                        <TextField fx:id="ccvTextField" layoutX="183.0" layoutY="266.0" prefHeight="26.0" prefWidth="53.0" promptText="123" />
+                        <TextField fx:id="cardNumberTextField" layoutX="156.0" layoutY="144.0" prefHeight="27.0" prefWidth="178.0" promptText="xxxx-xxxx-xxxx-xxxx" />
+                        <TextField fx:id="cardHolderTextField" layoutX="178.0" layoutY="181.0" prefHeight="27.0" prefWidth="140.0" promptText="Karl Karlsson" />
                         <TextField fx:id="expirationMonthTextField" layoutX="217.0" layoutY="214.0" prefHeight="27.0" prefWidth="37.0" promptText="xx" />
                         <TextField fx:id="expirationYearTextField" layoutX="280.0" layoutY="214.0" prefHeight="27.0" prefWidth="37.0" promptText="xx" />
                         <RadioButton fx:id="cardRadioButton" layoutX="150.0" layoutY="68.0" mnemonicParsing="false" onAction="#radioButtonActionPerformed" selected="true" text="Kort">
@@ -98,17 +85,11 @@
                         <font>
                            <Font name="HelveticaNeueLTPro-Roman" size="16.0" />
                         </font>
-                        <tooltip>
-                           <Tooltip text="Välj att betala med kort" />
-                        </tooltip>
                         </RadioButton>
                         <RadioButton fx:id="invoiceRadioButton" layoutX="235.0" layoutY="68.0" mnemonicParsing="false" onAction="#radioButtonActionPerformed" text="Faktura" toggleGroup="$paygroup">
                         <font>
                            <Font name="HelveticaNeueLTPro-Roman" size="16.0" />
                         </font>
-                        <tooltip>
-                           <Tooltip text="Välj att betala med faktura" />
-                        </tooltip>
                      </RadioButton>
                         <Label fx:id="cardNumberLabel" alignment="CENTER_RIGHT" layoutX="12.0" layoutY="144.0" prefWidth="140.0" text="Kortnummer:" AnchorPane.leftAnchor="12.0">
                         <font>
@@ -160,16 +141,13 @@
                      </Label>
                   </children>
                </AnchorPane>
-                  <Button fx:id="cancelButton" layoutX="386.0" layoutY="434.0" mnemonicParsing="false" onAction="#backButtonActionPerformed" prefHeight="49.0" prefWidth="156.0" text="Avbryt" textFill="WHITE" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="380.0">
+                  <Button fx:id="cancelButton" layoutX="386.0" layoutY="434.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="156.0" text="Avbryt" textFill="WHITE" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="380.0">
                   <font>
                      <Font name="HelveticaNeueLTPro-Roman" size="16.0" />
                   </font>
                   <cursor>
                      <Cursor fx:constant="HAND" />
                   </cursor>
-                  <tooltip>
-                     <Tooltip text="Avbryt, sparar ingen information. Går tillbaka dit du var" />
-                  </tooltip>
                </Button>
                   <Button fx:id="saveButton" layoutX="573.0" layoutY="437.0" mnemonicParsing="false" onAction="#saveButtonActionPerformed" prefHeight="49.0" prefWidth="156.0" text="Spara ändringar" textFill="WHITE" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="573.0" AnchorPane.rightAnchor="367.0">
                   <font>
@@ -178,9 +156,6 @@
                   <cursor>
                      <Cursor fx:constant="HAND" />
                   </cursor>
-                  <tooltip>
-                     <Tooltip text="Sparar all data" />
-                  </tooltip>
                </Button>
                <Label fx:id="personalInfoLabel" layoutY="8.0" prefHeight="34.0" prefWidth="250.0" text="Personuppgifter">
                   <font>
