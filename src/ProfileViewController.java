@@ -104,10 +104,7 @@ public class ProfileViewController extends AnchorPane {
         } catch (IOException e) {
             System.out.println("Error in constructor of ProfileVeiwController");
         }
-        //Sets items to choicebox
-        ObservableList<String> cardTypes = FXCollections.observableArrayList("Visa", "Mastercard");
-        cardTypeChoiceBox.setItems(cardTypes);
-        cardTypeChoiceBox.setValue("Visa");
+        
         initializeListeners();
 
     }
