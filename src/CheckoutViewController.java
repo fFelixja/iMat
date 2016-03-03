@@ -1,48 +1,3 @@
-//import javafx.fxml.FXML;
-//import javafx.scene.control.Button;
-//import javafx.scene.control.ChoiceBox;
-//import javafx.scene.control.RadioButton;
-//import javafx.scene.control.TextField;
-//import javafx.scene.layout.AnchorPane;
-//
-//public class CheckoutViewController extends AnchorPane {
-//
-//    @FXML private TextField firstnameTextField;
-//
-//    @FXML private TextField lastnameTextField;
-//
-//    @FXML private TextField adressTextField;
-//
-//    @FXML private TextField adressTwoTextField;
-//
-//    @FXML private TextField zipcodeTextField;
-//
-//    @FXML private TextField telephoneTextField;
-//
-//    @FXML private TextField cityTextField;
-//
-//    @FXML private TextField ccvTextField;
-//
-//    @FXML private TextField cardNumberTextField;
-//
-//    @FXML private TextField cardHolderTextField;
-//
-//    @FXML private TextField expirationMonthTextField;
-//
-//    @FXML private TextField expirationYearTextField;
-//
-//    @FXML private Button purchaseButton;
-//
-//    @FXML private Button cancelButton;
-//
-//    @FXML private RadioButton cardRadioButton;
-//
-//    @FXML private RadioButton invoiceRadioButton;
-//
-//    @FXML private ChoiceBox cardTypeChoiceBox;
-//}
-
-
 import javafx.collections.FXCollections;
         import javafx.collections.ObservableList;
         import javafx.event.ActionEvent;
@@ -250,10 +205,10 @@ public class CheckoutViewController extends AnchorPane {
 
     @FXML
     public void purchaseButtonActionPerformed(ActionEvent event) {
-        int i = 0;
+        int i = 1;
         isOk = true;
-        while (isOk || i < textFieldListenerList.size()) {
-            isOk = textFieldListenerList.get(i).getIsOk();
+        while (isOk && i < textFieldListenerList.size()) {
+            isOk = textFieldListenerList.get(i - 1).getIsOk();
             i++;
         }
 
