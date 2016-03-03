@@ -4,11 +4,14 @@ import javafx.collections.FXCollections;
         import javafx.fxml.FXML;
         import javafx.fxml.FXMLLoader;
         import javafx.scene.control.*;
-        import javafx.scene.image.ImageView;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
         import javafx.scene.layout.AnchorPane;
         import javafx.scene.paint.Color;
+import se.chalmers.ait.dat215.project.CreditCard;
+import se.chalmers.ait.dat215.project.Customer;
 
-        import java.io.IOException;
+import java.io.IOException;
         import java.util.ArrayList;
         import java.util.List;
 
@@ -107,12 +110,36 @@ public class CheckoutViewController extends AnchorPane {
             System.out.println("Error in constructor of CheckoutViewController");
         }
         //Sets items to choicebox
-        ObservableList<String> cardTypes = FXCollections.observableArrayList("Visa", "Mastercard");
-        cardTypeChoiceBox.setItems(cardTypes);
-        cardTypeChoiceBox.setValue("Visa");
         initializeListeners();
-
+        populateTextFields();
         this.controller = controller;
+
+    }
+
+    private void populateTextFields(){
+        Customer customer = DataHandler.getCustomer();
+        CreditCard creditCard = DataHandler.getCreditCard();
+        //Set all info about customer
+        firstnameTextField.setText(customer.getFirstName());
+        lastnameTextField.setText(customer.getLastName());
+        adressTextField.setText(customer.getAddress());
+        zipcodeTextField.setText(customer.getPostCode());
+        cityTextField.setText(customer.getPostAddress());
+        telephoneTextField.setText(customer.getPhoneNumber());
+        //Set all info about creditcard
+        ccvTextField.setText(Integer.toString(creditCard.getVerificationCode()));
+        cardHolderTextField.setText(creditCard.getHoldersName());
+        expirationMonthTextField.setText(Integer.toString(creditCard.getValidMonth()));
+        expirationYearTextField.setText(Integer.toString(creditCard.getValidYear()));
+        if(creditCard.getCardType().equals("Visa")){
+            cardLabel.setText("Visa");
+            cardImage.setImage(new Image("img/visa.png"));
+        }else if(creditCard.getCardType().equals("Mastercard")){
+            cardLabel.setText("Mastercard");
+            cardImage.setImage(new Image("img/mastercard.png"));
+        }
+        cardNumberTextField.setText(creditCard.getCardNumber());
+
 
     }
 
