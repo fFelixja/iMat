@@ -1,4 +1,4 @@
-#homeButton, #backButton, #profileButton, #purchaseHistoryButton, #shoppingCartButton {
+#homeButton, #backButton, #profileButton, #purchaseHistoryButton, #shoppingCartButton, #searchButton {
 	-fx-background-color:#FFF;
 	-fx-background-radius:0;
 	-fx-border-color:rgba(26, 188, 156,1.0);
@@ -6,20 +6,17 @@
 	
 }
 
-#homeButton, #backButton {
 
-	
-}
-
-#homeButton:hover, #backButton:hover, #profileButton:hover, #purchaseHistoryButton:hover, #shoppingCartButton:hover {
+#homeButton:hover, #backButton:hover, #profileButton:hover, #purchaseHistoryButton:hover, #shoppingCartButton:hover, #searchButton:hover {
 	-fx-border-width:0px 0px 5px 0px;
 	-fx-text:#FFF;
 	
 }
-#homeButton:pressed, #backButton:pressed, #profileButton:pressed, #purchaseHistoryButton:pressed, #shoppingCartButton:pressed {
+#homeButton:pressed, #backButton:pressed, #profileButton:pressed, #purchaseHistoryButton:pressed, #shoppingCartButton:pressed, #searchButton:pressed {
 	-fx-background-color:#ecf0f1;
-	
 	-fx-effect:innershadow(gaussian,#ecf0f1,3,1,0,0);
+	-fx-border-width:0px 0px 5px 0px;
+	-fx-text:#FFF;
 }
 
 #baseStackPane{
@@ -32,7 +29,6 @@
 	-fx-border-width:0px 1px 1px 0px;
 	-fx-border-color:rgba(52, 152, 219,0.3);;
 	-fx-border-style:solid;
-
 }
 
 #checkoutView {
@@ -40,14 +36,14 @@
 }
 
 #confirmView {
-    -fx-background-color: deeppink;
+    	-fx-background-color: deeppink;
 }
 
 #allCategories {
 	-fx-border-insets:50%;
 }
 
-#categoryScrollPane {
+#categoryScrollPane, #productScrollPane {
     -fx-background-image:url(restaurant_bright.png);
 }
 #categoryGridPane {
@@ -55,7 +51,7 @@
 }
 
 #productGridPane{
-    -fx-background-image:url(restaurant_bright.png);
+    -fx-background-color:#FFF;
 }
 
 #profileView {
@@ -77,7 +73,7 @@
 }
 
 #shoppingCart {
-	-fx-background-color: chartreuse;
+	-fx-background-image:url(restaurant_bright.png);
 }
 
 #profileAnchorPane {
@@ -97,12 +93,11 @@
 }
 
 #purchaseDetailView {
-    -fx-background-color: chocolate;
+    	-fx-background-color:derive(gray,90%);
 }
 
 #personalInfoLabel, #paymentInfoLabel {
 	-fx-background-color:#FFF;
-	
 	-fx-border-width:0px 0px 2px 0px;
 	-fx-border-color:rgba(52, 152, 219,0.3);
 	-fx-border-style:solid;
@@ -137,13 +132,57 @@
 
 }
 
+#categoryPane:hover {
+	-fx-background-color:#ecf0f1;
+} 
+
 #productPane {
-	-fx-border-width:2px;
+	-fx-border-width:5px;
 	-fx-border-color:rgba(52, 152, 219,0.3);
 	-fx-border-style:solid;
 	-fx-background-color:#FFF;
-	-fx-padding:20px;
-	-fx-background-insets:20px;
+}
+
+#productImage {
+	-fx-border-width:0px 0px 50px 0px;
+	-fx-border-color:rgba(52, 152, 219,0.3);
+	-fx-border-style:solid;
+}
+
+.thumb {
+	-fx-background-color:rgba(52, 152, 219,0.3);
+	-fx-padding:50px;
+	-fx-stroke-width:50px;
+
+}
+
+.thumb:hover {
+	-fx-background-color:rgba(52, 152, 219,0.5);
+}
+
+.thumb:pressed {
+	-fx-background-color:rgba(52, 152, 219,0.7);
+}
+
+.track {
+	
+	-fx-background-color:#FFF;  
+	-fx-border-color:derive(gray,50%); 
+	-fx-background-radius: 0em; 
+
+}
+
+.increment-button, .decrement-button  {
+	-fx-padding:5px;
+	-fx-background-color:#FFF;
+}
+
+.increment-button:pressed, .decrement-button:pressed {
+	-fx-background-color:gray;
+}
+
+.increment-button:hover, .decrement-button:hover {
+	-fx-background-color:derive(gray,80%);
 }
 
 

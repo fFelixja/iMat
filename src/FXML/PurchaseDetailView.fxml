@@ -50,5 +50,8 @@
             </GridPane>
          </content>
       </ScrollPane>
-   <Button fx:id="addToCartButton" layoutX="312.0" layoutY="445.0" mnemonicParsing="false" onAction="#addToCartButtonActionPerformed" text="LAGG ALL I KUNVAGNEN KNAPP" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="20.0" />
+   <Button fx:id="addToCartButton" layoutX="22.0" layoutY="440.0" mnemonicParsing="false" onAction="#addToCartButtonActionPerformed" text="Lägg till allt i kundvagnen" textFill="WHITE" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="22.0">
+      <font>
+         <Font size="16.0" />
+      </font></Button>
 </fx:root>
