@@ -142,6 +142,7 @@
             </ScrollPane>
          </children>
       </StackPane>
+      <AnchorPane id="feedbackPanel" fx:id="feedbackPanel" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="65.0" />
       <Label fx:id="viewLabel" layoutX="14.0" layoutY="61.0" text="Label" AnchorPane.topAnchor="61.0">
          <font>
             <Font size="22.0" />

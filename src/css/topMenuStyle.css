@@ -72,6 +72,10 @@
 
 }
 
+#feedbackPanel {
+	-fx-background-color: magenta;
+}
+
 #shoppingCart {
 	-fx-background-color: chartreuse;
 }

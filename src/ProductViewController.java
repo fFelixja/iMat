@@ -1,4 +1,5 @@
 
+import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -28,7 +29,9 @@ public class ProductViewController extends AnchorPane {
 
     private Product product;
 
-    public ProductViewController(Product product, int spinnerSpinAmount) {
+    private TopMenuController controller;
+
+    public ProductViewController(TopMenuController controller, Product product, int spinnerSpinAmount) {
 
         try {
 
@@ -39,6 +42,8 @@ public class ProductViewController extends AnchorPane {
         } catch (IOException e) {
             System.out.println("Error in constructor of ProductViewController");
         }
+
+        this.controller = controller;
 
         this.product = product;
         this.nameLabel.setText(product.getName());
@@ -60,5 +65,8 @@ public class ProductViewController extends AnchorPane {
     @FXML
     protected void addToCartButtonActionPerformed(ActionEvent event) {
         DataHandler.addToCart(product, Double.parseDouble(amountSpinner.getValue().toString()));
+
+        controller.addToCartFeedback(product, Integer.parseInt(amountSpinner.getValue().toString()));
+
     }
 }

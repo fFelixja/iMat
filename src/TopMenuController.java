@@ -1,6 +1,8 @@
+import javafx.animation.PauseTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -8,6 +10,9 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+import javafx.util.Duration;
 import se.chalmers.ait.dat215.project.Order;
 import se.chalmers.ait.dat215.project.Product;
 import se.chalmers.ait.dat215.project.ProductCategory;
@@ -50,7 +55,9 @@ public class TopMenuController extends AnchorPane implements Initializable{
 
     @FXML private GridPane productGridPane;
 
-    @FXML public Label viewLabel;
+    @FXML private Label viewLabel;
+
+    @FXML private AnchorPane feedbackPanel;
 
     private CategoryController latestCategory;
 
@@ -196,14 +203,9 @@ public class TopMenuController extends AnchorPane implements Initializable{
         }
     }
 
-//    @FXML
-//    protected void searchButtonActionPerformed(ActionEvent event) throws IOException {
-//        searchTextFieldKeyPressed(event);
-//    }
     @FXML
     protected void profileButtonActionPerformed(ActionEvent event)throws IOException {
         profileViewToFront();
-
     }
 
     @FXML
@@ -264,9 +266,26 @@ public class TopMenuController extends AnchorPane implements Initializable{
     }
 
     public void addProductToGrid(Product product, int column, int row) {
-        ProductViewController productView = new ProductViewController(product, 1);
+        ProductViewController productView = new ProductViewController(this, product, 1);
         productGridPane.add(productView, column, row);
         productGridPane.getStyleClass().add("gridStyle");
+    }
+
+    public void addToCartFeedback(Product product, int amount) {
+
+        ItemAddedMessagePanelController popupPanel= new ItemAddedMessagePanelController(product.getName(), amount);
+
+        feedbackPanel.getChildren().removeAll(feedbackPanel.getChildren());
+
+        feedbackPanel.getChildren().addAll(popupPanel);
+
+        feedbackPanel.setVisible(true);
+
+        PauseTransition delay = new PauseTransition(Duration.seconds(5));
+        delay.setOnFinished( event -> feedbackPanel.setVisible(false) );
+        delay.play();
+
+
     }
 
     public void setViewLabel(String text) {
