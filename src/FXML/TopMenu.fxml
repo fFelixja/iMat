@@ -119,7 +119,7 @@
             </ScrollPane>
             <ScrollPane id="productView" fx:id="productScrollPane" fitToHeight="true" fitToWidth="true" prefHeight="200.0" prefWidth="200.0" stylesheets="@../css/topMenuStyle.css">
                <content>
-                  <FlowPane id="categoryScrollPane">
+                  <FlowPane id="categoryScrollPane" stylesheets="@../css/topMenuStyle.css">
                      <children>
                         <GridPane id="productGridPane" fx:id="productGridPane" hgap="5.0" style="-fx-padding:10px 0px 0px 30px;" stylesheets="@../css/topMenuStyle.css" vgap="20.0">
                           <columnConstraints>
