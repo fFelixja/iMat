@@ -1,5 +1,4 @@
 import javafx.collections.FXCollections;
-        import javafx.collections.ObservableList;
         import javafx.event.ActionEvent;
         import javafx.fxml.FXML;
         import javafx.fxml.FXMLLoader;
@@ -230,6 +229,11 @@ public class CheckoutViewController extends AnchorPane {
             ccvLabel.setTextFill(Color.web("000"));
             expireDateLabel.setTextFill(Color.web("000"));
         }
+    }
+
+    @FXML
+    public void cancelButtonActionPerformed(ActionEvent event) {
+        controller.shoppingCartViewToFront();
     }
 
     @FXML
