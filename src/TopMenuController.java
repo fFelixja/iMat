@@ -1,5 +1,8 @@
+import javafx.animation.KeyFrame;
 import javafx.animation.PauseTransition;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
@@ -59,6 +62,8 @@ public class TopMenuController extends AnchorPane implements Initializable{
 
     @FXML private AnchorPane feedbackPanel;
 
+    private PauseTransition feedbackDelay = new PauseTransition(Duration.seconds(5));
+
     private CategoryController latestCategory;
 
     private ConfirmViewController confirmView = new ConfirmViewController();
@@ -78,6 +83,8 @@ public class TopMenuController extends AnchorPane implements Initializable{
             "Pasta", "Bröd","Citrusfrukter", "Exotiska Frukter", "Meloner","Stenfrukter",
             "Grönsaker", "Kål", "Rotfrukter", "Baljväxter", "Bär", "Örtkryddor", "Sötsaker",
             "Torrvaror", "Nötter & Frön", "Dryck"};
+
+    Timeline timeline = new Timeline();
 
     @Override
     public void initialize(URL url, ResourceBundle bundle){
@@ -102,6 +109,14 @@ public class TopMenuController extends AnchorPane implements Initializable{
         homeButton.requestFocus();
 
         categoryViewToFront();
+        timeline.getKeyFrames().add(new KeyFrame(Duration.seconds(5),
+                new EventHandler<ActionEvent>() {
+                    @Override
+                    public void handle(ActionEvent event) {
+                        feedbackPanel.setVisible(false);
+                        System.out.println("stop");
+                    }
+                }));
     }
 
     private void populateProductID(){
@@ -271,21 +286,18 @@ public class TopMenuController extends AnchorPane implements Initializable{
         productGridPane.getStyleClass().add("gridStyle");
     }
 
-    public void addToCartFeedback(Product product, int amount) {
+    public void addToCartFeedback(Product product, double amount) {
+        timeline.stop();
 
         ItemAddedMessagePanelController popupPanel= new ItemAddedMessagePanelController(product.getName(), amount);
-
         feedbackPanel.getChildren().removeAll(feedbackPanel.getChildren());
-
         feedbackPanel.getChildren().addAll(popupPanel);
-
         feedbackPanel.setVisible(true);
 
-        PauseTransition delay = new PauseTransition(Duration.seconds(5));
-        delay.setOnFinished( event -> feedbackPanel.setVisible(false) );
-        delay.play();
+        timeline.play();
 
-
+//        feedbackDelay.setOnFinished( event -> feedbackPanel.setVisible(false) );
+//        feedbackDelay.play();
     }
 
     public void setViewLabel(String text) {

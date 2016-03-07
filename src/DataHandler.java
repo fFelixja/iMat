@@ -5,12 +5,6 @@ import java.util.List;
 
 public class DataHandler {
 
-//    IMatDataHandler dataHandler;
-
-    public DataHandler() {
-//         dataHandler = IMatDataHandler.getInstance();
-    }
-
     public static String getCategory(int productId) {
         return IMatDataHandler.getInstance().getProduct(productId).getCategory().toString();
     }
@@ -26,13 +20,6 @@ public class DataHandler {
     public static List<Product> searchProducts(String search) {
         return IMatDataHandler.getInstance().findProducts(search);
     }
-
-
-
-
-
-
-
 
     public static void saveCustomer(String firstname, String lastname, String adress, String zipcode, String postAdress, String telephone){
         //Save customer information
@@ -78,26 +65,21 @@ public class DataHandler {
         return IMatDataHandler.getInstance().getShoppingCart();
     }
 
-    public static void addToCart(Product product, double amount) {
+    public static double addToCart(Product product, double amount) {
 
         //Checks if the shopping cart already contains the product as to not create duplicates
-        if (IMatDataHandler.getInstance().getShoppingCart().getItems().size() < 1) {
-            IMatDataHandler.getInstance().getShoppingCart().addProduct(product, amount);
-        } else {
-            boolean productExists = false;
+        if (IMatDataHandler.getInstance().getShoppingCart().getItems().size() > 1) {
             for (ShoppingItem shoppingItem : IMatDataHandler.getInstance().getShoppingCart().getItems()) {
                 if (shoppingItem.getProduct().equals(product)) {
                     IMatDataHandler.getInstance().getShoppingCart().getItems().get(
                             IMatDataHandler.getInstance().getShoppingCart().getItems().indexOf(shoppingItem)).setAmount(
                             shoppingItem.getAmount() + amount);
-                    productExists = true;
-                    break;
+                    return shoppingItem.getAmount(); //Returns current amount to show the in the feedback panel
                 }
             }
-            if (!productExists) {
-                IMatDataHandler.getInstance().getShoppingCart().addProduct(product, amount);
-            }
         }
+        IMatDataHandler.getInstance().getShoppingCart().addProduct(product, amount);
+        return amount;
     }
 
     public static Product getProduct(int idNumber) {

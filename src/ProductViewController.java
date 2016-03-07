@@ -64,9 +64,9 @@ public class ProductViewController extends AnchorPane {
 
     @FXML
     protected void addToCartButtonActionPerformed(ActionEvent event) {
-        DataHandler.addToCart(product, Double.parseDouble(amountSpinner.getValue().toString()));
+        double amount = DataHandler.addToCart(product, Double.parseDouble(amountSpinner.getValue().toString()));
 
-        controller.addToCartFeedback(product, Integer.parseInt(amountSpinner.getValue().toString()));
+        controller.addToCartFeedback(product, amount);
 
     }
 }
