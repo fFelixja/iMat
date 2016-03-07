@@ -5,6 +5,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.text.Font;
 import se.chalmers.ait.dat215.project.ShoppingCart;
 
 import java.io.IOException;
@@ -44,8 +45,8 @@ public class ShoppingCartViewController extends AnchorPane{
             productGridPane.add(shoppingItem, i % 2, i / 2);
         }
 
-        amountItemsLabel.setText(Integer.toString(shoppingCart.getItems().size()));
-        totalPriceLabel.setText(Double.toString(shoppingCart.getTotal()));
+        amountItemsLabel.setText("Totalt antal varor: " + Integer.toString(shoppingCart.getItems().size()));
+        totalPriceLabel.setText("Totalt pris: " + Double.toString(shoppingCart.getTotal()));
     }
 
     private void clearProductGridPane() {

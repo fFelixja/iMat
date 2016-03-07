@@ -114,7 +114,6 @@ public class TopMenuController extends AnchorPane implements Initializable{
                     @Override
                     public void handle(ActionEvent event) {
                         feedbackPanel.setVisible(false);
-                        System.out.println("stop");
                     }
                 }));
     }

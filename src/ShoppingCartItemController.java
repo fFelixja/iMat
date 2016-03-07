@@ -52,7 +52,8 @@ public class ShoppingCartItemController extends AnchorPane {
     private void updateValues() {
         nameLabel.setText(shoppingItem.getProduct().getName());
         amountLabel.setText(Double.toString(shoppingItem.getAmount()));
-        pricePerUnitLabel.setText(shoppingItem.getProduct().getUnit());
+//        pricePerUnitLabel.setText(shoppingItem.getProduct().getUnit());
+        pricePerUnitLabel.setText(shoppingItem.getProduct().getPrice() + " " + shoppingItem.getProduct().getUnit());
         totalPriceLabel.setText(Double.toString(shoppingItem.getTotal()));
         productImageView.setImage(DataHandler.getProductImage(shoppingItem.getProduct()));
     }
