@@ -26,7 +26,9 @@ public class PurchaseDetailViewController extends AnchorPane{
 
     private List<ShoppingItem> productList;
 
-    public PurchaseDetailViewController() {
+    private TopMenuController controller;
+
+    public PurchaseDetailViewController(TopMenuController controller) {
 
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("FXML/PurchaseDetailView.fxml"));
@@ -36,6 +38,7 @@ public class PurchaseDetailViewController extends AnchorPane{
         } catch (IOException e) {
             System.out.println("Fel i PurchaseDetailView");
         }
+        this.controller = controller;
     }
 
     public void setOrder(Order order){
@@ -50,12 +53,10 @@ public class PurchaseDetailViewController extends AnchorPane{
 
     private void addProducts(){
         clearProductGrid();
-       for (int i = 0; i < productList.size(); i++){
-
-
-           HistoryProductItemController productItem = new HistoryProductItemController(productList.get(i));
-           productGrid.add(productItem, i%2, i/2);
-       }
+        for (int i = 0; i < productList.size(); i++){
+            HistoryProductItemController productItem = new HistoryProductItemController(productList.get(i));
+            productGrid.add(productItem, i%2, i/2);
+           }
 
     }
 
@@ -68,6 +69,7 @@ public class PurchaseDetailViewController extends AnchorPane{
 
         for (ShoppingItem shoppingItem: productList) {
             DataHandler.addToCart(shoppingItem.getProduct(), shoppingItem.getAmount());
+            controller.addToCartFeedback("hela kundvagneng", 1);
         }
     }
 }

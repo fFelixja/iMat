@@ -68,7 +68,7 @@ public class DataHandler {
     public static double addToCart(Product product, double amount) {
 
         //Checks if the shopping cart already contains the product as to not create duplicates
-        if (IMatDataHandler.getInstance().getShoppingCart().getItems().size() > 1) {
+        if (IMatDataHandler.getInstance().getShoppingCart().getItems().size() > 0) {
             for (ShoppingItem shoppingItem : IMatDataHandler.getInstance().getShoppingCart().getItems()) {
                 if (shoppingItem.getProduct().equals(product)) {
                     IMatDataHandler.getInstance().getShoppingCart().getItems().get(

@@ -66,7 +66,7 @@ public class ProductViewController extends AnchorPane {
     protected void addToCartButtonActionPerformed(ActionEvent event) {
         double amount = DataHandler.addToCart(product, Double.parseDouble(amountSpinner.getValue().toString()));
 
-        controller.addToCartFeedback(product, amount);
+        controller.addToCartFeedback(product.getName(), amount);
 
     }
 }

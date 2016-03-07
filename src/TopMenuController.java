@@ -74,7 +74,7 @@ public class TopMenuController extends AnchorPane implements Initializable{
 
     private PurchaseHistoryViewController history  = new PurchaseHistoryViewController(this);
 
-    private PurchaseDetailViewController pastDetails = new PurchaseDetailViewController();
+    private PurchaseDetailViewController pastDetails = new PurchaseDetailViewController(this);
 
     private ShoppingCartViewController shoppingCart = new ShoppingCartViewController(this);
 
@@ -251,6 +251,7 @@ public class TopMenuController extends AnchorPane implements Initializable{
 
     public void categoryViewToFront() {
         categoryScrollPane.toFront();
+        setViewLabel("Alla kategorier");
     }
 
     public void historyViewToFront() {
@@ -285,10 +286,10 @@ public class TopMenuController extends AnchorPane implements Initializable{
         productGridPane.getStyleClass().add("gridStyle");
     }
 
-    public void addToCartFeedback(Product product, double amount) {
+    public void addToCartFeedback(String name, double amount) {
         timeline.stop();
 
-        ItemAddedMessagePanelController popupPanel= new ItemAddedMessagePanelController(product.getName(), amount);
+        ItemAddedMessagePanelController popupPanel= new ItemAddedMessagePanelController(name, amount);
         feedbackPanel.getChildren().removeAll(feedbackPanel.getChildren());
         feedbackPanel.getChildren().addAll(popupPanel);
         feedbackPanel.setVisible(true);
