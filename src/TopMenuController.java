@@ -62,8 +62,6 @@ public class TopMenuController extends AnchorPane implements Initializable{
 
     @FXML private AnchorPane feedbackPanel;
 
-    private PauseTransition feedbackDelay = new PauseTransition(Duration.seconds(5));
-
     private CategoryController latestCategory;
 
     private ConfirmViewController confirmView = new ConfirmViewController();
@@ -84,7 +82,9 @@ public class TopMenuController extends AnchorPane implements Initializable{
             "Grönsaker", "Kål", "Rotfrukter", "Baljväxter", "Bär", "Örtkryddor", "Sötsaker",
             "Torrvaror", "Nötter & Frön", "Dryck"};
 
-    Timeline timeline = new Timeline();
+    private Timeline timeline = new Timeline();
+
+    private int backCounter = 0;
 
     @Override
     public void initialize(URL url, ResourceBundle bundle){
@@ -116,7 +116,11 @@ public class TopMenuController extends AnchorPane implements Initializable{
                         feedbackPanel.setVisible(false);
                     }
                 }));
+
+        backButton.setDisable(true);
+        backCounter = 0;
     }
+
 
     private void populateProductID(){
 
@@ -165,7 +169,7 @@ public class TopMenuController extends AnchorPane implements Initializable{
     }
 
     @FXML
-    protected void searchTextFieldKeyPressed(ActionEvent event) {
+    protected void searchTextFieldKeyPressed() {
         clearProductGridPane();
 
         List<Product> productList = DataHandler.searchProducts(searchTextField.getText());
@@ -181,54 +185,80 @@ public class TopMenuController extends AnchorPane implements Initializable{
     }
 
     @FXML
-    protected void homeButtonActionPerformed(ActionEvent event) {
+    protected void homeButtonActionPerformed() {
         categoryViewToFront();
         viewLabel.setText("Alla kategorier");
     }
 
     @FXML
-    protected void backButtonActionPerformed(ActionEvent event) {
-        baseStackPane.getChildren().get(baseStackPane.getChildren().size() - 1).toBack();
+    protected void backButtonActionPerformed() {
 
-        if (baseStackPane.getChildren().get(baseStackPane.getChildren().size() - 1).getId().equals("productView")) {
-            latestCategory.createProductView();
-        }
-
-        switch (baseStackPane.getChildren().get(baseStackPane.getChildren().size() - 1).getId()){
-            case "shoppingCart": setViewLabel("Kundvagn");
-                break;
-            case "purchaseDetailView": setViewLabel("Skriv bra text här");
-                break;
-            case "purchaseHistoryView": setViewLabel("Tidigare inköp");
-                break;
-            case "profileView": setViewLabel("Din profil");
-                break;
-            case "productView": try {
-                setViewLabel(latestCategory.getName());
-            } catch (NullPointerException e) {
-                System.out.println("Fuck iMat");
+        if (backCounter > 0) {
+            if (backCounter == 1) {
+                backButton.setDisable(true);
             }
-                break;
-            case "categoryScrollPane": setViewLabel("Alla kategorier");
-                break;
-            case "confirmView": setViewLabel("Bekräftelsevy");
-                break;
-            default: break;
+            System.out.println(backCounter);
+            backCounter--;
+
+            baseStackPane.getChildren().get(baseStackPane.getChildren().size() - 1).toBack();
+
+            if (baseStackPane.getChildren().get(baseStackPane.getChildren().size() - 1).getId().equals("productView")) {
+                latestCategory.createProductView();
+            }
+            switch (baseStackPane.getChildren().get(baseStackPane.getChildren().size() - 1).getId()) {
+                case "shoppingCart":
+                    setViewLabel("Kundvagn");
+                    break;
+                case "purchaseDetailView":
+                    setViewLabel("Skriv bra text här");
+                    break;
+                case "purchaseHistoryView":
+                    setViewLabel("Tidigare inköp");
+                    break;
+                case "profileView":
+                    setViewLabel("Din profil");
+                    break;
+                case "productView":
+                    try {
+                        setViewLabel(latestCategory.getName());
+                    } catch (NullPointerException e) {
+                        System.out.println("Fuck iMat");
+                    }
+                    break;
+                case "categoryScrollPane":
+                    setViewLabel("Alla kategorier");
+                    break;
+                case "confirmView":
+                    setViewLabel("Bekräftelsevy");
+                    break;
+                default:
+                    break;
+            }
         }
     }
 
+    private void increaseBackCounter() {
+        if (backCounter == 0) {
+            backButton.setDisable(false);
+        }
+        System.out.println(backButton.isDisable());
+        System.out.println(backButton.isDisabled());
+        System.out.println(backCounter);
+        backCounter++;
+    }
+
     @FXML
-    protected void profileButtonActionPerformed(ActionEvent event)throws IOException {
+    protected void profileButtonActionPerformed()throws IOException {
         profileViewToFront();
     }
 
     @FXML
-    protected void purchaseHistoryButtonActionPerformed(ActionEvent event) throws IOException {
+    protected void purchaseHistoryButtonActionPerformed() throws IOException {
         historyViewToFront();
     }
 
     @FXML
-    protected void shoppingCartButtonActionPerformed(ActionEvent event)throws IOException {
+    protected void shoppingCartButtonActionPerformed()throws IOException {
         shoppingCartViewToFront();
     }
 
@@ -241,41 +271,50 @@ public class TopMenuController extends AnchorPane implements Initializable{
     }
 
     public void profileViewToFront(){
+        increaseBackCounter();
         profile.toFront();
         viewLabel.setText("Din profil");
     }
 
     public void productViewToFront() {
+        increaseBackCounter();
+        backCounter++;
         productScrollPane.toFront();
     }
 
     public void categoryViewToFront() {
+        increaseBackCounter();
         categoryScrollPane.toFront();
         setViewLabel("Alla kategorier");
     }
 
     public void historyViewToFront() {
+        increaseBackCounter();
         history.toFront();
         viewLabel.setText("Tidigare inköp");
     }
 
     public void checkoutViewToFront() {
+        increaseBackCounter();
         checkout.toFront();
         setViewLabel("Kassa");
     }
 
     public void shoppingCartViewToFront() {
+        increaseBackCounter();
         shoppingCart.populateProductGridPane(DataHandler.getShoppingCart());
         viewLabel.setText("Kundvagn");
         shoppingCart.toFront();
     }
 
     public void confirmViewToFront() {
+        increaseBackCounter();
         confirmView.toFront();
         setViewLabel("Bekräftelsevy");
     }
 
     public void pastPurchaseDetailViewToFront(Order order){
+        increaseBackCounter();
         pastDetails.setOrder(order);
         pastDetails.toFront();
     }
@@ -295,9 +334,6 @@ public class TopMenuController extends AnchorPane implements Initializable{
         feedbackPanel.setVisible(true);
 
         timeline.play();
-
-//        feedbackDelay.setOnFinished( event -> feedbackPanel.setVisible(false) );
-//        feedbackDelay.play();
     }
 
     public void setViewLabel(String text) {
