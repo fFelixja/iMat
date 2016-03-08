@@ -257,7 +257,7 @@ public class CheckoutViewController extends AnchorPane {
             needCheck = true;
         }else{
             feedBackLabel.setTextFill(Color.web("#da1515"));
-            feedBackLabel.setText("Du kan inte spara när det är fel!");
+            feedBackLabel.setText("Det finns fel i uppgifterna!");
         }
     }
 
