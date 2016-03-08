@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<fx:root prefHeight="88.0" prefWidth="597.0" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root prefHeight="100.0" prefWidth="1920.0" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
       <Label fx:id="datePurchasedLabel" layoutX="80.0" layoutY="12.0" text="XXXX-XX-XX" AnchorPane.leftAnchor="80.0">
          <font>
             <Font size="25.0" />
@@ -21,7 +21,7 @@
             <Font size="19.0" />
          </font>
       </Label>
-      <Button id="saveButton" fx:id="viewDetailsButton" layoutX="549.0" layoutY="12.0" mnemonicParsing="false" onAction="#viewDetailsButtonActionPerformed" prefHeight="65.0" prefWidth="166.0" text="Se detaljer" AnchorPane.rightAnchor="14.0">
+      <Button id="saveButton" fx:id="viewDetailsButton" layoutX="1521.0" layoutY="16.0" mnemonicParsing="false" onAction="#viewDetailsButtonActionPerformed" prefHeight="65.0" prefWidth="383.0" text="Se detaljer" AnchorPane.rightAnchor="16.0">
          <font>
             <Font size="22.0" />
          </font>
