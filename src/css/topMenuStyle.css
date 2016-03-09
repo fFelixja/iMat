@@ -193,7 +193,7 @@
 /*	-fx-background-color:#ecf0f1;*/
 }
 
-#productPane {
+#productPane, #cartItem {
 	-fx-background-image:url(category_static.png);
 	-fx-background-size:380,380;
 	-fx-background-repeat: no-repeat;
@@ -203,6 +203,10 @@
 	-fx-border-style:solid;
 	-fx-background-color:#FFF;
 */
+}
+
+#cartItem {
+	-fx-background-size:320,320;
 }
 
 #productImage {
