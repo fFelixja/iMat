@@ -1,23 +1,32 @@
 #homeButton, #backButton, #profileButton, #purchaseHistoryButton, #shoppingCartButton, #searchButton {
-	-fx-background-color:#FFF;
-	-fx-background-radius:0;
+	-fx-background-image:url(static_button.png);
+	-fx-background-repeat: no-repeat;
+  -fx-background-position:center;
+	-fx-background-size:120,40;
+	-fx-skin: "com.sun.javafx.scene.control.skin.ButtonSkin";
+-fx-background-color: -fx-shadow-highlight-color, -fx-outer-border, -fx-inner-border, -fx-body-color;
+-fx-background-insets: 0 0 0 0, 0, 0, 0;
+-fx-background-radius: 5, 5, 5, 5;
+/*	-fx-background-radius:0;
 	-fx-border-color:rgba(26, 188, 156,1.0);
-	-fx-border-width:0px 0px 2px 0px; 
-	
+	-fx-border-width:0px 0px 2px 0px;
+*/
 }
 
 
 #homeButton:hover, #backButton:hover, #profileButton:hover, #purchaseHistoryButton:hover, #shoppingCartButton:hover, #searchButton:hover {
 	-fx-border-width:0px 0px 5px 0px;
 	-fx-text:#FFF;
-	
+
 }
 #homeButton:pressed, #backButton:pressed, #profileButton:pressed, #purchaseHistoryButton:pressed, #shoppingCartButton:pressed, #searchButton:pressed {
-	-fx-background-color:#ecf0f1;
-	-fx-effect:innershadow(gaussian,#ecf0f1,3,1,0,0);
+	-fx-background-image:url(clicked_button.png);
+/*	-fx-effect:innershadow(gaussian,#ecf0f1,3,1,0,0);
 	-fx-border-width:0px 0px 5px 0px;
 	-fx-text:#FFF;
+*/
 }
+
 
 #baseStackPane{
 	-fx-background-color:#FFF;
@@ -36,22 +45,41 @@
 }
 
 #confirmView {
-    	-fx-background-color: deeppink;
+    	-fx-background-color: #FFF;
 }
 
 #allCategories {
 	-fx-border-insets:50%;
 }
 
-#categoryScrollPane, #productScrollPane {
+#categoryScrollPane, #productScrollPane,#categoryGridPane {
     -fx-background-image:url(restaurant_bright.png);
+		-fx-focus-color: transparent;
 }
-#categoryGridPane {
+#categoryScrollPane:focused, #productScrollPane:focused,#categoryGridPane:focused {
     -fx-background-image:url(restaurant_bright.png);
+		-fx-focus-color: transparent;
 }
 
+#pastPurchasePane {
+	-fx-background-image:url(past_purchase.png);
+	-fx-background-size:1920,100;
+	-fx-background-repeat: no-repeat;
+	-fx-background-position:center;
+}
+
+
 #productGridPane{
-    -fx-background-color:#FFF;
+
+		-fx-focus-color: transparent;
+}
+
+#header {
+	-fx-background-image:url(header.png);
+	-fx-background-size:1920,120;
+	-fx-background-repeat: no-repeat;
+	-fx-background-position:center;
+
 }
 
 #profileView {
@@ -59,17 +87,20 @@
 }
 
 #mainPane {
-		-fx-background-image:url(restaurant.png);
+		/*-fx-background-image:url(header.png);*/
 }
 
 #baseStackPane {
-		-fx-background-image:url(restaurant.png);
+/*		-fx-background-image:url(header.png);*/
 		-fx-text-color:#FFF;
 
 }
 
 #feedbackPanel {
-	-fx-background-color: magenta;
+	-fx-background-image:url(item_added.png);
+	-fx-background-size:420,140;
+	-fx-background-repeat: no-repeat;
+	-fx-background-position:center;
 }
 
 #shoppingCart {
@@ -85,11 +116,15 @@
 }
 
 #personalnfoPanel, #paymentInfoPanel {
-	-fx-background-color:#FFF;
+	-fx-background-image:url(info_panel.png);
+	-fx-background-size:800,100;
+	-fx-background-repeat: no-repeat;
+	-fx-background-position:center;
+/*	-fx-background-color:#FFF;
 	-fx-border-width:0px 0px 5px 0px;
 	-fx-border-color:rgba(52, 152, 219,0.3);;
 	-fx-border-style:solid;
-
+*/
 }
 
 #purchaseDetailView {
@@ -97,19 +132,35 @@
 }
 
 #personalInfoLabel, #paymentInfoLabel {
-	-fx-background-color:#FFF;
-	-fx-border-width:0px 0px 2px 0px;
-	-fx-border-color:rgba(52, 152, 219,0.3);
-	-fx-border-style:solid;
-	
+
+
 }
 
-#saveButton, #cancelButton, #addToCartButton, #purchaseButton{
+#addToCartButton {
+	-fx-background-image:url(static_addToCart.png);
+	-fx-background-size:180,60;
+	-fx-background-repeat: no-repeat;
+	-fx-background-position:center;
+	-fx-skin: "com.sun.javafx.scene.control.skin.ButtonSkin";
+-fx-background-color: -fx-shadow-highlight-color, -fx-outer-border, -fx-inner-border, -fx-body-color;
+-fx-background-insets: 0 0 0 0, 0, 0, 0;
+-fx-background-radius: 5, 5, 5, 5;
 
-	-fx-background-radius:0px 0px 0px 0px;
+}
+
+#saveButton, #cancelButton, #purchaseButton{
+	-fx-background-image:url(static_button.png);
+	-fx-background-repeat: no-repeat;
+  -fx-background-position:center;
+	-fx-background-size:180,60;
+	-fx-skin: "com.sun.javafx.scene.control.skin.ButtonSkin";
+-fx-background-color: -fx-shadow-highlight-color, -fx-outer-border, -fx-inner-border, -fx-body-color;
+-fx-background-insets: 0 0 0 0, 0, 0, 0;
+-fx-background-radius: 5, 5, 5, 5;
+/*	-fx-background-radius:0px 0px 0px 0px;
 	-fx-background-color:#16a085;
 	-fx-text-color:#FFF;
-	
+*/
 
 }
 
@@ -125,22 +176,33 @@
 }
 
 #categoryPane {
-	-fx-border-width:5px;
+	-fx-background-image:url(category_static.png);
+	-fx-background-size:300,300;
+	-fx-background-repeat: no-repeat;
+	-fx-background-position:center;
+
+	/*-fx-border-width:5px;
 	-fx-border-color:rgba(52, 152, 219,0.3);
 	-fx-border-style:solid;
 	-fx-background-color:#FFF;
-
+*/
 }
 
 #categoryPane:hover {
-	-fx-background-color:#ecf0f1;
-} 
+/*	-fx-background-image:url(category_hover.png);
+/*	-fx-background-color:#ecf0f1;*/
+}
 
 #productPane {
-	-fx-border-width:5px;
+	-fx-background-image:url(category_static.png);
+	-fx-background-size:380,380;
+	-fx-background-repeat: no-repeat;
+	-fx-background-position:center;
+	/*-fx-border-width:5px;
 	-fx-border-color:rgba(52, 152, 219,0.3);
 	-fx-border-style:solid;
 	-fx-background-color:#FFF;
+*/
 }
 
 #productImage {
@@ -165,10 +227,10 @@
 }
 
 .track {
-	
-	-fx-background-color:#FFF;  
-	-fx-border-color:derive(gray,50%); 
-	-fx-background-radius: 0em; 
+
+	-fx-background-color:#FFF;
+	-fx-border-color:derive(gray,50%);
+	-fx-background-radius: 0em;
 
 }
 
@@ -184,5 +246,3 @@
 .increment-button:hover, .decrement-button:hover {
 	-fx-background-color:derive(gray,80%);
 }
-
-
