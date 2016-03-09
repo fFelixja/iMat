@@ -82,7 +82,7 @@
 
 }
 
-#profileView {
+#profileView, #purchaseHistory{
     -fx-background-image:url(restaurant_bright.png);
 }
 
@@ -103,7 +103,7 @@
 	-fx-background-position:center;
 }
 
-#shoppingCart {
+#shoppingCart, #purchaseDetailView{
 	-fx-background-image:url(restaurant_bright.png);
 }
 
@@ -127,9 +127,6 @@
 */
 }
 
-#purchaseDetailView {
-    	-fx-background-color:derive(gray,90%);
-}
 
 #personalInfoLabel, #paymentInfoLabel {
 

@@ -33,13 +33,10 @@ public class PastPurchasePanelController extends AnchorPane {
             System.out.println("Fel i PastPurchasePanelController");
         }
 
-
         datePurchasedLabel.setText(order.getDate().toString());
         amountLabel.setText(order.getItems().size() + "st");
         totalPriceLabel.setText(DataHandler.getOrderTotal(order) + "kr");
-
         this.controller = controller;
-
         this.order = order;
 
     }
@@ -47,6 +44,7 @@ public class PastPurchasePanelController extends AnchorPane {
     @FXML
     protected void viewDetailsButtonActionPerformed (ActionEvent event){
         controller.pastPurchaseDetailViewToFront(order);
+        controller.setViewLabel("Kvitto");
     }
 
 

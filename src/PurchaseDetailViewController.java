@@ -46,6 +46,7 @@ public class PurchaseDetailViewController extends AnchorPane{
         nbrOfProductsLabel.setText(order.getItems().size() + " st");
         priceLabel.setText(DataHandler.getOrderTotal(order) + " kr");
 
+
         productList = order.getItems();
         addProducts();
 
