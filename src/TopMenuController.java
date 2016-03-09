@@ -319,6 +319,7 @@ public class TopMenuController extends AnchorPane implements Initializable{
         increaseBackCounter(confirmView.getId(), confirmView);
         confirmView.toFront();
         setViewLabel("Bekräftelsevy");
+        confirmView.updateLabels();
     }
 
     public void pastPurchaseDetailViewToFront(Order order){

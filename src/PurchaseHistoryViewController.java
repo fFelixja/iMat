@@ -33,10 +33,8 @@ public class PurchaseHistoryViewController extends AnchorPane {
 }
 
 class OrderComparator implements Comparator<Order> {
-
     @Override
     public int compare(Order a, Order b) {
         return b.getOrderNumber() - a.getOrderNumber();
     }
-
 }

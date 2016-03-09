@@ -1,6 +1,7 @@
 import javafx.scene.image.Image;
 import se.chalmers.ait.dat215.project.*;
 
+import java.util.Comparator;
 import java.util.List;
 
 public class DataHandler {
@@ -52,6 +53,7 @@ public class DataHandler {
     public static Customer getCustomer(){
         return IMatDataHandler.getInstance().getCustomer();
     }
+
     public static CreditCard getCreditCard(){
         return IMatDataHandler.getInstance().getCreditCard();
     }
@@ -97,7 +99,6 @@ public class DataHandler {
 
     public static void removeShoppingItem(ShoppingItem shoppingItem) {
         IMatDataHandler.getInstance().getShoppingCart().removeItem(shoppingItem);
-
     }
 
     // Returns the total cost of an order
@@ -110,6 +111,7 @@ public class DataHandler {
     }
 
     public static void placeOrder() {
-        IMatDataHandler.getInstance().placeOrder(true);
+        IMatDataHandler.getInstance().placeOrder(false);
     }
+
 }
