@@ -11,6 +11,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Region;
 import javafx.scene.layout.StackPane;
 
 import javafx.stage.Stage;
@@ -22,6 +23,7 @@ import se.chalmers.ait.dat215.project.ProductCategory;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -62,8 +64,6 @@ public class TopMenuController extends AnchorPane implements Initializable{
 
     @FXML private AnchorPane feedbackPanel;
 
-    private PauseTransition feedbackDelay = new PauseTransition(Duration.seconds(5));
-
     private CategoryController latestCategory;
 
     private ConfirmViewController confirmView = new ConfirmViewController(this);
@@ -84,7 +84,11 @@ public class TopMenuController extends AnchorPane implements Initializable{
             "Grönsaker", "Kål", "Rotfrukter", "Baljväxter", "Bär", "Örtkryddor", "Sötsaker",
             "Torrvaror", "Nötter & Frön", "Dryck"};
 
-    Timeline timeline = new Timeline();
+    private Timeline timeline = new Timeline();
+
+    private int backCounter = 0;
+
+    private ArrayDeque<Region> backQueue = new ArrayDeque<>();
 
     @Override
     public void initialize(URL url, ResourceBundle bundle){
@@ -116,7 +120,11 @@ public class TopMenuController extends AnchorPane implements Initializable{
                         feedbackPanel.setVisible(false);
                     }
                 }));
+
+        backButton.setDisable(true);
+        backCounter = 0;
     }
+
 
     private void populateProductID(){
 
@@ -165,7 +173,7 @@ public class TopMenuController extends AnchorPane implements Initializable{
     }
 
     @FXML
-    protected void searchTextFieldKeyPressed(ActionEvent event) {
+    protected void searchTextFieldKeyPressed() {
         clearProductGridPane();
 
         List<Product> productList = DataHandler.searchProducts(searchTextField.getText());
@@ -181,54 +189,84 @@ public class TopMenuController extends AnchorPane implements Initializable{
     }
 
     @FXML
-    protected void homeButtonActionPerformed(ActionEvent event) {
+    protected void homeButtonActionPerformed() {
         categoryViewToFront();
         viewLabel.setText("Alla kategorier");
     }
 
     @FXML
-    protected void backButtonActionPerformed(ActionEvent event) {
-        baseStackPane.getChildren().get(baseStackPane.getChildren().size() - 1).toBack();
+    protected void backButtonActionPerformed() {
 
-        if (baseStackPane.getChildren().get(baseStackPane.getChildren().size() - 1).getId().equals("productView")) {
-            latestCategory.createProductView();
-        }
-
-        switch (baseStackPane.getChildren().get(baseStackPane.getChildren().size() - 1).getId()){
-            case "shoppingCart": setViewLabel("Kundvagn");
-                break;
-            case "purchaseDetailView": setViewLabel("Tidigare inköp");
-                break;
-            case "purchaseHistoryView": setViewLabel("Tidigare inköp");
-                break;
-            case "profileView": setViewLabel("Din profil");
-                break;
-            case "productView": try {
-                setViewLabel(latestCategory.getName());
-            } catch (NullPointerException e) {
-                System.out.println("Fuck iMat");
+        if (backQueue.size() >= 1) {
+            if (backQueue.size() == 2) {
+                backButton.setDisable(true);
             }
-                break;
-            case "categoryScrollPane": setViewLabel("Alla kategorier");
-                break;
-            case "confirmView": setViewLabel("Bekräftelsevy");
-                break;
-            default: break;
+//            backCounter--;
+
+            backQueue.removeLast();
+            backQueue.peekLast().toFront();
+
+//            baseStackPane.getChildren().get(baseStackPane.getChildren().size() - 1).toBack();
+
+            if (baseStackPane.getChildren().get(baseStackPane.getChildren().size() - 1).getId().equals("productView")) {
+                latestCategory.createProductView();
+            }
+            switch (baseStackPane.getChildren().get(baseStackPane.getChildren().size() - 1).getId()) {
+                case "shoppingCart":
+                    setViewLabel("Kundvagn");
+                    break;
+                case "purchaseDetailView":
+                    setViewLabel("Skriv bra text här");
+                    break;
+                case "purchaseHistoryView":
+                    setViewLabel("Tidigare inköp");
+                    break;
+                case "profileView":
+                    setViewLabel("Din profil");
+                    break;
+                case "productView":
+                    try {
+                        setViewLabel(latestCategory.getName());
+                    } catch (NullPointerException e) {
+                        System.out.println("Fuck iMat");
+                    }
+                    break;
+                case "categoryScrollPane":
+                    setViewLabel("Alla kategorier");
+                    break;
+                case "confirmView":
+                    setViewLabel("Bekräftelsevy");
+                    break;
+                default:
+                    break;
+            }
         }
     }
 
+    private boolean increaseBackCounter(String id, Region region) {
+        if (!baseStackPane.getChildren().get(baseStackPane.getChildren().size() - 1).getId().equals(id)) {
+
+            if (backQueue.size() == 1) {
+                backButton.setDisable(false);
+            }
+            backQueue.add(region);
+            return true;
+        }
+        return false;
+    }
+
     @FXML
-    protected void profileButtonActionPerformed(ActionEvent event)throws IOException {
+    protected void profileButtonActionPerformed()throws IOException {
         profileViewToFront();
     }
 
     @FXML
-    protected void purchaseHistoryButtonActionPerformed(ActionEvent event) throws IOException {
+    protected void purchaseHistoryButtonActionPerformed() throws IOException {
         historyViewToFront();
     }
 
     @FXML
-    protected void shoppingCartButtonActionPerformed(ActionEvent event)throws IOException {
+    protected void shoppingCartButtonActionPerformed()throws IOException {
         shoppingCartViewToFront();
     }
 
@@ -241,41 +279,50 @@ public class TopMenuController extends AnchorPane implements Initializable{
     }
 
     public void profileViewToFront(){
+        increaseBackCounter(profile.getId(), profile);
+
         profile.toFront();
         viewLabel.setText("Din profil");
     }
 
     public void productViewToFront() {
+        increaseBackCounter(productScrollPane.getId(), productScrollPane);
         productScrollPane.toFront();
     }
 
     public void categoryViewToFront() {
+        increaseBackCounter(categoryScrollPane.getId(), categoryScrollPane);
         categoryScrollPane.toFront();
         setViewLabel("Alla kategorier");
     }
 
     public void historyViewToFront() {
+        increaseBackCounter(history.getId(), history);
         history.toFront();
         viewLabel.setText("Tidigare inköp");
     }
 
     public void checkoutViewToFront() {
+        increaseBackCounter(checkout.getId(), checkout);
         checkout.toFront();
         setViewLabel("Kassa");
     }
 
     public void shoppingCartViewToFront() {
+        increaseBackCounter(shoppingCart.getId(), shoppingCart);
         shoppingCart.populateProductGridPane(DataHandler.getShoppingCart());
         viewLabel.setText("Kundvagn");
         shoppingCart.toFront();
     }
 
     public void confirmViewToFront() {
+        increaseBackCounter(confirmView.getId(), confirmView);
         confirmView.toFront();
         setViewLabel("Bekräftelsevy");
     }
 
     public void pastPurchaseDetailViewToFront(Order order){
+        increaseBackCounter(pastDetails.getId(), pastDetails);
         pastDetails.setOrder(order);
         pastDetails.toFront();
     }
@@ -295,9 +342,6 @@ public class TopMenuController extends AnchorPane implements Initializable{
         feedbackPanel.setVisible(true);
 
         timeline.play();
-
-//        feedbackDelay.setOnFinished( event -> feedbackPanel.setVisible(false) );
-//        feedbackDelay.play();
     }
 
     public void setViewLabel(String text) {

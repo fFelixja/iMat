@@ -310,8 +310,9 @@ public class ProfileViewController extends AnchorPane {
         return this.profileLabel.toString();
     }
 
-    public void cancleButtonActionPerformed(ActionEvent event){
-        topMenuController.backButtonActionPerformed(event);
+    public void cancelButtonActionPerformed(){
+
+        topMenuController.backButtonActionPerformed();
     }
 
 }
