@@ -17,9 +17,7 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Duration;
-import se.chalmers.ait.dat215.project.Order;
-import se.chalmers.ait.dat215.project.Product;
-import se.chalmers.ait.dat215.project.ProductCategory;
+import se.chalmers.ait.dat215.project.*;
 
 import java.io.IOException;
 import java.net.URL;
@@ -30,7 +28,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 
-public class TopMenuController extends AnchorPane implements Initializable{
+public class TopMenuController extends AnchorPane implements Initializable, ShoppingCartListener {
 
     @FXML private TextField searchTextField;
 
@@ -91,6 +89,11 @@ public class TopMenuController extends AnchorPane implements Initializable{
     private ArrayDeque<Region> backQueue = new ArrayDeque<>();
 
     @Override
+    public void shoppingCartChanged(CartEvent evt) {
+        shoppingCartButton.setText("Kundvagn " + IMatDataHandler.getInstance().getShoppingCart().getTotal() + "kr");
+    }
+
+    @Override
     public void initialize(URL url, ResourceBundle bundle){
         populateProductID();
         initializeCategoryView();
@@ -122,7 +125,8 @@ public class TopMenuController extends AnchorPane implements Initializable{
                 }));
 
         backButton.setDisable(true);
-        backCounter = 0;
+
+        IMatDataHandler.getInstance().getShoppingCart().addShoppingCartListener(this);
     }
 
 
@@ -279,6 +283,7 @@ public class TopMenuController extends AnchorPane implements Initializable{
     }
 
     public void profileViewToFront(){
+        profile.populateTextFields();
         increaseBackCounter(profile.getId(), profile);
 
         profile.toFront();
@@ -303,6 +308,7 @@ public class TopMenuController extends AnchorPane implements Initializable{
     }
 
     public void checkoutViewToFront() {
+        checkout.populateTextFields();
         increaseBackCounter(checkout.getId(), checkout);
         checkout.toFront();
         setViewLabel("Kassa");
@@ -319,6 +325,7 @@ public class TopMenuController extends AnchorPane implements Initializable{
         increaseBackCounter(confirmView.getId(), confirmView);
         confirmView.toFront();
         setViewLabel("Bekräftelsevy");
+        confirmView.updateLabels();
     }
 
     public void pastPurchaseDetailViewToFront(Order order){
@@ -333,10 +340,10 @@ public class TopMenuController extends AnchorPane implements Initializable{
         productGridPane.getStyleClass().add("gridStyle");
     }
 
-    public void addToCartFeedback(String name, double amount) {
+    public void addToCartFeedback(String title, String name, String amount) {
         timeline.stop();
 
-        ItemAddedMessagePanelController popupPanel= new ItemAddedMessagePanelController(name, amount);
+        ItemAddedMessagePanelController popupPanel= new ItemAddedMessagePanelController(title, name, amount);
         feedbackPanel.getChildren().removeAll(feedbackPanel.getChildren());
         feedbackPanel.getChildren().addAll(popupPanel);
         feedbackPanel.setVisible(true);

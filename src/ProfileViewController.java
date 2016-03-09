@@ -166,7 +166,7 @@ public class ProfileViewController extends AnchorPane {
         cardNumberListener.setCardNumberGUI(cardLabel, cardImage);
 
     }
-    private void populateTextFields(){
+    public void populateTextFields(){
         needCheck = false;
 
         Customer customer = DataHandler.getCustomer();

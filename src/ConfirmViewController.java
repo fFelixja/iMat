@@ -4,11 +4,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import se.chalmers.ait.dat215.project.IMatDataHandler;
+import se.chalmers.ait.dat215.project.Order;
 
 import java.io.IOException;
 
 public class ConfirmViewController extends AnchorPane {
-    @FXML private Label totalGroceriesLabel;
+    @FXML private Label totalAmountLabel;
 
     @FXML private Label totalCostLabel;
 
@@ -29,6 +31,12 @@ public class ConfirmViewController extends AnchorPane {
             System.out.println("Error in constructor of ConfirmViewController");
         }
         this.controller = controller;
+    }
+
+    public void updateLabels() {
+        totalCostLabel.setText("Totalt pris: " + IMatDataHandler.getInstance().getShoppingCart().getTotal());
+        totalAmountLabel.setText("Antal saker: " + IMatDataHandler.getInstance().getShoppingCart().getItems().size());
+        IMatDataHandler.getInstance().getShoppingCart().clear();
     }
 
     @FXML

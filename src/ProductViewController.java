@@ -1,4 +1,5 @@
 
+import com.sun.xml.internal.fastinfoset.algorithm.DoubleEncodingAlgorithm;
 import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -51,7 +52,7 @@ public class ProductViewController extends AnchorPane {
         priceUnitLabel.setText(Double.toString(product.getPrice()) + " " + product.getUnit());
         amountUnitLabel.setText(product.getUnitSuffix());
 
-        amountSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, Integer.MAX_VALUE, 1, spinnerSpinAmount));
+        amountSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1, Integer.MAX_VALUE, 1, spinnerSpinAmount));
     }
 
     public void setProductImage(Image image) {
@@ -66,7 +67,7 @@ public class ProductViewController extends AnchorPane {
     protected void addToCartButtonActionPerformed(ActionEvent event) {
         double amount = DataHandler.addToCart(product, Double.parseDouble(amountSpinner.getValue().toString()));
 
-        controller.addToCartFeedback(product.getName(), amount);
+        controller.addToCartFeedback("Vara tillagd i kundvagnen: ", product.getName(), Double.toString(amount));
 
     }
 }

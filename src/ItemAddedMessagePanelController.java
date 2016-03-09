@@ -11,7 +11,9 @@ public class ItemAddedMessagePanelController extends AnchorPane {
 
     @FXML private Label productAddedLabel;
 
-    public ItemAddedMessagePanelController(String name, double amount) {
+    @FXML private Label titleLabel;
+
+    public ItemAddedMessagePanelController(String title, String name, String amount) {
 
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("FXML/ItemAddedMessagePanel.fxml"));
@@ -22,7 +24,8 @@ public class ItemAddedMessagePanelController extends AnchorPane {
             System.out.println("Error in constructor of ItemAddedMessagePanel");
         }
 
-        nbrOfAddedItemLabel.setText(Double.toString(amount));
+        titleLabel.setText(title);
+        nbrOfAddedItemLabel.setText(amount);
         productAddedLabel.setText(name);
     }
 }
