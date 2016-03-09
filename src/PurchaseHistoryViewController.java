@@ -27,7 +27,6 @@ public class PurchaseHistoryViewController extends AnchorPane {
 
         pastOrders.sort(new OrderComparator());
         for (Order order : pastOrders){
-            System.out.println(order.getOrderNumber());
             purchaseBox.getChildren().add(new PastPurchasePanelController(order, controller));
         }
     }
