@@ -56,7 +56,7 @@ public class PurchaseDetailViewController extends AnchorPane{
         clearProductGrid();
         for (int i = 0; i < productList.size(); i++){
             HistoryProductItemController productItem = new HistoryProductItemController(productList.get(i));
-            productGrid.add(productItem, i%2, i/2);
+            productGrid.add(productItem, i%3, i/3);
            }
 
     }

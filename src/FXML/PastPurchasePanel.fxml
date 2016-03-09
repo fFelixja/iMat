@@ -22,7 +22,7 @@
             <Font name="Yu Gothic UI Regular" size="20.0" />
          </font>
       </Label>
-      <Button id="saveButton" fx:id="viewDetailsButton" layoutX="1521.0" layoutY="16.0" mnemonicParsing="false" onAction="#viewDetailsButtonActionPerformed" prefHeight="65.0" prefWidth="383.0" text="Se detaljer" AnchorPane.rightAnchor="16.0">
+      <Button fx:id="viewDetailsButton" layoutX="1521.0" layoutY="16.0" mnemonicParsing="false" onAction="#viewDetailsButtonActionPerformed" prefHeight="70.0" prefWidth="380.0" text="Se detaljer" textFill="WHITE" AnchorPane.rightAnchor="16.0">
          <font>
             <Font size="22.0" />
          </font>

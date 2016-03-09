@@ -20,8 +20,8 @@
    <children>
       <AnchorPane fx:id="header" prefHeight="120.0" prefWidth="1920.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <TextField fx:id="searchTextField" layoutX="1148.0" layoutY="60.0" onAction="#searchTextFieldKeyPressed" prefHeight="40.0" prefWidth="201.0" promptText="Sök..." AnchorPane.rightAnchor="622.0" AnchorPane.topAnchor="60.0" />
-            <Button fx:id="backButton" layoutX="421.0" layoutY="60.0" mnemonicParsing="false" onAction="#backButtonActionPerformed" prefHeight="40.0" prefWidth="28.0" AnchorPane.leftAnchor="410.0" AnchorPane.topAnchor="60.0">
+            <TextField fx:id="searchTextField" layoutX="1148.0" layoutY="75.0" onAction="#searchTextFieldKeyPressed" prefHeight="25.0" prefWidth="201.0" promptText="Sök..." AnchorPane.rightAnchor="622.0" AnchorPane.topAnchor="75.0" />
+            <Button fx:id="backButton" layoutX="421.0" layoutY="60.0" mnemonicParsing="false" onAction="#backButtonActionPerformed" prefHeight="40.0" prefWidth="28.0" AnchorPane.leftAnchor="430.0" AnchorPane.topAnchor="60.0">
                <graphic>
                   <ImageView fx:id="backButtonImage" fitHeight="18.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true" />
                </graphic>
@@ -29,7 +29,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="homeButton" layoutX="516.0" layoutY="60.0" mnemonicParsing="false" onAction="#homeButtonActionPerformed" prefHeight="40.0" prefWidth="120.0" text="Kategorier" textFill="WHITE" AnchorPane.leftAnchor="500.0" AnchorPane.topAnchor="60.0">
+            <Button fx:id="homeButton" layoutX="506.0" layoutY="60.0" mnemonicParsing="false" onAction="#homeButtonActionPerformed" prefHeight="40.0" prefWidth="120.0" text="Kategorier" textFill="WHITE" AnchorPane.leftAnchor="506.0" AnchorPane.topAnchor="60.0">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -62,7 +62,7 @@
                   <Tooltip text="Gå till tidigare inköp" />
                </tooltip>
             </Button>
-            <Button fx:id="shoppingCartButton" layoutX="1706.0" layoutY="60.0" mnemonicParsing="false" onAction="#shoppingCartButtonActionPerformed" prefHeight="40.0" prefWidth="184.0" text="Kundvagn" textFill="WHITE" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="60.0">
+            <Button fx:id="shoppingCartButton" layoutX="1706.0" layoutY="60.0" mnemonicParsing="false" onAction="#shoppingCartButtonActionPerformed" prefHeight="40.0" prefWidth="180.0" text="Kundvagn" textFill="WHITE" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="60.0">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -76,7 +76,7 @@
                   <Tooltip text="Gå till kundvagn" />
                </tooltip>
             </Button>
-            <Button fx:id="searchButton" layoutX="1308.0" layoutY="60.0" mnemonicParsing="false" onAction="#searchTextFieldKeyPressed" prefHeight="25.0" prefWidth="59.0" stylesheets="@../css/topMenuStyle.css" text="Sök" textFill="WHITE" AnchorPane.rightAnchor="553.0" AnchorPane.topAnchor="60.0" />
+            <Button fx:id="searchButton" layoutX="1310.0" layoutY="76.0" mnemonicParsing="false" onAction="#searchTextFieldKeyPressed" prefHeight="25.0" prefWidth="59.0" stylesheets="@../css/topMenuStyle.css" text="Sök" textFill="WHITE" AnchorPane.rightAnchor="551.0" AnchorPane.topAnchor="75.0" />
             <Label fx:id="viewLabel" layoutX="60.0" layoutY="82.0" text="Label" textFill="WHITE" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="82.0">
                <font>
                   <Font name="Yu Gothic UI Bold" size="24.0" />
@@ -167,10 +167,16 @@
                             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
                               <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
                           </rowConstraints>
+                           <FlowPane.margin>
+                              <Insets top="60.0" />
+                           </FlowPane.margin>
                         </GridPane>
                      </children>
                   </FlowPane>
                </content>
+               <StackPane.margin>
+                  <Insets />
+               </StackPane.margin>
             </ScrollPane>
          </children>
       </StackPane>

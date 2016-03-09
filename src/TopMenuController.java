@@ -220,7 +220,7 @@ public class TopMenuController extends AnchorPane implements Initializable, Shop
                     setViewLabel("Kundvagn");
                     break;
                 case "purchaseDetailView":
-                    setViewLabel("Skriv bra text här");
+                    setViewLabel("Kvitto");
                     break;
                 case "purchaseHistoryView":
                     setViewLabel("Tidigare inköp");
@@ -331,6 +331,7 @@ public class TopMenuController extends AnchorPane implements Initializable, Shop
     public void pastPurchaseDetailViewToFront(Order order){
         increaseBackCounter(pastDetails.getId(), pastDetails);
         pastDetails.setOrder(order);
+        viewLabel.setText("Inköpskvitto");
         pastDetails.toFront();
     }
 

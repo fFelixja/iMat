@@ -160,7 +160,7 @@
                </AnchorPane>
                   <Button fx:id="cancelButton" layoutX="722.0" layoutY="784.0" mnemonicParsing="false" onAction="#cancelButtonActionPerformed" prefHeight="60.0" prefWidth="178.0" text="Avbryt" textFill="WHITE" AnchorPane.bottomAnchor="105.0" AnchorPane.leftAnchor="722.0">
                   <font>
-                     <Font name="HelveticaNeueLTPro-Roman" size="16.0" />
+                     <Font name="HelveticaNeueLTPro-Roman" size="20.0" />
                   </font>
                   <cursor>
                      <Cursor fx:constant="HAND" />
@@ -171,7 +171,7 @@
                </Button>
                   <Button fx:id="saveButton" layoutX="1014.0" layoutY="744.0" mnemonicParsing="false" onAction="#saveButtonActionPerformed" prefHeight="60.0" prefWidth="178.0" text="Spara ändringar" textFill="WHITE" AnchorPane.bottomAnchor="105.0" AnchorPane.leftAnchor="1014.0" AnchorPane.rightAnchor="728.0">
                   <font>
-                     <Font name="HelveticaNeueLTPro-Roman" size="16.0" />
+                     <Font name="HelveticaNeueLTPro-Roman" size="20.0" />
                   </font>
                   <cursor>
                      <Cursor fx:constant="HAND" />

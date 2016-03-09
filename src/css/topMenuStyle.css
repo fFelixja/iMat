@@ -1,5 +1,6 @@
 #homeButton, #backButton, #profileButton, #purchaseHistoryButton, #shoppingCartButton, #searchButton {
 	-fx-background-image:url(static_button.png);
+	-fx-background-color:transparent;
 	-fx-background-repeat: no-repeat;
   -fx-background-position:center;
 	-fx-background-size:120,40;
@@ -7,6 +8,7 @@
 -fx-background-color: -fx-shadow-highlight-color, -fx-outer-border, -fx-inner-border, -fx-body-color;
 -fx-background-insets: 0 0 0 0, 0, 0, 0;
 -fx-background-radius: 5, 5, 5, 5;
+-fx-background-color:none;
 /*	-fx-background-radius:0;
 	-fx-border-color:rgba(26, 188, 156,1.0);
 	-fx-border-width:0px 0px 2px 0px;
@@ -15,12 +17,17 @@
 
 
 #homeButton:hover, #backButton:hover, #profileButton:hover, #purchaseHistoryButton:hover, #shoppingCartButton:hover, #searchButton:hover {
-	-fx-border-width:0px 0px 5px 0px;
-	-fx-text:#FFF;
+	-fx-background-image:url(hover_button.png);
+	-fx-background-color: -fx-shadow-highlight-color, -fx-outer-border, -fx-inner-border, -fx-body-color;
+	-fx-background-insets: 0 0 0 0, 0, 0, 0;
+	-fx-background-radius: 5, 5, 5, 5;
+	-fx-background-color:none;
+
 
 }
 #homeButton:pressed, #backButton:pressed, #profileButton:pressed, #purchaseHistoryButton:pressed, #shoppingCartButton:pressed, #searchButton:pressed {
 	-fx-background-image:url(clicked_button.png);
+	-fx-background-color:none;
 /*	-fx-effect:innershadow(gaussian,#ecf0f1,3,1,0,0);
 	-fx-border-width:0px 0px 5px 0px;
 	-fx-text:#FFF;
@@ -28,6 +35,27 @@
 }
 
 
+#shoppingCartButton {
+	-fx-background-image:url(cartButton_static.png);
+	-fx-background-color:transparent;
+	-fx-background-repeat: no-repeat;
+  -fx-background-position:center;
+	-fx-background-size:180,40;
+	-fx-skin: "com.sun.javafx.scene.control.skin.ButtonSkin";
+-fx-background-color: -fx-shadow-highlight-color, -fx-outer-border, -fx-inner-border, -fx-body-color;
+-fx-background-insets: 0 0 0 0, 0, 0, 0;
+-fx-background-radius: 5, 5, 5, 5;
+}
+
+#shoppingCartButton:hover {
+-fx-background-image:url(cartButton_hover.png);
+-fx-background-color:none;
+
+}
+#shoppingCartButton:pressed {
+	-fx-background-image:url(cartButton_clicked.png);
+	-fx-background-color:none;
+}
 #baseStackPane{
 	-fx-background-color:#FFF;
 }
@@ -133,8 +161,33 @@
 
 }
 
-#addToCartButton,#checkoutnButton,#continueShoppingButton {
+#addToCartButton,#checkoutnButton {
 	-fx-background-image:url(static_addToCart.png);
+	-fx-background-color:none;
+	-fx-background-size:360,70;
+	-fx-background-repeat: no-repeat;
+	-fx-background-position:center;
+	-fx-skin: "com.sun.javafx.scene.control.skin.ButtonSkin";
+	-fx-background-color: -fx-shadow-highlight-color, -fx-outer-border, -fx-inner-border, -fx-body-color;
+	-fx-background-insets: 0 0 0 0, 0, 0, 0;
+	-fx-background-radius: 5, 5, 5, 5;
+
+}
+
+#addToCartButton:hover,#checkoutnButton:hover{
+		-fx-background-image:url(addToCart_hover.png);
+		-fx-background-color:none;
+}
+
+#addToCartButton:pressed,#checkoutnButton:pressed{
+		-fx-background-image:url(addToCart_clicked.png);
+		-fx-background-color:none;
+}
+
+
+#checkoutnButton,#continueShoppingButton {
+	-fx-background-image:url(static_button.png);
+	-fx-background-color:none;
 	-fx-background-size:180,60;
 	-fx-background-repeat: no-repeat;
 	-fx-background-position:center;
@@ -142,11 +195,16 @@
 	-fx-background-color: -fx-shadow-highlight-color, -fx-outer-border, -fx-inner-border, -fx-body-color;
 	-fx-background-insets: 0 0 0 0, 0, 0, 0;
 	-fx-background-radius: 5, 5, 5, 5;
-	
-}
 
-#checkoutnButton,#continueShoppingButton {
-	-fx-background-image:url(static_button.png);
+}
+#checkoutnButton:hover,#continueShoppingButton:hover {
+	-fx-background-image:url(hover_button.png);
+	-fx-background-color:none;
+
+}
+#checkoutnButton:pressed,#continueShoppingButton:pressed {
+	-fx-background-image:url(clicked_button.png);
+	-fx-background-color:none;
 
 }
 
@@ -159,6 +217,7 @@
 -fx-background-color: -fx-shadow-highlight-color, -fx-outer-border, -fx-inner-border, -fx-body-color;
 -fx-background-insets: 0 0 0 0, 0, 0, 0;
 -fx-background-radius: 5, 5, 5, 5;
+-fx-background-color:none;
 /*	-fx-background-radius:0px 0px 0px 0px;
 	-fx-background-color:#16a085;
 	-fx-text-color:#FFF;
@@ -166,16 +225,58 @@
 
 }
 
-#saveButton:hover, #cancelButton:hover, #addToCartButton:hover, #purchaseButton:hover {
-	-fx-background-color:#1abc9c;
-	-fx-effect: innershadow(gaussian,rgba(52, 73, 94,0.4),3,1,0,0);
-
+#saveButton:hover, #cancelButton:hover, #purchaseButton:hover {
+	-fx-background-image:url(hover_button.png);
+	-fx-background-repeat: no-repeat;
+	-fx-background-position:center;
+	-fx-background-size:180,60;
+	-fx-skin: "com.sun.javafx.scene.control.skin.ButtonSkin";
+-fx-background-color: -fx-shadow-highlight-color, -fx-outer-border, -fx-inner-border, -fx-body-color;
+-fx-background-insets: 0 0 0 0, 0, 0, 0;
+-fx-background-radius: 5, 5, 5, 5;
+-fx-background-color:none;
 }
 
-#saveButton:pressed, #cancelButton:pressed, #addToCartButton:pressed, #purchaseButton:pressed {
-	-fx-background-color:#16a085;
-	-fx-effect: innershadow(gaussian,#16a085,3,1,0,0);
+#saveButton:pressed, #cancelButton:pressed, #purchaseButton:pressed {
+	-fx-background-image:url(clicked_button.png);
+	-fx-background-repeat: no-repeat;
+	-fx-background-position:center;
+	-fx-background-size:180,60;
+	-fx-skin: "com.sun.javafx.scene.control.skin.ButtonSkin";
+-fx-background-color: -fx-shadow-highlight-color, -fx-outer-border, -fx-inner-border, -fx-body-color;
+-fx-background-insets: 0 0 0 0, 0, 0, 0;
+-fx-background-radius: 5, 5, 5, 5;
+-fx-background-color:none;
 }
+#viewDetailsButton {
+	-fx-background-image:url(detailbutton_static.png);
+	-fx-background-repeat: no-repeat;
+	-fx-background-position:center;
+	-fx-background-size:380,70;
+	-fx-skin: "com.sun.javafx.scene.control.skin.ButtonSkin";
+-fx-background-color: -fx-shadow-highlight-color, -fx-outer-border, -fx-inner-border, -fx-body-color;
+-fx-background-insets: 0 0 0 0, 0, 0, 0;
+-fx-background-radius: 5, 5, 5, 5;
+-fx-background-color:none;
+}
+#viewDetailsButton:hover {
+		-fx-background-image:url(detailbutton_hover.png);
+		-fx-background-color: -fx-shadow-highlight-color, -fx-outer-border, -fx-inner-border, -fx-body-color;
+		-fx-background-insets: 0 0 0 0, 0, 0, 0;
+		-fx-background-radius: 5, 5, 5, 5;
+		-fx-background-color:none;
+}
+
+#viewDetailsButton:pressed {
+	-fx-background-image:url(detailbutton_clicked.png);
+	-fx-background-color: -fx-shadow-highlight-color, -fx-outer-border, -fx-inner-border, -fx-body-color;
+	-fx-background-insets: 0 0 0 0, 0, 0, 0;
+	-fx-background-radius: 5, 5, 5, 5;
+	-fx-background-color:none;
+}
+
+
+
 
 #categoryPane {
 	-fx-background-image:url(category_static.png);
@@ -191,12 +292,18 @@
 }
 
 #categoryPane:hover {
-/*	-fx-background-image:url(category_hover.png);
+-fx-background-image:url(category_hover.png);
+-fx-background-color:none;
 /*	-fx-background-color:#ecf0f1;*/
 }
 
-#productPane, #cartItem {
-	-fx-background-image:url(category_static.png);
+#categoryPane:pressed{
+-fx-background-image:url(category_clicked.png);
+
+}
+
+#productPane, #cartItem, #historyProductItem {
+	-fx-background-image:url(detailedCategory_static.png);
 	-fx-background-size:380,380;
 	-fx-background-repeat: no-repeat;
 	-fx-background-position:center;
@@ -205,6 +312,9 @@
 	-fx-border-style:solid;
 	-fx-background-color:#FFF;
 */
+}
+#historyProductItem{
+	-fx-background-size:250,250;
 }
 
 #cartItem {

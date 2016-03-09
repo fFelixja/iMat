@@ -44,7 +44,7 @@ public class PastPurchasePanelController extends AnchorPane {
     @FXML
     protected void viewDetailsButtonActionPerformed (ActionEvent event){
         controller.pastPurchaseDetailViewToFront(order);
-        controller.setViewLabel("Kvitto");
+
     }
 
 
