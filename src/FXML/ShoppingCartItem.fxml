@@ -13,7 +13,7 @@
       </font></Label>
    <Label fx:id="amountLabel" layoutX="84.0" layoutY="307.0" text="10 st" AnchorPane.bottomAnchor="25.0" />
    <Label fx:id="pricePerUnitLabel" layoutX="36.0" layoutY="260.0" text="89 kr/kg" AnchorPane.bottomAnchor="70.0" />
-   <Label fx:id="totalPriceLabel" layoutX="237.0" layoutY="31.0" text="890" textFill="WHITE">
+   <Label fx:id="totalPriceLabel" layoutX="255.0" layoutY="31.0" text="890" textFill="WHITE" AnchorPane.rightAnchor="25.0">
       <font>
          <Font name="Yu Gothic UI Regular" size="26.0" />
       </font></Label>
@@ -21,9 +21,4 @@
    <Button fx:id="decreaseAmountButton" layoutX="37.0" layoutY="296.0" mnemonicParsing="false" onAction="#decreaseAmountButtonActionPerformed" text="-" AnchorPane.bottomAnchor="25.0" />
    <ImageView fx:id="productImageView" fitHeight="127.0" fitWidth="161.0" layoutX="95.0" layoutY="112.0" pickOnBounds="true" preserveRatio="true" />
    <Button fx:id="removeProductButton" layoutX="239.0" layoutY="296.0" mnemonicParsing="false" onAction="#removeProductButtonActionPerformed" text="Ta bort" AnchorPane.bottomAnchor="25.0" AnchorPane.rightAnchor="30.0" />
-   <Label layoutX="303.0" layoutY="31.0" text="kr" textFill="WHITE">
-      <font>
-         <Font size="26.0" />
-      </font>
-   </Label>
 </fx:root>
