@@ -45,7 +45,7 @@
 }
 
 #confirmView {
-    	-fx-background-color: deeppink;
+    	-fx-background-color: #FFF;
 }
 
 #allCategories {
@@ -59,6 +59,13 @@
 #categoryScrollPane:focused, #productScrollPane:focused,#categoryGridPane:focused {
     -fx-background-image:url(restaurant_bright.png);
 		-fx-focus-color: transparent;
+}
+
+#pastPurchasePane {
+	-fx-background-image:url(past_purchase.png);
+	-fx-background-size:1920,100;
+	-fx-background-repeat: no-repeat;
+	-fx-background-position:center;
 }
 
 
@@ -129,20 +136,31 @@
 
 }
 
-#saveButton, #cancelButton, #purchaseButton{
-
-	-fx-background-radius:0px 0px 0px 0px;
-	-fx-background-color:#16a085;
-	-fx-text-color:#FFF;
-
+#addToCartButton {
+	-fx-background-image:url(static_addToCart.png);
+	-fx-background-size:180,60;
+	-fx-background-repeat: no-repeat;
+	-fx-background-position:center;
+	-fx-skin: "com.sun.javafx.scene.control.skin.ButtonSkin";
+-fx-background-color: -fx-shadow-highlight-color, -fx-outer-border, -fx-inner-border, -fx-body-color;
+-fx-background-insets: 0 0 0 0, 0, 0, 0;
+-fx-background-radius: 5, 5, 5, 5;
 
 }
 
-#addToCartButton {
-	-fx-background-image:url(static_addToCart.png);
-	-fx-background-size:300,50;
+#saveButton, #cancelButton, #purchaseButton{
+	-fx-background-image:url(static_button.png);
 	-fx-background-repeat: no-repeat;
-	-fx-background-position:center;
+  -fx-background-position:center;
+	-fx-background-size:180,60;
+	-fx-skin: "com.sun.javafx.scene.control.skin.ButtonSkin";
+-fx-background-color: -fx-shadow-highlight-color, -fx-outer-border, -fx-inner-border, -fx-body-color;
+-fx-background-insets: 0 0 0 0, 0, 0, 0;
+-fx-background-radius: 5, 5, 5, 5;
+/*	-fx-background-radius:0px 0px 0px 0px;
+	-fx-background-color:#16a085;
+	-fx-text-color:#FFF;
+*/
 
 }
 

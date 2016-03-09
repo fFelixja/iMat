@@ -158,7 +158,7 @@
                      </Label>
                   </children>
                </AnchorPane>
-                  <Button fx:id="cancelButton" layoutX="760.0" layoutY="782.0" mnemonicParsing="false" onAction="#cancleButtonActionPerformed" prefHeight="49.0" prefWidth="200.0" text="Avbryt" textFill="WHITE" AnchorPane.bottomAnchor="118.0" AnchorPane.leftAnchor="760.0">
+                  <Button fx:id="cancelButton" layoutX="722.0" layoutY="784.0" mnemonicParsing="false" onAction="#cancleButtonActionPerformed" prefHeight="60.0" prefWidth="178.0" text="Avbryt" textFill="WHITE" AnchorPane.bottomAnchor="105.0" AnchorPane.leftAnchor="722.0">
                   <font>
                      <Font name="HelveticaNeueLTPro-Roman" size="16.0" />
                   </font>
@@ -169,7 +169,7 @@
                      <Tooltip text="Spara inte ändringar, gå tillbaka" />
                   </tooltip>
                </Button>
-                  <Button fx:id="saveButton" layoutX="988.0" layoutY="782.0" mnemonicParsing="false" onAction="#saveButtonActionPerformed" prefHeight="49.0" prefWidth="186.0" text="Spara ändringar" textFill="WHITE" AnchorPane.bottomAnchor="118.0" AnchorPane.leftAnchor="988.0" AnchorPane.rightAnchor="746.0">
+                  <Button fx:id="saveButton" layoutX="1014.0" layoutY="744.0" mnemonicParsing="false" onAction="#saveButtonActionPerformed" prefHeight="60.0" prefWidth="178.0" text="Spara ändringar" textFill="WHITE" AnchorPane.bottomAnchor="105.0" AnchorPane.leftAnchor="1014.0" AnchorPane.rightAnchor="728.0">
                   <font>
                      <Font name="HelveticaNeueLTPro-Roman" size="16.0" />
                   </font>
@@ -180,7 +180,7 @@
                      <Tooltip text="Spara alla dina ändringar" />
                   </tooltip>
                </Button>
-               <Label fx:id="feedBackLabel" alignment="CENTER" layoutX="243.0" layoutY="437.0" prefHeight="30.0" prefWidth="576.0" AnchorPane.leftAnchor="243.0">
+               <Label fx:id="feedBackLabel" alignment="CENTER" layoutX="672.0" layoutY="726.0" prefHeight="30.0" prefWidth="576.0" AnchorPane.leftAnchor="672.0">
                   <font>
                      <Font size="25.0" />
                   </font>

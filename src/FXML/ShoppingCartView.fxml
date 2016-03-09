@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 
 <fx:root id="shoppingCart" prefHeight="949.0" prefWidth="1920.0" stylesheets="@../css/topMenuStyle.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
-  <ScrollPane layoutY="79.0" prefHeight="800.0" prefWidth="960.0">
+  <ScrollPane layoutX="480.0" layoutY="82.0" prefHeight="800.0" prefWidth="960.0">
      <content>
         <GridPane fx:id="productGridPane">
           <columnConstraints>
@@ -24,8 +24,8 @@
         </GridPane>
      </content>
   </ScrollPane>
-  <Button fx:id="continueShoppingButton" layoutX="14.0" layoutY="900.0" mnemonicParsing="false" onAction="#continueShoppingButtonActionPerformed" text="Fortsätt handla" />
-  <Button fx:id="checkoutnButton" layoutX="890.0" layoutY="900.0" mnemonicParsing="false" onAction="#checkoutButtonButtonActionPerformed" text="Till kassan" />
-  <Label fx:id="totalPriceLabel" layoutX="195.0" layoutY="45.0" text="10 kr" />
-  <Label fx:id="amountItemsLabel" layoutX="376.0" layoutY="45.0" text="4 saker" />
+  <Button fx:id="continueShoppingButton" layoutX="480.0" layoutY="900.0" mnemonicParsing="false" onAction="#continueShoppingButtonActionPerformed" text="Fortsätt handla" />
+  <Button fx:id="checkoutnButton" layoutX="1370.0" layoutY="900.0" mnemonicParsing="false" onAction="#checkoutButtonButtonActionPerformed" text="Till kassan" />
+  <Label fx:id="totalPriceLabel" layoutX="774.0" layoutY="54.0" text="10 kr" />
+  <Label fx:id="amountItemsLabel" layoutX="1237.0" layoutY="54.0" text="4 saker" />
 </fx:root>
