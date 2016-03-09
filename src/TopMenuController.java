@@ -197,7 +197,7 @@ public class TopMenuController extends AnchorPane implements Initializable{
         switch (baseStackPane.getChildren().get(baseStackPane.getChildren().size() - 1).getId()){
             case "shoppingCart": setViewLabel("Kundvagn");
                 break;
-            case "purchaseDetailView": setViewLabel("Skriv bra text här");
+            case "purchaseDetailView": setViewLabel("Tidigare inköp");
                 break;
             case "purchaseHistoryView": setViewLabel("Tidigare inköp");
                 break;
