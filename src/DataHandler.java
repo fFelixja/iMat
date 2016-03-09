@@ -76,6 +76,7 @@ public class DataHandler {
                     IMatDataHandler.getInstance().getShoppingCart().getItems().get(
                             IMatDataHandler.getInstance().getShoppingCart().getItems().indexOf(shoppingItem)).setAmount(
                             shoppingItem.getAmount() + amount);
+                    IMatDataHandler.getInstance().getShoppingCart().fireShoppingCartChanged(shoppingItem, true);
                     return shoppingItem.getAmount(); //Returns current amount to show the in the feedback panel
                 }
             }
