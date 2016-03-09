@@ -26,8 +26,8 @@
         </GridPane>
      </content>
   </ScrollPane>
-  <Button fx:id="continueShoppingButton" layoutX="425.0" layoutY="891.0" mnemonicParsing="false" onAction="#continueShoppingButtonActionPerformed" prefHeight="50.0" prefWidth="238.0" text="Fortsätt handla" />
-  <Button fx:id="checkoutnButton" layoutX="1257.0" layoutY="891.0" mnemonicParsing="false" onAction="#checkoutButtonButtonActionPerformed" prefHeight="50.0" prefWidth="238.0" text="Till kassan" />
+  <Button fx:id="continueShoppingButton" layoutX="425.0" layoutY="886.0" mnemonicParsing="false" onAction="#continueShoppingButtonActionPerformed" prefHeight="60.0" prefWidth="180.0" text="Fortsätt handla" textFill="WHITE" />
+  <Button fx:id="checkoutnButton" layoutX="1315.0" layoutY="886.0" mnemonicParsing="false" onAction="#checkoutButtonButtonActionPerformed" prefHeight="60.0" prefWidth="180.0" text="Till kassan" textFill="WHITE" />
   <Label fx:id="totalPriceLabel" layoutX="425.0" layoutY="43.0" text="10 kr">
       <font>
          <Font size="26.0" />

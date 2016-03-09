@@ -136,15 +136,20 @@
 
 }
 
-#addToCartButton {
+#addToCartButton,#checkoutnButton,#continueShoppingButton {
 	-fx-background-image:url(static_addToCart.png);
 	-fx-background-size:180,60;
 	-fx-background-repeat: no-repeat;
 	-fx-background-position:center;
 	-fx-skin: "com.sun.javafx.scene.control.skin.ButtonSkin";
--fx-background-color: -fx-shadow-highlight-color, -fx-outer-border, -fx-inner-border, -fx-body-color;
--fx-background-insets: 0 0 0 0, 0, 0, 0;
--fx-background-radius: 5, 5, 5, 5;
+	-fx-background-color: -fx-shadow-highlight-color, -fx-outer-border, -fx-inner-border, -fx-body-color;
+	-fx-background-insets: 0 0 0 0, 0, 0, 0;
+	-fx-background-radius: 5, 5, 5, 5;
+	
+}
+
+#checkoutnButton,#continueShoppingButton {
+	-fx-background-image:url(static_button.png);
 
 }
 

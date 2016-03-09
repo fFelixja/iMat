@@ -143,7 +143,7 @@
                         </Label>
                      </children>
                   </AnchorPane>
-                  <Button fx:id="cancelButton" onAction="#cancelButtonActionPerformed" layoutX="94.0" layoutY="465.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="156.0" text="Avbryt köp" textFill="WHITE" AnchorPane.bottomAnchor="38.0" AnchorPane.leftAnchor="94.0">
+                  <Button fx:id="cancelButton" layoutX="94.0" layoutY="465.0" mnemonicParsing="false" onAction="#cancelButtonActionPerformed" prefHeight="49.0" prefWidth="156.0" text="Avbryt köp" textFill="WHITE" AnchorPane.bottomAnchor="38.0" AnchorPane.leftAnchor="94.0">
                      <font>
                         <Font name="HelveticaNeueLTPro-Roman" size="16.0" />
                      </font>
