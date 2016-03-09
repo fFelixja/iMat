@@ -283,6 +283,7 @@ public class TopMenuController extends AnchorPane implements Initializable, Shop
     }
 
     public void profileViewToFront(){
+        profile.populateTextFields();
         increaseBackCounter(profile.getId(), profile);
 
         profile.toFront();
@@ -307,6 +308,7 @@ public class TopMenuController extends AnchorPane implements Initializable, Shop
     }
 
     public void checkoutViewToFront() {
+        checkout.populateTextFields();
         increaseBackCounter(checkout.getId(), checkout);
         checkout.toFront();
         setViewLabel("Kassa");

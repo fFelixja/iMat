@@ -115,7 +115,7 @@ public class CheckoutViewController extends AnchorPane {
 
     }
 
-    private void populateTextFields(){
+    public void populateTextFields(){
         needCheck = false;
 
         Customer customer = DataHandler.getCustomer();
