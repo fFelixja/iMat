@@ -69,7 +69,7 @@ public class PurchaseDetailViewController extends AnchorPane{
 
         for (ShoppingItem shoppingItem: productList) {
             DataHandler.addToCart(shoppingItem.getProduct(), shoppingItem.getAmount());
-            controller.addToCartFeedback("hela kundvagneng", 1);
+            controller.addToCartFeedback("", "", "lagt till hela kundvagnen");
         }
     }
 }

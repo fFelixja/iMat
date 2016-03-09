@@ -338,10 +338,10 @@ public class TopMenuController extends AnchorPane implements Initializable, Shop
         productGridPane.getStyleClass().add("gridStyle");
     }
 
-    public void addToCartFeedback(String name, double amount) {
+    public void addToCartFeedback(String title, String name, String amount) {
         timeline.stop();
 
-        ItemAddedMessagePanelController popupPanel= new ItemAddedMessagePanelController(name, amount);
+        ItemAddedMessagePanelController popupPanel= new ItemAddedMessagePanelController(title, name, amount);
         feedbackPanel.getChildren().removeAll(feedbackPanel.getChildren());
         feedbackPanel.getChildren().addAll(popupPanel);
         feedbackPanel.setVisible(true);
