@@ -42,7 +42,7 @@ public class ShoppingCartViewController extends AnchorPane{
         clearProductGridPane();
         for (int i = 0; i < shoppingCart.getItems().size(); i++) {
             ShoppingCartItemController shoppingItem = new ShoppingCartItemController(shoppingCart.getItems().get(i), this);
-            productGridPane.add(shoppingItem, i % 2, i / 2);
+            productGridPane.add(shoppingItem, i % 3, i / 3);
         }
 
         amountItemsLabel.setText("Totalt antal varor: " + Integer.toString(shoppingCart.getItems().size()));

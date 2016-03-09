@@ -4,29 +4,29 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<fx:root fx:id="itemAddedMessage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="140.0" prefWidth="420.0" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root fx:id="itemAddedMessage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="140.0" prefWidth="447.0" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label layoutX="14.0" layoutY="14.0" text="Vara tillagd i kundvagnen:">
+      <Label layoutX="14.0" layoutY="14.0" text="Vara tillagd i kundvagnen:" AnchorPane.leftAnchor="25.0">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="14.0" layoutY="49.0" text="Nu har du">
+      <Label layoutX="14.0" layoutY="49.0" text="Nu har du" AnchorPane.leftAnchor="25.0">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="nbrOfAddedItemLabel" layoutX="108.0" layoutY="49.0" text="XX st">
+      <Label fx:id="nbrOfAddedItemLabel" layoutX="119.0" layoutY="49.0" text="XX st">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="productAddedLabel" layoutX="172.0" layoutY="49.0" text="Mjölk">
+      <Label fx:id="productAddedLabel" layoutX="168.0" layoutY="49.0" text="Mjölk">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="248.0" layoutY="49.0" text="i din kundvagn.">
+      <Label layoutX="311.0" layoutY="49.0" text="i din kundvagn." AnchorPane.rightAnchor="20.0">
          <font>
             <Font size="18.0" />
          </font>
