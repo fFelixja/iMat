@@ -111,6 +111,5 @@ public class DataHandler {
 
     public static void placeOrder() {
         IMatDataHandler.getInstance().placeOrder(true);
-        System.out.println(IMatDataHandler.getInstance().getOrders().size());
     }
 }

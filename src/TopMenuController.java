@@ -66,7 +66,7 @@ public class TopMenuController extends AnchorPane implements Initializable{
 
     private CategoryController latestCategory;
 
-    private ConfirmViewController confirmView = new ConfirmViewController();
+    private ConfirmViewController confirmView = new ConfirmViewController(this);
 
     private ProfileViewController profile = new ProfileViewController(this);
 

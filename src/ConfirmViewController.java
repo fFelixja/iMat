@@ -16,7 +16,9 @@ public class ConfirmViewController extends AnchorPane {
 
     @FXML private Button exitButton;
 
-    public ConfirmViewController () {
+    private TopMenuController controller;
+
+    public ConfirmViewController (TopMenuController controller) {
 
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("FXML/ConfirmView.fxml"));
@@ -26,8 +28,14 @@ public class ConfirmViewController extends AnchorPane {
         } catch (IOException e) {
             System.out.println("Error in constructor of ConfirmViewController");
         }
+        this.controller = controller;
     }
 
+    @FXML
+    protected void shopAgainButtonActionPerformed() {
+        controller.categoryViewToFront();
+    }
+    
     @FXML
     protected void exitButtonActionPerformed(ActionEvent event) {
         DataHandler.shutdown();

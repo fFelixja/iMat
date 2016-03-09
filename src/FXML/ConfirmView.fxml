@@ -20,6 +20,6 @@
   <Label fx:id="totalGroceriesLabel" layoutX="199.0" layoutY="180.0" text="10st" />
   <Label layoutX="291.0" layoutY="180.0" text="Total kostnad:" />
   <Label fx:id="totalCostLabel" layoutX="372.0" layoutY="180.0" text="1000 kr" />
-  <Button fx:id="shopAgainButton" layoutX="70.0" layoutY="273.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" text="Handla Igen" />
+  <Button fx:id="shopAgainButton" onAction="#shopAgainButtonActionPerformed" layoutX="70.0" layoutY="273.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" text="Handla Igen" />
   <Button fx:id="exitButton" layoutX="372.0" layoutY="273.0" mnemonicParsing="false" onAction="#exitButtonActionPerformed" prefHeight="40.0" prefWidth="140.0" text="Avsluta Program" />
 </fx:root>
