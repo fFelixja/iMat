@@ -51,7 +51,7 @@ public class ProductViewController extends AnchorPane {
         priceUnitLabel.setText(Double.toString(product.getPrice()) + " " + product.getUnit());
         amountUnitLabel.setText(product.getUnitSuffix());
 
-        amountSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, Integer.MAX_VALUE, 1, spinnerSpinAmount));
+        amountSpinner.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1, Integer.MAX_VALUE, 1, spinnerSpinAmount));
     }
 
     public void setProductImage(Image image) {

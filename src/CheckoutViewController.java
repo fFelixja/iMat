@@ -250,8 +250,6 @@ public class CheckoutViewController extends AnchorPane {
             if(cardRadioButton.isSelected()) {
                 getCardData();
             }
-            feedBackLabel.setTextFill(Color.web("#038610"));
-            feedBackLabel.setText("Ditt köp är slutfört!");
             DataHandler.placeOrder();
             controller.confirmViewToFront();
             needCheck = true;
