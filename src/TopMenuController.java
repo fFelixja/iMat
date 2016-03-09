@@ -11,6 +11,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Region;
 import javafx.scene.layout.StackPane;
 
 import javafx.stage.Stage;
@@ -22,6 +23,7 @@ import se.chalmers.ait.dat215.project.ProductCategory;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -85,6 +87,8 @@ public class TopMenuController extends AnchorPane implements Initializable{
     private Timeline timeline = new Timeline();
 
     private int backCounter = 0;
+
+    private ArrayDeque<Region> backQueue = new ArrayDeque<>();
 
     @Override
     public void initialize(URL url, ResourceBundle bundle){
@@ -193,14 +197,16 @@ public class TopMenuController extends AnchorPane implements Initializable{
     @FXML
     protected void backButtonActionPerformed() {
 
-        if (backCounter > 0) {
-            if (backCounter == 1) {
+        if (backQueue.size() >= 1) {
+            if (backQueue.size() == 2) {
                 backButton.setDisable(true);
             }
-            System.out.println(backCounter);
-            backCounter--;
+//            backCounter--;
 
-            baseStackPane.getChildren().get(baseStackPane.getChildren().size() - 1).toBack();
+            backQueue.removeLast();
+            backQueue.peekLast().toFront();
+
+//            baseStackPane.getChildren().get(baseStackPane.getChildren().size() - 1).toBack();
 
             if (baseStackPane.getChildren().get(baseStackPane.getChildren().size() - 1).getId().equals("productView")) {
                 latestCategory.createProductView();
@@ -237,14 +243,16 @@ public class TopMenuController extends AnchorPane implements Initializable{
         }
     }
 
-    private void increaseBackCounter() {
-        if (backCounter == 0) {
-            backButton.setDisable(false);
+    private boolean increaseBackCounter(String id, Region region) {
+        if (!baseStackPane.getChildren().get(baseStackPane.getChildren().size() - 1).getId().equals(id)) {
+
+            if (backQueue.size() == 1) {
+                backButton.setDisable(false);
+            }
+            backQueue.add(region);
+            return true;
         }
-        System.out.println(backButton.isDisable());
-        System.out.println(backButton.isDisabled());
-        System.out.println(backCounter);
-        backCounter++;
+        return false;
     }
 
     @FXML
@@ -271,50 +279,50 @@ public class TopMenuController extends AnchorPane implements Initializable{
     }
 
     public void profileViewToFront(){
-        increaseBackCounter();
+        increaseBackCounter(profile.getId(), profile);
+
         profile.toFront();
         viewLabel.setText("Din profil");
     }
 
     public void productViewToFront() {
-        increaseBackCounter();
-        backCounter++;
+        increaseBackCounter(productScrollPane.getId(), productScrollPane);
         productScrollPane.toFront();
     }
 
     public void categoryViewToFront() {
-        increaseBackCounter();
+        increaseBackCounter(categoryScrollPane.getId(), categoryScrollPane);
         categoryScrollPane.toFront();
         setViewLabel("Alla kategorier");
     }
 
     public void historyViewToFront() {
-        increaseBackCounter();
+        increaseBackCounter(history.getId(), history);
         history.toFront();
         viewLabel.setText("Tidigare inköp");
     }
 
     public void checkoutViewToFront() {
-        increaseBackCounter();
+        increaseBackCounter(checkout.getId(), checkout);
         checkout.toFront();
         setViewLabel("Kassa");
     }
 
     public void shoppingCartViewToFront() {
-        increaseBackCounter();
+        increaseBackCounter(shoppingCart.getId(), shoppingCart);
         shoppingCart.populateProductGridPane(DataHandler.getShoppingCart());
         viewLabel.setText("Kundvagn");
         shoppingCart.toFront();
     }
 
     public void confirmViewToFront() {
-        increaseBackCounter();
+        increaseBackCounter(confirmView.getId(), confirmView);
         confirmView.toFront();
         setViewLabel("Bekräftelsevy");
     }
 
     public void pastPurchaseDetailViewToFront(Order order){
-        increaseBackCounter();
+        increaseBackCounter(pastDetails.getId(), pastDetails);
         pastDetails.setOrder(order);
         pastDetails.toFront();
     }
