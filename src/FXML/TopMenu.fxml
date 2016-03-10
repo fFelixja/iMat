@@ -180,6 +180,6 @@
             </ScrollPane>
          </children>
       </StackPane>
-      <AnchorPane id="feedbackPanel" fx:id="feedbackPanel" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="130.0" />
+      <AnchorPane id="feedbackPanel" fx:id="feedbackPanel" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="120.0" />
    </children>
 </AnchorPane>
