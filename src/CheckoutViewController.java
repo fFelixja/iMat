@@ -60,6 +60,7 @@ public class CheckoutViewController extends AnchorPane {
     @FXML private Label ccvLabel;
     @FXML private Label cardLabel;
     @FXML private ImageView cardImage;
+    @FXML private ImageView sequence_checkout;
 
     @FXML private Label errorFirstNameLabel;
     @FXML private Label errorLastNameLabel;
@@ -106,11 +107,13 @@ public class CheckoutViewController extends AnchorPane {
             loader.setController(this);
             loader.setRoot(this);
             loader.load();
+            sequence_checkout.setImage(new Image("css/sequence_checkout.png"));
         } catch (IOException e) {
             System.out.println("Error in constructor of CheckoutViewController");
         }
         initializeListeners();
         populateTextFields();
+
         this.controller = controller;
 
     }

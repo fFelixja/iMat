@@ -3,6 +3,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 import se.chalmers.ait.dat215.project.Order;
@@ -18,6 +20,8 @@ public class ConfirmViewController extends AnchorPane {
 
     @FXML private Button exitButton;
 
+    @FXML private ImageView sequence_confirm;
+
     private TopMenuController controller;
 
     public ConfirmViewController (TopMenuController controller) {
@@ -27,6 +31,7 @@ public class ConfirmViewController extends AnchorPane {
             loader.setController(this);
             loader.setRoot(this);
             loader.load();
+            sequence_confirm.setImage(new Image("css/sequence_confirm.png"));
         } catch (IOException e) {
             System.out.println("Error in constructor of ConfirmViewController");
         }

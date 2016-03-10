@@ -15,8 +15,8 @@
 <fx:root id="profileView" fx:id="profileAnchorPane" prefHeight="949.0" prefWidth="1920.0" stylesheets="@../css/topMenuStyle.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
       <AnchorPane fx:id="profileAnchorPane" prefHeight="948.0" prefWidth="1920.0">
          <children>
-            <Separator layoutY="6.0" orientation="VERTICAL" prefHeight="413.0" prefWidth="1096.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="6.0" />
-            <AnchorPane fx:id="personalnfoPanel" layoutX="132.0" layoutY="126.0" prefHeight="598.0" prefWidth="798.0" AnchorPane.bottomAnchor="224.0" AnchorPane.leftAnchor="130.0" AnchorPane.topAnchor="126.0">
+            <Separator layoutY="220.0" orientation="VERTICAL" prefHeight="413.0" prefWidth="1096.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="220.0" />
+            <AnchorPane fx:id="personalnfoPanel" layoutX="132.0" layoutY="126.0" prefHeight="562.0" prefWidth="798.0" AnchorPane.bottomAnchor="166.0" AnchorPane.leftAnchor="130.0" AnchorPane.topAnchor="220.0">
                <children>
                   <TextField fx:id="firstnameTextField" layoutX="178.0" layoutY="172.0" prefHeight="26.0" prefWidth="136.0" AnchorPane.leftAnchor="178.0" />
                   <TextField fx:id="lastnameTextField" layoutX="178.0" layoutY="216.0" prefHeight="26.0" prefWidth="136.0" AnchorPane.leftAnchor="178.0" />
@@ -73,7 +73,7 @@
                   </Label>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="paymentInfoPanel" layoutX="991.0" layoutY="126.0" prefHeight="598.0" prefWidth="798.0" AnchorPane.bottomAnchor="224.0" AnchorPane.rightAnchor="130.0" AnchorPane.topAnchor="126.0">
+            <AnchorPane fx:id="paymentInfoPanel" layoutX="991.0" layoutY="126.0" prefHeight="562.0" prefWidth="798.0" AnchorPane.bottomAnchor="166.0" AnchorPane.rightAnchor="130.0" AnchorPane.topAnchor="220.0">
                <children>
                   <TextField fx:id="ccvTextField" layoutX="194.0" layoutY="397.0" prefHeight="26.0" prefWidth="53.0" promptText="123" />
                   <TextField fx:id="cardNumberTextField" layoutX="192.0" layoutY="271.0" prefHeight="27.0" prefWidth="178.0" promptText="xxxx-xxxx-xxxx-xxxx" />
@@ -154,7 +154,7 @@
                </Label>
                </children>
             </AnchorPane>
-            <Button fx:id="cancelButton" layoutX="750.0" layoutY="801.0" mnemonicParsing="false" onAction="#cancelButtonActionPerformed" prefHeight="61.0" prefWidth="178.0" text="Avbryt köp" textFill="WHITE" AnchorPane.bottomAnchor="86.0" AnchorPane.leftAnchor="750.0">
+            <Button fx:id="cancelButton" layoutX="130.0" layoutY="791.0" mnemonicParsing="false" onAction="#cancelButtonActionPerformed" prefHeight="61.0" prefWidth="178.0" text="Avbryt köp" textFill="WHITE" AnchorPane.bottomAnchor="96.0" AnchorPane.leftAnchor="130.0">
                <font>
                   <Font name="HelveticaNeueLTPro-Roman" size="20.0" />
                </font>
@@ -162,7 +162,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="purchaseButton" layoutX="992.0" layoutY="801.0" mnemonicParsing="false" onAction="#purchaseButtonActionPerformed" prefHeight="61.0" prefWidth="178.0" text="Slutför köp" textFill="WHITE" AnchorPane.bottomAnchor="86.0" AnchorPane.leftAnchor="992.0" AnchorPane.rightAnchor="750.0">
+            <Button fx:id="purchaseButton" layoutX="1553.0" layoutY="826.0" mnemonicParsing="false" onAction="#purchaseButtonActionPerformed" prefHeight="53.0" prefWidth="237.0" text="Slutför köp" textFill="WHITE" AnchorPane.bottomAnchor="69.0" AnchorPane.leftAnchor="1553.0" AnchorPane.rightAnchor="130.0">
                <font>
                   <Font size="20.0" />
                </font>
@@ -175,12 +175,13 @@
                   <Font size="25.0" />
                </font>
             </Label>
-         <Label layoutX="130.0" layoutY="41.0" text="Bekräfta dina uppgifter innan du slutför köpet">
+         <Label layoutX="130.0" layoutY="41.0" text="Bekräfta dina uppgifter innan du slutför köpet" AnchorPane.topAnchor="160.0">
             <font>
                <Font size="26.0" />
             </font>
          </Label>
             <Label fx:id="errorAdressTwoLabel" layoutX="477.0" layoutY="430.0" prefWidth="200.0" textFill="#da1515" AnchorPane.leftAnchor="477.0" />
+         <ImageView fx:id="sequence_checkout" fitHeight="80.0" fitWidth="1000.0" layoutX="460.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="15.0" />
          </children>
       </AnchorPane>
 </fx:root>

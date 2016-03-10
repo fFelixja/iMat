@@ -47,12 +47,12 @@
 -fx-background-radius: 5, 5, 5, 5;
 }
 
-#shoppingCartButton:hover {
+#shoppingCartButton:hover,#checkoutnButton:hover,#purchaseButton:hover {
 -fx-background-image:url(cartButton_hover.png);
 -fx-background-color:none;
 
 }
-#shoppingCartButton:pressed {
+#shoppingCartButton:pressed,#checkoutnButton:pressed,#purchaseButton:pressed {
 	-fx-background-image:url(cartButton_clicked.png);
 	-fx-background-color:none;
 }
@@ -161,7 +161,7 @@
 
 }
 
-#addToCartButton,#checkoutnButton {
+#addToCartButton {
 	-fx-background-image:url(static_addToCart.png);
 	-fx-background-color:none;
 	-fx-background-size:360,70;
@@ -174,12 +174,14 @@
 
 }
 
-#addToCartButton:hover,#checkoutnButton:hover{
+
+
+#addToCartButton:hover{
 		-fx-background-image:url(addToCart_hover.png);
 		-fx-background-color:none;
 }
 
-#addToCartButton:pressed,#checkoutnButton:pressed{
+#addToCartButton:pressed{
 		-fx-background-image:url(addToCart_clicked.png);
 		-fx-background-color:none;
 }
@@ -197,18 +199,23 @@
 	-fx-background-radius: 5, 5, 5, 5;
 
 }
-#checkoutnButton:hover,#continueShoppingButton:hover {
+#continueShoppingButton:hover {
 	-fx-background-image:url(hover_button.png);
 	-fx-background-color:none;
 
 }
-#checkoutnButton:pressed,#continueShoppingButton:pressed {
+#continueShoppingButton:pressed {
 	-fx-background-image:url(clicked_button.png);
 	-fx-background-color:none;
 
 }
+#checkoutnButton, #purchaseButton {
+-fx-background-image:url(cartButton_static.png);
+-fx-background-size:240,80;
 
-#saveButton, #cancelButton, #purchaseButton{
+}
+
+#saveButton, #cancelButton{
 	-fx-background-image:url(static_button.png);
 	-fx-background-repeat: no-repeat;
   -fx-background-position:center;
@@ -225,7 +232,7 @@
 
 }
 
-#saveButton:hover, #cancelButton:hover, #purchaseButton:hover {
+#saveButton:hover, #cancelButton:hover {
 	-fx-background-image:url(hover_button.png);
 	-fx-background-repeat: no-repeat;
 	-fx-background-position:center;
@@ -237,7 +244,8 @@
 -fx-background-color:none;
 }
 
-#saveButton:pressed, #cancelButton:pressed, #purchaseButton:pressed {
+
+#saveButton:pressed, #cancelButton:pressed {
 	-fx-background-image:url(clicked_button.png);
 	-fx-background-repeat: no-repeat;
 	-fx-background-position:center;

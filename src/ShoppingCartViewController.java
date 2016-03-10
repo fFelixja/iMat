@@ -3,6 +3,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Font;
@@ -21,6 +23,7 @@ public class ShoppingCartViewController extends AnchorPane{
     @FXML private Button checkoutButton;
 
     @FXML private GridPane productGridPane;
+    @FXML private ImageView sequence_cart;
 
     private TopMenuController controller;
 
@@ -31,6 +34,7 @@ public class ShoppingCartViewController extends AnchorPane{
             loader.setController(this);
             loader.setRoot(this);
             loader.load();
+            sequence_cart.setImage(new Image("css/sequence_cart.png"));
         } catch (IOException e) {
             System.out.println("Error in constructor of ShoppingCartViewController");
         }
