@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 
 <fx:root id="shoppingCart" prefHeight="949.0" prefWidth="1920.0" stylesheets="@../css/topMenuStyle.css" type="AnchorPane" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
-  <ScrollPane layoutX="425.0" layoutY="81.0" prefHeight="752.0" prefWidth="1070.0">
+  <ScrollPane hbarPolicy="NEVER" layoutX="425.0" layoutY="81.0" prefHeight="752.0" prefWidth="1070.0">
      <content>
         <GridPane fx:id="productGridPane" hgap="-10.0" vgap="20.0">
           <columnConstraints>

@@ -127,6 +127,8 @@ public class TopMenuController extends AnchorPane implements Initializable, Shop
         backButton.setDisable(true);
 
         IMatDataHandler.getInstance().getShoppingCart().addShoppingCartListener(this);
+
+        shoppingCartButton.setText("Kundvagn " + IMatDataHandler.getInstance().getShoppingCart().getTotal() + "kr");
     }
 
 
@@ -220,7 +222,7 @@ public class TopMenuController extends AnchorPane implements Initializable, Shop
                     setViewLabel("Kundvagn");
                     break;
                 case "purchaseDetailView":
-                    setViewLabel("Kvitto");
+                    setViewLabel("Inköpskvitto");
                     break;
                 case "purchaseHistoryView":
                     setViewLabel("Tidigare inköp");
