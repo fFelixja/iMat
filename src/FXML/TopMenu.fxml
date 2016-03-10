@@ -20,7 +20,7 @@
    <children>
       <AnchorPane fx:id="header" prefHeight="120.0" prefWidth="1920.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <TextField fx:id="searchTextField" layoutX="1148.0" layoutY="75.0" onAction="#searchTextFieldKeyPressed" prefHeight="25.0" prefWidth="201.0" promptText="Sök..." AnchorPane.rightAnchor="622.0" AnchorPane.topAnchor="75.0" />
+            <TextField fx:id="searchTextField" layoutX="1148.0" layoutY="75.0" onAction="#searchTextFieldKeyPressed" prefHeight="25.0" prefWidth="201.0" promptText="Sök..." AnchorPane.rightAnchor="622.0" AnchorPane.topAnchor="60.0" />
             <Button fx:id="backButton" layoutX="421.0" layoutY="60.0" mnemonicParsing="false" onAction="#backButtonActionPerformed" prefHeight="40.0" prefWidth="28.0" AnchorPane.leftAnchor="430.0" AnchorPane.topAnchor="60.0">
                <graphic>
                   <ImageView fx:id="backButtonImage" fitHeight="18.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true" />
@@ -76,7 +76,7 @@
                   <Tooltip text="Gå till kundvagn" />
                </tooltip>
             </Button>
-            <Button fx:id="searchButton" layoutX="1310.0" layoutY="76.0" mnemonicParsing="false" onAction="#searchTextFieldKeyPressed" prefHeight="25.0" prefWidth="59.0" stylesheets="@../css/topMenuStyle.css" text="Sök" textFill="WHITE" AnchorPane.rightAnchor="551.0" AnchorPane.topAnchor="75.0" />
+            <Button fx:id="searchButton" layoutX="1310.0" layoutY="76.0" mnemonicParsing="false" onAction="#searchTextFieldKeyPressed" prefHeight="40.0" prefWidth="59.0" stylesheets="@../css/topMenuStyle.css" text="Sök" textFill="WHITE" AnchorPane.rightAnchor="551.0" AnchorPane.topAnchor="60.0" />
             <Label fx:id="viewLabel" layoutX="60.0" layoutY="82.0" text="Label" textFill="WHITE" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="82.0">
                <font>
                   <Font name="Yu Gothic UI Bold" size="24.0" />
